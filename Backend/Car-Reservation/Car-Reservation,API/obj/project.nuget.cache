@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MpkOP0we9Gs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Car-Reservation,API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\2M\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "C:\\Users\\2M\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
