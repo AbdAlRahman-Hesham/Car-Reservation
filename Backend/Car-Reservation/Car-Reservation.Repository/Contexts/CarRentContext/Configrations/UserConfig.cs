@@ -1,6 +1,5 @@
 ﻿using Car_Reservation_Domain.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations;
