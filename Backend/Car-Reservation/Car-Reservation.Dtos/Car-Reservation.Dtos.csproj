@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AccountDtos\" />
-    <Folder Include="ErrorDtos\" />
+    <ProjectReference Include="..\Car-Reservation,Domain\Car-Reservation.Domain.csproj" />
   </ItemGroup>
 
 </Project>
