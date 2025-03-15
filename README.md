@@ -1,10 +1,14 @@
-# Car-Reservation
+# Car-Reservation Project
+
+Welcome to the **Car-Reservation** project
+
+---
 
 ## Configuration
 
-The Car Reservation System uses the following configuration settings:
+The project uses the following configuration settings in the `appsettings.json` file:
 
-### appsettings.json 
+### `appsettings.json`
 ```json
 {
   "Logging": {
@@ -24,9 +28,19 @@ The Car Reservation System uses the following configuration settings:
     "Lifetime": 7
   }
 }
-
 ```
-## Backend Project Structure 
+
+### Key Configuration Details:
+- **Logging**: Configures logging levels for the application.
+- **ConnectionStrings**: Specifies the database connection string for SQL Server.
+- **JWT**: Configures JSON Web Token (JWT) settings for authentication and authorization.
+
+---
+
+## Backend Project Structure
+
+The project is organized into the following structure:
+
 ```
 ├─── API                 # Presentation Layer (API Controllers, Middleware, Extensions)
 │   ├─── Controllers     # Handles HTTP requests and responses
@@ -58,14 +72,15 @@ The Car Reservation System uses the following configuration settings:
 └─── Services            # Business Logic Layer (Application Services)
     ├─── AuthServices    # Authentication and Authorization services
 ```
-(Due to technical issues, the search service is temporarily unavailable.)
 
+---
 
+## Setup Instructions
 
-## Setup Instructions To Setup Backend Project
+Follow these steps to set up the **Car-Reservation** project on your local machine.
 
 ### Step 1: Install Required Tools
-Make sure you have the following installed on your machine:
+Ensure you have the following installed:
 - **Visual Studio** (with ASP.NET and Entity Framework workloads)
 - **Git**
 - **SQL Server** (or use SQLite if configured)
@@ -80,7 +95,7 @@ Make sure you have the following installed on your machine:
    ```
 3. Navigate to the project folder:
    ```bash
-   cd car-reservation
+   cd Car-Reservation
    ```
 
 ---
@@ -88,7 +103,7 @@ Make sure you have the following installed on your machine:
 ### Step 3: Open the Project in Visual Studio
 1. Open **Visual Studio**.
 2. Click **Open a project or solution**.
-3. Navigate to the cloned `car-reservation` folder and select the `.sln` file.
+3. Navigate to the cloned `Car-Reservation` folder and select the `.sln` file.
 
 ---
 
@@ -118,5 +133,13 @@ Make sure you have the following installed on your machine:
 
 ---
 
+## Contribution Guidelines
 
+To contribute to the project, follow these guidelines:
 
+1. **Follow the Project Structure**: Ensure your changes align with the existing folder structure.
+2. **Use Meaningful Commit Messages**: Write clear and descriptive commit messages.
+3. **Document Your Changes**: Update the relevant documentation and add comments to your code.
+4. **Create Pull Requests**: Submit a pull request for review before merging your changes.
+
+---
