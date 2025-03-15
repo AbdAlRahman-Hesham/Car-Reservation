@@ -16,7 +16,7 @@ The application connects to a SQL Server database with the following connection 
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "Default": "Server=DESKTOP-S1F3JC4;Database=Car-Reservation-Db;Integrated Security=True;TrustServerCertificate=True;"
+    "Default": "Server=.;Database=Car-Reservation-Db;Integrated Security=True;TrustServerCertificate=True;"
   },
   "JWT": {
     "Issuer": "http://localhost",
