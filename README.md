@@ -58,3 +58,69 @@ The Car Reservation System uses the following configuration settings:
 └─── Services            # Business Logic Layer (Application Services)
     ├─── AuthServices    # Authentication and Authorization services
 ```
+(Due to technical issues, the search service is temporarily unavailable.)
+
+# Car Reservation Project - Setup and Contribution Guide
+
+This guide provides step-by-step instructions for setting up the **Car Reservation** project on your local machine and outlines the contribution guidelines for developers.
+
+---
+
+## Setup Instructions To Setup Backend Project
+
+### Step 1: Install Required Tools
+Make sure you have the following installed on your machine:
+- **Visual Studio** (with ASP.NET and Entity Framework workloads)
+- **Git**
+- **SQL Server** (or use SQLite if configured)
+
+---
+
+### Step 2: Clone the Project from GitHub
+1. Open **Git Bash** or **Command Prompt**.
+2. Run the following command to clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/car-reservation.git
+   ```
+3. Navigate to the project folder:
+   ```bash
+   cd car-reservation
+   ```
+
+---
+
+### Step 3: Open the Project in Visual Studio
+1. Open **Visual Studio**.
+2. Click **Open a project or solution**.
+3. Navigate to the cloned `car-reservation` folder and select the `.sln` file.
+
+---
+
+### Step 4: Restore NuGet Packages
+1. In Visual Studio, open the **Package Manager Console (PMC)**:
+   - Go to **Tools → NuGet Package Manager → Package Manager Console**.
+2. Run the following command to install all dependencies:
+   ```bash
+   dotnet restore
+   ```
+
+---
+
+### Step 5: Apply Database Migrations
+1. Open the **Package Manager Console** again.
+2. Run the following command to update the database:
+   ```bash
+   dotnet ef database update
+   ```
+
+---
+
+### Step 6: Run the Project
+1. Set **Car-Reservation.API** as the startup project.
+2. Click **Start (F5)** in Visual Studio.
+3. The API should now be running at `https://localhost:7014/` (or another assigned port).
+
+---
+
+
+
