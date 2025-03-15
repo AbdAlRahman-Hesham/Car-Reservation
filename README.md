@@ -26,7 +26,7 @@ The Car Reservation System uses the following configuration settings:
 }
 
 ```
-### Backend Project Structure 
+## Backend Project Structure 
 ```
 ├─── API                 # Presentation Layer (API Controllers, Middleware, Extensions)
 │   ├─── Controllers     # Handles HTTP requests and responses
@@ -60,11 +60,7 @@ The Car Reservation System uses the following configuration settings:
 ```
 (Due to technical issues, the search service is temporarily unavailable.)
 
-# Car Reservation Project - Setup and Contribution Guide
 
-This guide provides step-by-step instructions for setting up the **Car Reservation** project on your local machine and outlines the contribution guidelines for developers.
-
----
 
 ## Setup Instructions To Setup Backend Project
 
@@ -80,7 +76,7 @@ Make sure you have the following installed on your machine:
 1. Open **Git Bash** or **Command Prompt**.
 2. Run the following command to clone the repository:
    ```bash
-   git clone https://github.com/your-repo/car-reservation.git
+   git clone [https://github.com/your-repo/car-reservation.git](https://github.com/AbdAlRahman-Hesham/Car-Reservation.git)
    ```
 3. Navigate to the project folder:
    ```bash
