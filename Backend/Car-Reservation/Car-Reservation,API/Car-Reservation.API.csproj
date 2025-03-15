@@ -13,6 +13,11 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Middelware\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Car-Reservation.Services\Car-Reservation.Services.csproj" />
   </ItemGroup>
 
 </Project>

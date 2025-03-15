@@ -2,13 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Car_Reservation.Services</RootNamespace>
+    <RootNamespace>Car_Reservation_Domain</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Car-Reservation.Repository\Car-Reservation.Repositories.csproj" />
+    <Folder Include="ServicesInterfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.3" />
   </ItemGroup>
 
 </Project>

@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Car_Reservation_Domain</RootNamespace>
+    <RootNamespace>Car_Reservation.Dtos</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="ServicesInterfaces\" />
+    <Folder Include="AccountDtos\" />
+    <Folder Include="ErrorDtos\" />
   </ItemGroup>
 
 </Project>
