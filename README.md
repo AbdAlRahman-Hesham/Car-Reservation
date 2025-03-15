@@ -5,7 +5,6 @@
 The Car Reservation System uses the following configuration settings:
 
 ### appsettings.json 
-The application connects to a SQL Server database with the following connection string:
 ```json
 {
   "Logging": {
