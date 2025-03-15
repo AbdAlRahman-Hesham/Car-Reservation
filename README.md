@@ -27,11 +27,12 @@ The Car Reservation System uses the following configuration settings:
 
 ```
 Car-Reservation
+```
 ├─── API                 # Presentation Layer (API Controllers, Middleware, Extensions)
 │   ├─── Controllers     # Handles HTTP requests and responses
 │   ├─── Extension       # Extension methods for configuring services
 │   ├─── Middleware      # Custom middleware (e.g., error handling, authentication)
-│   └─── Properties      # (Optional) Assembly info or settings
+│   └─── Properties      # Assembly info or settings
 │
 ├─── Domain              # Core Business Logic (Entities, Interfaces)
 │   ├─── Entities        # Core entities used in the system
@@ -49,12 +50,11 @@ Car-Reservation
 │   │       ├─── Configurations  # Entity configurations for EF Core
 │   │       ├─── Data            # Seed data or static data
 │   │       └─── Migrations      # EF Core database migrations
-│   ├─── Migrations      # (Possibly redundant, should be inside Contexts/Migrations)
 │   ├─── Repositories    # Concrete repository implementations
-│   ├─── RepositoriesInterfaces # Interfaces for repositories (Repository Pattern)
+│   ├─── RepositoryInterfaces # Interfaces for repositories (Repository Pattern)
 │   ├─── Specifications  # Specification pattern for querying
 │   └─── UnitsOfWork     # Unit of Work pattern for managing transactions
 │
 └─── Services            # Business Logic Layer (Application Services)
     ├─── AuthServices    # Authentication and Authorization services
-
+```
