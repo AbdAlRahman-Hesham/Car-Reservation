@@ -23,7 +23,7 @@ app.UseExceptionHandlingMiddleware();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseSwaggerUI(O => O.SwaggerEndpoint("/openapi/v1.json", "Talabat Api"));
+    app.UseSwaggerUI(O => O.SwaggerEndpoint("/openapi/v1.json", "Car Reversation Api"));
 
 }
 await app.UseUpdateDataBase();
