@@ -1,15 +1,16 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Car_Reservation_Domain.Entities;
-using Car_Reservation.Repository.Reprositories_Interfaces;
-using Car_Reservation.Repository.Specifications;
+
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using Car_Reservation.Repository.Specifications;
+using Car_Reservation.Repository.Reprositories_Interfaces;
 
 namespace Car_Reservation.Repository.Reprositories;
 
-public class GenaricRepository<T>(CarRentContext db) : IGenaricRepository<T> where T : BaseEntity
+public class GenaricRepository<T>(CarRentDbContext db) : IGenaricRepository<T> where T : BaseEntity
 {
-    private protected readonly CarRentContext _db = db;
+    private protected readonly CarRentDbContext _db = db;
 
     public async Task<T?> GetAsync(int id)=> await _db.Set<T>().FindAsync(id);
     public async Task<T?> GetAsyncWithSpecification(Specification<T> specification)

@@ -6,9 +6,9 @@ using Car_Reservation_Domain.Entities.Identity;
 
 namespace Car_Reservation.APIs.Controllers;
 
-public class BuggyController(CarRentContext context) : BaseApiController
+public class BuggyController(CarRentDbContext context) : BaseApiController
 {
-    private readonly CarRentContext _context = context;
+    private readonly CarRentDbContext _context = context;
 
     [HttpGet("notfound")]
     public ActionResult GetNotFound()

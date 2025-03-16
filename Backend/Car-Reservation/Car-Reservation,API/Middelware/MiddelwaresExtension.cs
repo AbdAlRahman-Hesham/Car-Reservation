@@ -1,9 +1,9 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Car_Reservation_Domain.Entities.Identity;
 using Car_Reservation.APIs.Middlewares;
-using Car_Reservation.Repository.Identity.DataSeeding;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Car_Reservation.Repository.Identity.DataSeeding;
 
 
 
@@ -21,7 +21,7 @@ public static class MiddelwaresExtension
     {
         using (var scope = app.ApplicationServices.CreateScope())
         {
-            var db = scope.ServiceProvider.GetRequiredService<CarRentContext>();
+            var db = scope.ServiceProvider.GetRequiredService<CarRentDbContext>();
             await db.Database.MigrateAsync(); 
             
             
