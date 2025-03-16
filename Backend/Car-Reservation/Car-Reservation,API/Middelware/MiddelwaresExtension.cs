@@ -21,7 +21,7 @@ public static class MiddelwaresExtension
     {
         using (var scope = app.ApplicationServices.CreateScope())
         {
-            var db = scope.ServiceProvider.GetRequiredService<CarRentContext>();
+            var db = scope.ServiceProvider.GetRequiredService<CarRentDbContext>();
             await db.Database.MigrateAsync(); 
             
             

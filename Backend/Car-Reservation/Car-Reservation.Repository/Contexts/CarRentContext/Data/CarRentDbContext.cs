@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Car_Reservation.Repository.Contexts.CarRentContext.Data;
 
-public class CarRentContext(DbContextOptions options):IdentityDbContext<User>(options)
+public class CarRentDbContext(DbContextOptions options):IdentityDbContext<User>(options)
 {
     protected override void OnModelCreating(ModelBuilder builder)
     {

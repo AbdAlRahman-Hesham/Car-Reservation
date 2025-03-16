@@ -6,9 +6,9 @@ using System.Collections;
 
 namespace Car_Reservation.Repository.UnitOfWork;
 
-public class UnitOfWork(CarRentContext context) : IUnitOfWork
+public class UnitOfWork(CarRentDbContext context) : IUnitOfWork
 {
-    private readonly CarRentContext _context = context;
+    private readonly CarRentDbContext _context = context;
     private readonly Hashtable _repositories = new Hashtable();
 
     public async Task<int> CompleteAsync()

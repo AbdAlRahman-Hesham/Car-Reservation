@@ -8,7 +8,7 @@ namespace Car_Reservation_API.Extension
 
         public static IServiceCollection AddAppDbContexts(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<CarRentContext>(options =>
+            services.AddDbContext<CarRentDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("Default"));
             });

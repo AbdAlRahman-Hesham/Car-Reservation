@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 {
-    [DbContext(typeof(Car_Reservation.Repository.Contexts.CarRentContext.Data.CarRentContext))]
+    [DbContext(typeof(Car_Reservation.Repository.Contexts.CarRentContext.Data.CarRentDbContext))]
     [Migration("20250316204813_Entites")]
     partial class Entites
     {

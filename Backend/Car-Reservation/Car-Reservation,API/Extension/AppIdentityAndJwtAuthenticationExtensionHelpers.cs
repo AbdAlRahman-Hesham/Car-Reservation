@@ -16,7 +16,7 @@ namespace Car_Reservation_API.Extension
         {
 
             service.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<CarRentContext>();
+                .AddEntityFrameworkStores<CarRentDbContext>();
 
             service.AddScoped<IAuthServices, AuthServices>();
 
