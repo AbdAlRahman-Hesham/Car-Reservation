@@ -369,3 +369,9 @@ FodyWeavers.xsd
 Car-Reservation.Repository/obj/
 Car-Reservation.Services/obj/
 /Backend/Car-Reservation/.vs/Car-Reservation/v17/.suo
+/Backend/Car-Reservation/.vs/Car-Reservation/v17/DocumentLayout.backup.json
+/Backend/Car-Reservation/.vs/Car-Reservation/v17/DocumentLayout.json
+/Backend/Car-Reservation/Car-Reservation.Services/obj/Debug/net9.0/Car-Reservation.Services.AssemblyInfoInputs.cache
+/Backend/Car-Reservation/Car-Reservation.Services/obj/Debug/net9.0/Car-Reservation.Services.AssemblyInfo.cs
+/Backend/Car-Reservation/Car-Reservation.Repository/obj/Debug/net9.0/Car-Reservation.Repositories.AssemblyInfo.cs
+/Backend/Car-Reservation/Car-Reservation.Repository/obj/Debug/net9.0/Car-Reservation.Repositories.AssemblyInfoInputs.cache
