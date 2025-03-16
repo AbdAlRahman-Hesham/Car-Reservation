@@ -1,7 +1,7 @@
 ﻿using Car_Reservation_Domain.Entities.Identity;
-using E_Commerce.Domain.ServicesInterfaces;
-using E_Commerce.DTOs.AccountDtos;
-using E_Commerce.DTOs.ErrorResponse;
+using Car_Reservation_Domain.ServicesInterfaces;
+using Car_Reservation.DTOs.AccountDtos;
+using Car_Reservation.DTOs.ErrorResponse;
 using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 
-namespace E_Commerce.APIs.Controllers;
+namespace Car_Reservation.APIs.Controllers;
 
 
 public class AccountsController(UserManager<User> userManager, SignInManager<User> signInManager, IAuthServices authServices) : BaseApiController

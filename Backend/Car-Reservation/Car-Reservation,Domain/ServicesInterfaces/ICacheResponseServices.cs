@@ -1,4 +1,4 @@
-﻿namespace E_Commerce.Domain.ServicesInterfaces;
+﻿namespace Car_Reservation_Domain.ServicesInterfaces;
 
 public interface ICacheResponseService
 {

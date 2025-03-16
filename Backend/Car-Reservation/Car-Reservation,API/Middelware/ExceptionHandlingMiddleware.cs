@@ -1,8 +1,8 @@
-﻿using E_Commerce.DTOs.ErrorResponse;
+﻿using Car_Reservation.DTOs.ErrorResponse;
 using System.Net;
 using System.Text.Json;
 
-namespace E_Commerce.APIs.Middlewares;
+namespace Car_Reservation.APIs.Middlewares;
 
 public class ExceptionHandlingMiddleware
     (ILogger<ExceptionHandlingMiddleware> logger

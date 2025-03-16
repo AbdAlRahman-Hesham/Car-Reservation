@@ -1,10 +1,10 @@
-﻿using E_Commerce.DTOs.ErrorResponse;
+﻿using Car_Reservation.DTOs.ErrorResponse;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Car_Reservation_Domain.Entities.Identity;
 
-namespace E_Commerce.APIs.Controllers;
+namespace Car_Reservation.APIs.Controllers;
 
 public class BuggyController(CarRentContext context) : BaseApiController
 {

@@ -1,13 +1,13 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Car_Reservation_Domain.Entities.Identity;
-using E_Commerce.APIs.Middlewares;
-using E_Commerce.Repository.Identity.DataSeeding;
+using Car_Reservation.APIs.Middlewares;
+using Car_Reservation.Repository.Identity.DataSeeding;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 
 
-namespace E_Commerce.APIs.Extensions;
+namespace Car_Reservation.APIs.Extensions;
 
 public static class MiddelwaresExtension
 {

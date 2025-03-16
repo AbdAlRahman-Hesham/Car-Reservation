@@ -1,4 +1,4 @@
-﻿namespace E_Commerce.Domain.Entities;
+﻿namespace Car_Reservation_Domain.Entities;
 
 public class BaseEntity
 {

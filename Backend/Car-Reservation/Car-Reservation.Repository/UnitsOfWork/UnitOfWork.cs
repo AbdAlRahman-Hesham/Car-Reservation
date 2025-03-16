@@ -1,10 +1,10 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
-using E_Commerce.Domain.Entities;
-using E_Commerce.Repository.Reprositories;
-using E_Commerce.Repository.Reprositories_Interfaces;
+using Car_Reservation_Domain.Entities;
+using Car_Reservation.Repository.Reprositories;
+using Car_Reservation.Repository.Reprositories_Interfaces;
 using System.Collections;
 
-namespace E_Commerce.Repository.UnitOfWork;
+namespace Car_Reservation.Repository.UnitOfWork;
 
 public class UnitOfWork(CarRentContext context) : IUnitOfWork
 {

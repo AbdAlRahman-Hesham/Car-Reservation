@@ -1,7 +1,7 @@
-﻿using E_Commerce.Domain.Entities;
-using E_Commerce.Repository.Reprositories_Interfaces;
+﻿using Car_Reservation_Domain.Entities;
+using Car_Reservation.Repository.Reprositories_Interfaces;
 
-namespace E_Commerce.Repository.UnitOfWork;
+namespace Car_Reservation.Repository.UnitOfWork;
 
 public interface IUnitOfWork : IAsyncDisposable 
 {

@@ -1,5 +1,5 @@
 ﻿using Car_Reservation_Domain.Entities.Identity;
-using E_Commerce.Domain.ServicesInterfaces;
+using Car_Reservation_Domain.ServicesInterfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -7,7 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace E_Commerce.Services.AuthServices;
+namespace Car_Reservation.Services.AuthServices;
 
 public class AuthServices(IConfiguration configuration) :IAuthServices
 {

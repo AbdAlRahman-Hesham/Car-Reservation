@@ -1,4 +1,4 @@
-﻿namespace E_Commerce.DTOs.ErrorResponse;
+﻿namespace Car_Reservation.DTOs.ErrorResponse;
 
 public class ApiResponse
 {

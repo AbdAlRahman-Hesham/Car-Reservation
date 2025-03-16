@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace E_Commerce.APIs.Controllers
+namespace Car_Reservation.APIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

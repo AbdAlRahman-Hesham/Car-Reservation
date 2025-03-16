@@ -1,10 +1,10 @@
-﻿using E_Commerce.Domain.Entities;
+﻿using Car_Reservation_Domain.Entities;
 using Microsoft.Data.SqlClient;
 
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 
-namespace E_Commerce.Repository.Specifications;
+namespace Car_Reservation.Repository.Specifications;
 
 public abstract class Specification<TEntity> where TEntity : BaseEntity
 {
