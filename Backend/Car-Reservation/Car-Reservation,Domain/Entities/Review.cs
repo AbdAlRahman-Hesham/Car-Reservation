@@ -12,7 +12,7 @@ namespace Car_Reservation_Domain.Entities
     {
         public int Stars { get; set; }
         public string Comment { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public int CarId { get; set; }
         public Car Car { get; set; }
         public string UserId { get; set; }
