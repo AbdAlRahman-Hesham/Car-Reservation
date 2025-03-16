@@ -1,8 +1,8 @@
-﻿using E_Commerce.Domain.Entities;
+﻿using Car_Reservation_Domain.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
-namespace E_Commerce.Repository.Specifications;
+namespace Car_Reservation.Repository.Specifications;
 
 public static class SpecificaionQueryBuilder
 {

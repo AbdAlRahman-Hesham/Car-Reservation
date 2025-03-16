@@ -1,6 +1,6 @@
 using Car_Reservation_API.Extension;
-using E_Commerce.APIs.Extensions;
-using E_Commerce.APIs.Middlewares;
+using Car_Reservation.APIs.Extensions;
+using Car_Reservation.APIs.Middlewares;
 
 
 var builder = WebApplication.CreateBuilder(args);

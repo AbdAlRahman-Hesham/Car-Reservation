@@ -1758,6 +1758,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Car-Reservation.Domain": "1.0.0",
           "Car-Reservation.Dtos": "1.0.0",
           "Car-Reservation.Repositories": "1.0.0"
         },

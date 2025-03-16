@@ -271,6 +271,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
+                "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
+              },
               "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj": {
                 "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj"
               },

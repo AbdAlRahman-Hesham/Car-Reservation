@@ -1,7 +1,7 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Car_Reservation_Domain.Entities.Identity;
-using E_Commerce.Domain.ServicesInterfaces;
-using E_Commerce.Services.AuthServices;
+using Car_Reservation_Domain.ServicesInterfaces;
+using Car_Reservation.Services.AuthServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;

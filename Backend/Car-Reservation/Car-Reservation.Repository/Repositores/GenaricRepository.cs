@@ -1,11 +1,11 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
-using E_Commerce.Domain.Entities;
-using E_Commerce.Repository.Reprositories_Interfaces;
-using E_Commerce.Repository.Specifications;
+using Car_Reservation_Domain.Entities;
+using Car_Reservation.Repository.Reprositories_Interfaces;
+using Car_Reservation.Repository.Specifications;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace E_Commerce.Repository.Reprositories;
+namespace Car_Reservation.Repository.Reprositories;
 
 public class GenaricRepository<T>(CarRentContext db) : IGenaricRepository<T> where T : BaseEntity
 {

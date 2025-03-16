@@ -1,4 +1,4 @@
-﻿namespace E_Commerce.DTOs.Pagination;
+﻿namespace Car_Reservation.DTOs.Pagination;
 
 public class PaginationDto<T>
 {

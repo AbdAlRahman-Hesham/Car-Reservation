@@ -1,8 +1,8 @@
-﻿using E_Commerce.Domain.Entities;
-using E_Commerce.Repository.Specifications;
+﻿using Car_Reservation_Domain.Entities;
+using Car_Reservation.Repository.Specifications;
 using System.Linq.Expressions;
 
-namespace E_Commerce.Repository.Reprositories_Interfaces;
+namespace Car_Reservation.Repository.Reprositories_Interfaces;
 
 public interface IGenaricRepository<T> where T : BaseEntity
 {

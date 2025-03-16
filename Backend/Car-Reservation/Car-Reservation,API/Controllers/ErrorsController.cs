@@ -1,7 +1,7 @@
-﻿using E_Commerce.DTOs.ErrorResponse;
+﻿using Car_Reservation.DTOs.ErrorResponse;
 using Microsoft.AspNetCore.Mvc;
 
-namespace E_Commerce.APIs.Controllers;
+namespace Car_Reservation.APIs.Controllers;
 
 [Route("errors/{code}")]
 [ApiController]

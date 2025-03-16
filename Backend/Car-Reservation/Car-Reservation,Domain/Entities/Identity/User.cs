@@ -9,4 +9,6 @@ public class User :IdentityUser
     public string PicUrl { get; set; }
     public string NationalId { get; set; }
     public UserAddress Address { get; set; }
+    public ICollection<Reservation> Reservations { get; set; }
+    public ICollection<Request> Requests { get; set; }
 }

@@ -1,4 +1,4 @@
-﻿namespace E_Commerce.DTOs.AccountDtos;
+﻿namespace Car_Reservation.DTOs.AccountDtos;
 
 public class UserDto
 {

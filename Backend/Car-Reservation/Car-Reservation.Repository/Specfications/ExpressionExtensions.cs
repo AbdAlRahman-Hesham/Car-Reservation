@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 
 
-namespace E_Commerce.Repository.Specifications;
+namespace Car_Reservation.Repository.Specifications;
 
 public static class ExpressionExtensions
 {

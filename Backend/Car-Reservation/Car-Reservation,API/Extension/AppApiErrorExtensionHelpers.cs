@@ -1,4 +1,4 @@
-﻿using E_Commerce.DTOs.ErrorResponse;
+﻿using Car_Reservation.DTOs.ErrorResponse;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Car_Reservation_API.Extension
