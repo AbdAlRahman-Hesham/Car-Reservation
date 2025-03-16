@@ -1,9 +1,9 @@
 ﻿using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Car_Reservation_Domain.Entities.Identity;
 using Car_Reservation.APIs.Middlewares;
-using Car_Reservation.Repository.Identity.DataSeeding;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Car_Reservation.Repository.Identity.DataSeeding;
 
 
 
