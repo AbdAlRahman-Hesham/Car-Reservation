@@ -16,7 +16,7 @@ namespace ECommerce.Repository.Data
     {
         public static void SeedingHelper(CarRentDbContext context)
         {
-            string filePath = "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\DataSeeding";
+            string filePath = "..\\Car-Reservation.Repository\\Contexts\\CarRentContext\\DataSeeding";
             seed<Brand>(filePath + "/brand.json", context);
             seed<Model>(filePath + "/model.json", context);
             //seed<Car>(filePath + "/cars.json", context);
