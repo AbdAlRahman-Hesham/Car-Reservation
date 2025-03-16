@@ -1,0 +1,106 @@
+ [
+    {
+      "Name": "1 Series",
+      "Category": "Economic",
+      "BrandId": 3
+    },
+    {
+      "Name": "2 Series",
+      "Category": "Economic",
+      "BrandId": 3
+    },
+    {
+      "Name": "X1",
+      "Category": "Economic",
+      "BrandId": 3
+    },
+    {
+      "Name": "i3",
+      "Category": "Economic",
+      "BrandId": 3
+    },
+    {
+      "Name": "X2",
+      "Category": "Economic",
+      "BrandId": 3
+    },
+
+    {
+      "Name": "3 Series",
+      "Category": "Medium",
+      "BrandId": 3
+    },
+    {
+      "Name": "4 Series",
+      "Category": "Medium",
+      "BrandId": 3
+    },
+    {
+      "Name": "X3",
+      "Category": "Medium",
+      "BrandId": 3
+    },
+    {
+      "Name": "i4",
+      "Category": "Medium",
+      "BrandId": 3
+    },
+    {
+      "Name": "Z4",
+      "Category": "Medium",
+      "BrandId": 3
+    },
+
+    {
+      "Name": "5 Series",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "6 Series",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "X5",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "X6",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "M5",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+
+    {
+      "Name": "7 Series",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "X7",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "M8",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "i7",
+      "Category": "Luxury",
+      "BrandId": 3
+    },
+    {
+      "Name": "iX",
+      "Category": "Luxury",
+      "BrandId": 3
+    }
+  ]
+
