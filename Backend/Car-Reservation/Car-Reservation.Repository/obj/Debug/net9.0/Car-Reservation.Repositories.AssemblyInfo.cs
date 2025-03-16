@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Car-Reservation.Repositories")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a9efce42641b7d5f717fef45caa48f0e4d02853")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8998d5ac798407a2267640ced7bb5deb5b05c24")]
 [assembly: System.Reflection.AssemblyProductAttribute("Car-Reservation.Repositories")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Car-Reservation.Repositories")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
