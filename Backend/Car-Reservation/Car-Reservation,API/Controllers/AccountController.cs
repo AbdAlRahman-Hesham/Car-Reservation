@@ -57,6 +57,7 @@ public class AccountsController(UserManager<User> userManager, SignInManager<Use
             Address = registerDto.Address.Adapt<UserAddress>(),
             Email = registerDto.Email,
             UserName = registerDto.Email,
+            NationalId = registerDto.NationalId,
             PhoneNumber = registerDto.PhoneNumber,
 
         };

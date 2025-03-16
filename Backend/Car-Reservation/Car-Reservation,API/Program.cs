@@ -22,10 +22,10 @@ app.UseExceptionHandlingMiddleware();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwaggerUI(O => O.SwaggerEndpoint("/openapi/v1.json", "Car Reversation Api"));
 
 }
+app.MapOpenApi();
+app.UseSwaggerUI(O => O.SwaggerEndpoint("/openapi/v1.json", "Car-Reservation Api"));
 await app.UseUpdateDataBase();
 await app.UseSeeding();
 

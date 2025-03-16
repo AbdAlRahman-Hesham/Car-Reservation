@@ -2,6 +2,12 @@
 
 public class ApiResponse
 {
+    /// <summary>
+    /// {
+    ///     statusCode:401,
+    ///     errorMessage:.................
+    /// }
+    /// </summary>
     public int StatusCode { get; set; }
     public string ErrorMessage { get; set; }
 

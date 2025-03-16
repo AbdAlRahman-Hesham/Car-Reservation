@@ -9,6 +9,7 @@ public static class AppExtension
         services.AddIdentityAndJwtAuthenticationServices(configuration);
         services.AddApiErrorServices();
         services.RegisterMapsterConfigurtion();
+        
         return services;
     }
 }
