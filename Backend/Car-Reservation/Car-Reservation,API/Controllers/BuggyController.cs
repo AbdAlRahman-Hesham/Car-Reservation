@@ -28,7 +28,7 @@ public class BuggyController(CarRentContext context) : BaseApiController
     [HttpGet("badrequest")]
     public ActionResult GetBadRequest()
     {
-        return BadRequest();
+        return BadRequest(new ApiResponse(400));
     }
 
     [HttpGet("badrequest/{id}")]

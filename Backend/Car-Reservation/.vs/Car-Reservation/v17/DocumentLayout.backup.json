@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\middelware\\middelwaresextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\middelware\\middelwaresextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\controllers\\errorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\controllers\\errorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\controllers\\buggycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\controllers\\buggycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|c:\\users\\2m\\source\\repos\\car-reservation\\backend\\car-reservation\\car-reservation,api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,7 +138,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,20 +154,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "ErrorsController.cs",
+              "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\ErrorsController.cs",
+              "RelativeDocumentMoniker": "Car-Reservation,API\\Controllers\\ErrorsController.cs",
+              "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\ErrorsController.cs",
+              "RelativeToolTip": "Car-Reservation,API\\Controllers\\ErrorsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T01:21:08.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Car-Reservation,API\\appsettings.Development.json",
               "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\appsettings.Development.json*",
               "RelativeToolTip": "Car-Reservation,API\\appsettings.Development.json*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-15T23:24:25.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\appsettings.json",
+              "RelativeDocumentMoniker": "Car-Reservation,API\\appsettings.json",
+              "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\appsettings.json*",
+              "RelativeToolTip": "Car-Reservation,API\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-15T15:27:22.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MiddelwaresExtension.cs",
+              "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
+              "RelativeDocumentMoniker": "Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
+              "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
+              "RelativeToolTip": "Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T20:59:18.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BuggyController.cs",
+              "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\BuggyController.cs",
+              "RelativeDocumentMoniker": "Car-Reservation,API\\Controllers\\BuggyController.cs",
+              "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\BuggyController.cs",
+              "RelativeToolTip": "Car-Reservation,API\\Controllers\\BuggyController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T01:19:19.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Program.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Program.cs",
@@ -172,32 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\appsettings.json",
-              "RelativeDocumentMoniker": "Car-Reservation,API\\appsettings.json",
-              "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\appsettings.json",
-              "RelativeToolTip": "Car-Reservation,API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-15T15:27:22.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MiddelwaresExtension.cs",
-              "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
-              "RelativeDocumentMoniker": "Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
-              "ToolTip": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
-              "RelativeToolTip": "Car-Reservation,API\\Middelware\\MiddelwaresExtension.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T20:59:18.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "AppIdentityAndJwtAuthenticationExtensionHelpers.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\AppIdentityAndJwtAuthenticationExtensionHelpers.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\AppIdentityAndJwtAuthenticationExtensionHelpers.cs",
@@ -209,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "AppUnitOfWorkExtensionHelpers.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\AppUnitOfWorkExtensionHelpers.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\AppUnitOfWorkExtensionHelpers.cs",
@@ -221,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Controllers\\AccountController.cs",
@@ -233,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "UserConfig.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\Configrations\\UserConfig.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Repository\\Contexts\\CarRentContext\\Configrations\\UserConfig.cs",
@@ -245,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "RegisterMapsterConfigurtions.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\RegisterMapsterConfigurtions.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\RegisterMapsterConfigurtions.cs",
@@ -258,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "AppExtension.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\AppExtension.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\AppExtension.cs",
@@ -270,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "AppDbContextsExtension.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\AppDbContextsExtension.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\AppDbContextsExtension.cs",
@@ -282,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AppApiErrorExtensionHelpers.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\AppApiErrorExtensionHelpers.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\AppApiErrorExtensionHelpers.cs",
@@ -294,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Entities\\Identity\\User.cs",
               "RelativeDocumentMoniker": "Car-Reservation,Domain\\Entities\\Identity\\User.cs",
@@ -306,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UserAddress.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Entities\\Identity\\UserAddress.cs",
               "RelativeDocumentMoniker": "Car-Reservation,Domain\\Entities\\Identity\\UserAddress.cs",
@@ -318,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BaseApiController.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\BaseApiController.cs",
               "RelativeDocumentMoniker": "Car-Reservation,API\\Controllers\\BaseApiController.cs",
@@ -330,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Car-Reservation.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj",
               "RelativeDocumentMoniker": "Car-Reservation,Domain\\Car-Reservation.Domain.csproj",
@@ -342,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "PaginationDto.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\PaginationDto\\PaginationDto.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\PaginationDto\\PaginationDto.cs",
@@ -354,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ApiValidationResponse.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\ErrorDtos\\ApiValidationResponse.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\ErrorDtos\\ApiValidationResponse.cs",
@@ -366,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "ApiResponse.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\ErrorDtos\\ApiResponse.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\ErrorDtos\\ApiResponse.cs",
@@ -378,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ApiExceptionErrorResponse.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\ErrorDtos\\ApiExceptionErrorResponse.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\ErrorDtos\\ApiExceptionErrorResponse.cs",
@@ -390,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\AccountDtos\\UserDto.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\AccountDtos\\UserDto.cs",
@@ -402,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "UserWithNationalIdDto.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\AccountDtos\\UserWithNationalIdDto.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\AccountDtos\\UserWithNationalIdDto.cs",
@@ -414,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\AccountDtos\\RegisterDto.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\AccountDtos\\RegisterDto.cs",
@@ -426,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "UserAddressDto.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\AccountDtos\\UserAddressDto.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\AccountDtos\\UserAddressDto.cs",
@@ -438,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\AccountDtos\\LoginDto.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Dtos\\AccountDtos\\LoginDto.cs",
@@ -450,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "SeedingUsers.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\SeedingUsers.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Repository\\SeedingUsers.cs",
@@ -462,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "20250315151927_IdentityMaigration.Designer.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\Migrations\\20250315151927_IdentityMaigration.Designer.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Repository\\Contexts\\CarRentContext\\Migrations\\20250315151927_IdentityMaigration.Designer.cs",
@@ -474,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "CarRentContext.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\Data\\CarRentContext.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Repository\\Contexts\\CarRentContext\\Data\\CarRentContext.cs",
@@ -486,7 +521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "CarRentContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\Migrations\\CarRentContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Repository\\Contexts\\CarRentContext\\Migrations\\CarRentContextModelSnapshot.cs",
@@ -498,7 +533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "20250315151927_IdentityMaigration.cs",
               "DocumentMoniker": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\Migrations\\20250315151927_IdentityMaigration.cs",
               "RelativeDocumentMoniker": "Car-Reservation.Repository\\Contexts\\CarRentContext\\Migrations\\20250315151927_IdentityMaigration.cs",
