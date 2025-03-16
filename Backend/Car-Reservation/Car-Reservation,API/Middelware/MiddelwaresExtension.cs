@@ -4,6 +4,7 @@ using Car_Reservation.APIs.Middlewares;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Car_Reservation.Repository.Identity.DataSeeding;
+using ECommerce.Repository.Data;
 
 
 
@@ -35,6 +36,7 @@ public static class MiddelwaresExtension
         {
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
             await userManager.SeedingUserAsync();
+            Seeding.SeedingHelper(scope.ServiceProvider.GetRequiredService<CarRentDbContext>());
         }
         return app;
     }
