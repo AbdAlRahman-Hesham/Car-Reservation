@@ -368,3 +368,4 @@ FodyWeavers.xsd
 .vs/
 Car-Reservation.Repository/obj/
 Car-Reservation.Services/obj/
+/Backend/Car-Reservation/.vs/Car-Reservation/v17/.suo
