@@ -363,3 +363,8 @@ MigrationBackup/
 FodyWeavers.xsd
 /Backend/Car-Reservation/Car-Reservation,API/appsettings.json
 /Backend/Car-Reservation/Car-Reservation,API/appsettings.Development.json
+
+
+.vs/
+Car-Reservation.Repository/obj/
+Car-Reservation.Services/obj/
