@@ -13,15 +13,18 @@ namespace Car_Reservation_Domain.Entities.CarEntity
 {
     public class Car : BaseEntity
     {
-        public Model Model { get; set; }
-        public  Brand brand { get; set; }
+        public string Name { get; set; }
         public bool IsAvailable { get; set; }
         public string Url { get; set; }
         public double Rating { get; set; }
         public decimal InsuranceCost { get; set; } 
         public decimal Price { get; set; }
         public string AdminId { get; set; }
+        public int ModelId { get; set; }
+        public  int BrandId { get; set; }
         public User Admin { get; set; }
+        public Model Model { get; set; }
+        public  Brand Brand { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
         public ICollection<Review> Reviews { get; set; }
     }

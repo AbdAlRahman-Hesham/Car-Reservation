@@ -14,16 +14,3 @@ internal static class RegisterMapsterConfigurtions
         return service;
     }
 }
-
-class x
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-}
-
-class xDto
-{
-    public int IdXdto { get; set; }
-    public string NameXdto { get; set; }
-
-}
