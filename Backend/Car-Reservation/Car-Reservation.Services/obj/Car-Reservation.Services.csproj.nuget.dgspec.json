@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj": {}
+    "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj": {}
   },
   "projects": {
-    "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
+    "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj",
         "projectName": "Car-Reservation.Domain",
-        "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\obj\\",
+        "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj",
+        "packagesPath": "C:\\Users\\2M\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2M\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\2M\\Desktop": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,9 +44,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -85,24 +87,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj": {
+    "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj",
+        "projectUniqueName": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj",
         "projectName": "Car-Reservation.Dtos",
-        "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\obj\\",
+        "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj",
+        "packagesPath": "C:\\Users\\2M\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2M\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -111,14 +113,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\2M\\Desktop": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
-                "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
+              "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
+                "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
               }
             }
           }
@@ -131,9 +135,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -154,24 +158,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj": {
+    "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj",
         "projectName": "Car-Reservation.Repositories",
-        "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\obj\\",
+        "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj",
+        "packagesPath": "C:\\Users\\2M\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2M\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -180,14 +184,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\2M\\Desktop": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
-                "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
+              "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
+                "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
               }
             }
           }
@@ -200,9 +206,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -243,24 +249,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj": {
+    "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj",
+        "projectUniqueName": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj",
         "projectName": "Car-Reservation.Services",
-        "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\obj\\",
+        "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Services\\Car-Reservation.Services.csproj",
+        "packagesPath": "C:\\Users\\2M\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2M\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -269,20 +275,22 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\2M\\Desktop": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
-                "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
+              "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj": {
+                "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Car-Reservation.Domain.csproj"
               },
-              "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj": {
-                "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj"
+              "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj": {
+                "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Dtos\\Car-Reservation.Dtos.csproj"
               },
-              "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj": {
-                "projectPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj"
+              "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj": {
+                "projectPath": "C:\\Users\\2M\\source\\repos\\Car-Reservation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Car-Reservation.Repositories.csproj"
               }
             }
           }
@@ -295,9 +303,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -318,7 +326,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

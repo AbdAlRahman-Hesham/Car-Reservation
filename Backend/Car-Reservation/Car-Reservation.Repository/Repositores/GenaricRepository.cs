@@ -11,6 +11,7 @@ namespace Car_Reservation.Repository.Reprositories;
 public class GenaricRepository<T>(CarRentDbContext db) : IGenaricRepository<T> where T : BaseEntity
 {
     private protected readonly CarRentDbContext _db = db;
+    
 
     public async Task<T?> GetAsync(int id)=> await _db.Set<T>().FindAsync(id);
     public async Task<T?> GetAsyncWithSpecification(Specification<T> specification)
