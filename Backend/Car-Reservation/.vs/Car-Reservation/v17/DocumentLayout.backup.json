@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD896410-984E-4B38-99AE-DEBA9106C075}|Car-Reservation.Services\\Car-Reservation.Services.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation.services\\reservartionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD896410-984E-4B38-99AE-DEBA9106C075}|Car-Reservation.Services\\Car-Reservation.Services.csproj|solutionrelative:car-reservation.services\\reservartionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7524D2BB-13B8-42C7-900B-9C939B92ECD0}|Car-Reservation.Repository\\Car-Reservation.Repositories.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation.repository\\contexts\\carrentcontext\\dataseeding\\cars.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7524D2BB-13B8-42C7-900B-9C939B92ECD0}|Car-Reservation.Repository\\Car-Reservation.Repositories.csproj|solutionrelative:car-reservation.repository\\contexts\\carrentcontext\\dataseeding\\cars.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation,api\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1A61AAA-E781-4A7B-9D59-022E17305ABF}|Car-Reservation,Domain\\Car-Reservation.Domain.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation,domain\\entities\\carentity\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1A61AAA-E781-4A7B-9D59-022E17305ABF}|Car-Reservation,Domain\\Car-Reservation.Domain.csproj|solutionrelative:car-reservation,domain\\entities\\carentity\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1A61AAA-E781-4A7B-9D59-022E17305ABF}|Car-Reservation,Domain\\Car-Reservation.Domain.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation,domain\\servicesinterfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1A61AAA-E781-4A7B-9D59-022E17305ABF}|Car-Reservation,Domain\\Car-Reservation.Domain.csproj|solutionrelative:car-reservation,domain\\servicesinterfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7524D2BB-13B8-42C7-900B-9C939B92ECD0}|Car-Reservation.Repository\\Car-Reservation.Repositories.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation.repository\\specfications\\reservationspecification\\reservationspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7524D2BB-13B8-42C7-900B-9C939B92ECD0}|Car-Reservation.Repository\\Car-Reservation.Repositories.csproj|solutionrelative:car-reservation.repository\\specfications\\reservationspecification\\reservationspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7524D2BB-13B8-42C7-900B-9C939B92ECD0}|Car-Reservation.Repository\\Car-Reservation.Repositories.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation.repository\\specfications\\reservationspecification\\reservationspecwithcarid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7524D2BB-13B8-42C7-900B-9C939B92ECD0}|Car-Reservation.Repository\\Car-Reservation.Repositories.csproj|solutionrelative:car-reservation.repository\\specfications\\reservationspecification\\reservationspecwithcarid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|d:\\net\\projects\\car_revesation\\backend\\car-reservation\\car-reservation,api\\extension\\registermapsterconfigurtions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20490CDD-EAAE-4996-AC28-6144C9F90A1D}|Car-Reservation,API\\Car-Reservation.API.csproj|solutionrelative:car-reservation,api\\extension\\registermapsterconfigurtions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,66 +35,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ReservationController.cs",
-              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\ReservationController.cs",
-              "RelativeDocumentMoniker": "Car-Reservation,API\\Controllers\\ReservationController.cs",
-              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,API\\Controllers\\ReservationController.cs*",
-              "RelativeToolTip": "Car-Reservation,API\\Controllers\\ReservationController.cs*",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAYwGoAAAAAAAAAAAAAAA==",
+              "Title": "Car.cs",
+              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Entities\\CarEntity\\Car.cs",
+              "RelativeDocumentMoniker": "Car-Reservation,Domain\\Entities\\CarEntity\\Car.cs",
+              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\Entities\\CarEntity\\Car.cs",
+              "RelativeToolTip": "Car-Reservation,Domain\\Entities\\CarEntity\\Car.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:43:14.856Z",
+              "WhenOpened": "2025-03-17T15:09:19.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ReservartionService.cs",
-              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\ReservartionService.cs",
-              "RelativeDocumentMoniker": "Car-Reservation.Services\\ReservartionService.cs",
-              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Services\\ReservartionService.cs",
-              "RelativeToolTip": "Car-Reservation.Services\\ReservartionService.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAhwE4AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:46:22.408Z",
+              "Title": "cars.json",
+              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\DataSeeding\\cars.json",
+              "RelativeDocumentMoniker": "Car-Reservation.Repository\\Contexts\\CarRentContext\\DataSeeding\\cars.json",
+              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Contexts\\CarRentContext\\DataSeeding\\cars.json*",
+              "RelativeToolTip": "Car-Reservation.Repository\\Contexts\\CarRentContext\\DataSeeding\\cars.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-17T15:05:02.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IReservationService.cs",
-              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\ServicesInterfaces\\IReservationService.cs",
-              "RelativeDocumentMoniker": "Car-Reservation,Domain\\ServicesInterfaces\\IReservationService.cs",
-              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,Domain\\ServicesInterfaces\\IReservationService.cs",
-              "RelativeToolTip": "Car-Reservation,Domain\\ServicesInterfaces\\IReservationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAB8AAAAAAAAAA==",
+              "Title": "RegisterMapsterConfigurtions.cs",
+              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\RegisterMapsterConfigurtions.cs",
+              "RelativeDocumentMoniker": "Car-Reservation,API\\Extension\\RegisterMapsterConfigurtions.cs",
+              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation,API\\Extension\\RegisterMapsterConfigurtions.cs",
+              "RelativeToolTip": "Car-Reservation,API\\Extension\\RegisterMapsterConfigurtions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:42:15.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReservationSpecWithCarId.cs",
-              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpecWithCarId.cs",
-              "RelativeDocumentMoniker": "Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpecWithCarId.cs",
-              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpecWithCarId.cs",
-              "RelativeToolTip": "Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpecWithCarId.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:55:15.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReservationSpec.cs",
-              "DocumentMoniker": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpec.cs",
-              "RelativeDocumentMoniker": "Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpec.cs",
-              "ToolTip": "D:\\NET\\Projects\\Car_Revesation\\Backend\\Car-Reservation\\Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpec.cs",
-              "RelativeToolTip": "Car-Reservation.Repository\\Specfications\\ReservationSpecification\\ReservationSpec.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:49:56.57Z",
+              "WhenOpened": "2025-03-17T14:58:00.486Z",
               "EditorCaption": ""
             }
           ]
