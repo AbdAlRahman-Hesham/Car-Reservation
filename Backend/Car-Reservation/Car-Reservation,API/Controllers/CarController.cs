@@ -6,6 +6,7 @@ using Car_Reservation.Repository.Specfications.CarSpec;
 using Car_Reservation.Repository.UnitOfWork;
 using Car_Reservation_Domain.Entities.CarEntity;
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Car_Reservation_API.Controllers;
@@ -71,7 +72,7 @@ public class CarController(IUnitOfWork unitOfWork) : BaseApiController
 
     // Add Car (Admin)
     [HttpPost]
-    //[Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin")]
     [ProducesResponseType(typeof(CarToReturnDto), 200)]
     [ProducesResponseType(typeof(ApiResponse), 400)]
     public async Task<ActionResult<CarToReturnDto>> AddCar([FromBody] CarDto carDto)
@@ -88,7 +89,7 @@ public class CarController(IUnitOfWork unitOfWork) : BaseApiController
 
     // Update Car Info (Admin)
     [HttpPut("{id}")]
-    //[Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin")]
     [ProducesResponseType(200)]
     [ProducesResponseType(typeof(ApiResponse), 400)]
     [ProducesResponseType(typeof(ApiResponse), 404)]
@@ -110,7 +111,7 @@ public class CarController(IUnitOfWork unitOfWork) : BaseApiController
 
     // Delete Car (Admin)
     [HttpDelete("{id}")]
-    //[Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin")]
     [ProducesResponseType(200)]
     [ProducesResponseType(typeof(ApiResponse), 404)]
     public async Task<ActionResult> DeleteCar(int id)
