@@ -36,7 +36,8 @@ public static class MiddelwaresExtension
         {
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
             await userManager.SeedingUserAsync();
-            Seeding.SeedingHelper(scope.ServiceProvider.GetRequiredService<CarRentDbContext>());
+
+            //Seeding.SeedingHelper(scope.ServiceProvider.GetRequiredService<CarRentDbContext>());
         }
         return app;
     }
