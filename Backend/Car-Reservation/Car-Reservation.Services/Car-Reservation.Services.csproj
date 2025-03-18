@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.11.0" />
+    <PackageReference Include="MimeKit" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Car-Reservation,Domain\Car-Reservation.Domain.csproj" />
     <ProjectReference Include="..\Car-Reservation.Dtos\Car-Reservation.Dtos.csproj" />
     <ProjectReference Include="..\Car-Reservation.Repository\Car-Reservation.Repositories.csproj" />

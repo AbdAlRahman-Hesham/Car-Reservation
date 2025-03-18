@@ -106,9 +106,9 @@ public class ReservationController : BaseApiController
         {
 
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            var user = await _userManager.FindByEmailAsync(userEmail);
+            var user = await _userManager.FindByEmailAsync(userEmail!);
 
-            var reslut = await _reservationService.MakeReservationForUser(user.Id,StartDate,EndDate,CarId);
+            var reslut = await _reservationService.MakeReservationForUser(user!.Id,StartDate,EndDate,CarId);
             if (reslut == null) { return BadRequest(new ApiResponse(400)); }
             var reslutDto = reslut.Adapt<ReservationToReturnDto>();
             return Ok(reslutDto);
@@ -133,9 +133,8 @@ public class ReservationController : BaseApiController
             if (reslut == null) { return NotFound(new ApiResponse(404));  }
 
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            var roles = User.FindAll(ClaimTypes.Role);
-            var user = await _userManager.FindByEmailAsync(userEmail);
-            if (!(reslut.UserId == user.Id || roles.Any(r => r.Value == "Admin")) ) { return BadRequest(new ApiResponse(401)); }
+            var user = await _userManager.FindByEmailAsync(userEmail!);
+            if (!(reslut.UserId == user!.Id || User.IsInRole("Admin")) ) { return BadRequest(new ApiResponse(401)); }
 
             var CanceldReservation =  await _reservationService.CancleReservation(reslut);
             var reslutDto = CanceldReservation.Adapt<ReservationToReturnDto>();

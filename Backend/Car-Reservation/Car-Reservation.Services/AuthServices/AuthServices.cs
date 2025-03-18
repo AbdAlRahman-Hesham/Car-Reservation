@@ -16,16 +16,24 @@ public class AuthServices(IConfiguration configuration) :IAuthServices
     public async Task<string> CreateToken(User appUser, UserManager<User> userManager)
     {
         List<Claim> claims = new List<Claim> {
-              new Claim(ClaimTypes.Email, appUser.Email!),
-              new Claim(ClaimTypes.Name, appUser.FName + appUser.LName),
-              new Claim(ClaimTypes.MobilePhone, appUser.PhoneNumber!)
-        };
-        var roleClaims = await userManager.GetClaimsAsync(appUser);
-        claims.AddRange(roleClaims);
+    new Claim(ClaimTypes.Email, appUser.Email!),
+    new Claim(ClaimTypes.Name, appUser.FName + appUser.LName),
+    new Claim(ClaimTypes.MobilePhone, appUser.PhoneNumber!)
+};
+
+        // Get user roles and add them as claims
+        var roles = await userManager.GetRolesAsync(appUser);
+        foreach (var role in roles)
+        {
+            claims.Add(new Claim(ClaimTypes.Role, role));
+        }
+
+        // Add any additional claims
+        var userClaims = await userManager.GetClaimsAsync(appUser);
+        claims.AddRange(userClaims);
 
         SymmetricSecurityKey key = new(Encoding.UTF8.GetBytes(configuration["JWT:SecretKey"]!));
         SigningCredentials creds = new(key, SecurityAlgorithms.HmacSha512Signature);
-
         var token = new JwtSecurityToken(
             issuer: configuration["JWT:Issuer"],
             audience: configuration["JWT:Audience"],
@@ -33,7 +41,6 @@ public class AuthServices(IConfiguration configuration) :IAuthServices
             expires: DateTime.UtcNow.AddDays(double.Parse(configuration["JWT:Lifetime"]!)),
             signingCredentials: creds
         );
-
         return new JwtSecurityTokenHandler().WriteToken(token);
 
 

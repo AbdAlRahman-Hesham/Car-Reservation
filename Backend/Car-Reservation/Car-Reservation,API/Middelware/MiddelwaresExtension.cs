@@ -35,54 +35,11 @@ public static class MiddelwaresExtension
         using (var scope = app.ApplicationServices.CreateScope())
         {
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
-            await userManager.SeedingUserAsync();
+            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            await userManager.SeedingUserAsync(roleManager);
 
-            //Seeding.SeedingHelper(scope.ServiceProvider.GetRequiredService<CarRentDbContext>());
         }
         return app;
     }
 
-   /* public static IApplicationBuilder StartRedisServer(this IApplicationBuilder app)
-    {
-        try
-        {
-            ProcessStartInfo psi = new ProcessStartInfo
-            {
-                FileName = "cmd.exe",
-                Arguments = "/c redis-server",
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = false
-            };
-            Process process = new Process { StartInfo = psi };
-            process.OutputDataReceived += (sender, args) => Console.WriteLine(args.Data);
-            process.ErrorDataReceived += (sender, args) => Console.WriteLine("Error: " + args.Data);
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
-
-            // Store the process in a static variable or DI container
-            // so it can be properly disposed when the application shuts down
-            AppDomain.CurrentDomain.ProcessExit += (s, e) => {
-                try
-                {
-                    if (!process.HasExited)
-                    {
-                        process.Kill();
-                    }
-                    process.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error shutting down Redis: " + ex.Message);
-                }
-            };
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("An error occurred: " + ex.Message);
-        }
-        return app;
-    }*/
 }
