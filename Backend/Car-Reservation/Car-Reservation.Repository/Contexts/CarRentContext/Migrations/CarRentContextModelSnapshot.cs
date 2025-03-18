@@ -37,7 +37,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Car", b =>
@@ -86,7 +86,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasIndex("ModelId");
 
-                    b.ToTable("cars");
+                    b.ToTable("cars", (string)null);
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Model", b =>
@@ -113,7 +113,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.ToTable("Models");
+                    b.ToTable("Models", (string)null);
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Identity.User", b =>
@@ -224,7 +224,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Requests");
+                    b.ToTable("Requests", (string)null);
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Reservation", b =>
@@ -261,7 +261,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Review", b =>
@@ -296,7 +296,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -444,7 +444,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RequestUser");
+                    b.ToTable("RequestUser", (string)null);
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Car", b =>
@@ -500,7 +500,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("AspNetUsers");
+                            b1.ToTable("AspNetUsers", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
