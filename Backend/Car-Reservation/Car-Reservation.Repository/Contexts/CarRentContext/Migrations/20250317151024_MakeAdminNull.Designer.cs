@@ -478,7 +478,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Model", b =>
                 {
                     b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Brand", null)
-                        .WithMany("brands")
+                        .WithMany("Models")
                         .HasForeignKey("BrandId");
                 });
 
@@ -619,7 +619,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Brand", b =>
                 {
-                    b.Navigation("brands");
+                    b.Navigation("Models");
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Car", b =>
