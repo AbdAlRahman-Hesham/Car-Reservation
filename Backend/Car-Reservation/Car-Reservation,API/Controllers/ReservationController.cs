@@ -109,7 +109,7 @@ public class ReservationController : BaseApiController
             var user = await _userManager.FindByEmailAsync(userEmail!);
 
             var reslut = await _reservationService.MakeReservationForUser(user!.Id,StartDate,EndDate,CarId);
-            if (reslut == null) { return BadRequest(new ApiResponse(400)); }
+            if (reslut == null) { return BadRequest(new ApiResponse(400,"The car is reserved on this date")); }
             var reslutDto = reslut.Adapt<ReservationToReturnDto>();
             return Ok(reslutDto);
         }
