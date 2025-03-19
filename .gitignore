@@ -67,13 +67,6 @@ logs/
 *.db-wal
 *.rdb
 
-# Ignore all JavaScript files
-*.js
-*.js.map
-
-# Allow JavaScript files inside src/
-!src/**/*.js
-
 # Ignore Angular & ASP.NET generated files
 /dist/
 /out/
