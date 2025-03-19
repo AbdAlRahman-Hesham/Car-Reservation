@@ -1,14 +1,18 @@
 # Car-Reservation Project
 
-Welcome to the **Car-Reservation** project
+Welcome to the **Car-Reservation** project! This project is built using **ASP.NET API** for the backend and **React** for the frontend.
 
 ---
+## 🔗 Links
+- **Postman Collection**: [Car-Reservation API](https://www.postman.com/abdooawad/workspace/car-reservation/collection/38103183-0b3b7b7c-be3a-4346-9e40-5948fd9a7a46?action=share&creator=38103183)
+- **Application URL**: [Car-Reservation API](http://car-reservation.runasp.net/swagger)
+- **Project ERD**: [Car-Reservation ERD](https://drive.google.com/file/d/1m621vShpqT-ZnlM_tDr8QHoKSSz3eIji/view)
 
-## Configuration
+---
+## ⚙️ Configuration
+The project requires specific configurations set in the `appsettings.json` file.
 
-The project uses the following configuration settings in the `appsettings.json` file:
-
-### `appsettings.json`
+### Example `appsettings.json`
 ```json
 {
   "Logging": {
@@ -24,122 +28,129 @@ The project uses the following configuration settings in the `appsettings.json` 
   "JWT": {
     "Issuer": "http://localhost",
     "Audience": "http://localhost:4200",
-    "SecretKey": "PuQJfnYx7LSRxYv6TJwZ9kM3H8Dp4K2gCzVbNmEh8W5tA9qXrG4sBdFc/+UQn1jIoO3iNlZaRyP0wkvh5meK2w==",
+    "SecretKey": "The Secret Key",
     "Lifetime": 7
+  },
+  "EmailSettings": {
+    "Server": "smtp.gmail.com",
+    "Port": "587",
+    "UserName": "The User Name",
+    "Password": "The Password",
+    "Email": "The Email"
   }
 }
 ```
-
-### Key Configuration Details:
-- **Logging**: Configures logging levels for the application.
-- **ConnectionStrings**: Specifies the database connection string for SQL Server.
-- **JWT**: Configures JSON Web Token (JWT) settings for authentication and authorization.
+### 🔑 Key Configuration Details
+- **Logging**: Defines log levels for debugging and monitoring.
+- **Database Connection**: Uses SQL Server (`Car-Reservation-Db`).
+- **JWT Authentication**: Handles authentication settings.
+- **Email Settings**: Configures SMTP settings for sending emails.
 
 ---
-
-## Backend Project Structure
-
-The project is organized into the following structure:
+## 📁 Project Structure
+The backend project follows a structured, modular design.
 
 ```
-├─── API                 # Presentation Layer (API Controllers, Middleware, Extensions)
-│   ├─── Controllers     # Handles HTTP requests and responses
-│   ├─── Extension       # Extension methods for configuring services
-│   ├─── Middleware      # Custom middleware (e.g., error handling, authentication)
-│   └─── Properties      # Assembly info or settings
+📂 Car-Reservation
+│── 📂 API                 # Presentation Layer (Controllers, Middleware, Extensions)
+│   │── 📂 Controllers     # Handles HTTP requests
+│   │── 📂 Extension       # Service configuration helpers
+│   │── 📂 Middleware      # Custom middleware (error handling, authentication)
+│   └── 📂 Properties      # Project properties
 │
-├─── Domain              # Core Business Logic (Entities, Interfaces)
-│   ├─── Entities        # Core entities used in the system
-│   │   └─── Identity    # Identity-related entities (Users, Roles, Claims)
-│   └─── ServicesInterfaces # Service interfaces for dependency inversion
+│── 📂 Domain              # Core Business Logic (Entities, Interfaces)
+│   │── 📂 Entities        # Core domain entities
+│   │   └── 📂 Identity    # Identity management (Users, Roles, Claims)
+│   └── 📂 ServicesInterfaces # Abstraction for service logic
 │
-├─── Dtos                # Data Transfer Objects (DTOs)
-│   ├─── AccountDtos     # DTOs related to authentication and user accounts
-│   ├─── ErrorDtos       # DTOs for handling errors
-│   └─── PaginationDto   # DTOs for pagination responses
+│── 📂 Dtos                # Data Transfer Objects (DTOs)
+│   │── 📂 AccountDtos     # User authentication DTOs
+│   │── 📂 ErrorDtos       # Standardized error response DTOs
+│   └── 📂 PaginationDto   # DTOs for paginated API responses
 │
-├─── Repository          # Data Access Layer (EF Core, Repositories, Unit of Work)
-│   ├─── Contexts        # Database context (EF Core)
-│   │   └─── CarRentContext 
-│   │       ├─── Configurations  # Entity configurations for EF Core
-│   │       ├─── Data            # Seed data or static data
-│   │       └─── Migrations      # EF Core database migrations
-│   ├─── Repositories    # Concrete repository implementations
-│   ├─── RepositoryInterfaces # Interfaces for repositories (Repository Pattern)
-│   ├─── Specifications  # Specification pattern for querying
-│   └─── UnitsOfWork     # Unit of Work pattern for managing transactions
+│── 📂 Repository          # Data Access Layer (EF Core, Repositories, Unit of Work)
+│   │── 📂 Contexts        # Database context
+│   │   │── 📂 Configurations  # EF Core entity configurations
+│   │   │── 📂 Data            # Database seed data
+│   │   └── 📂 Migrations      # EF Core migrations
+│   │── 📂 Repositories    # Repository implementations
+│   │── 📂 RepositoryInterfaces # Interfaces for repositories
+│   └── 📂 UnitsOfWork     # Manages transactions
 │
-└─── Services            # Business Logic Layer (Application Services)
-    ├─── AuthServices    # Authentication and Authorization services
+└── 📂 Services            # Business Logic Layer
+    │── 📂 AuthServices    # Authentication services
 ```
 
 ---
+## 🚀 Backend Setup Instructions
+Follow these steps to set up and run the **Car-Reservation** project locally.
 
-## Setup Instructions
-
-Follow these steps to set up the **Car-Reservation** project on your local machine.
-
-### Step 1: Install Required Tools
+### ✅ Prerequisites
 Ensure you have the following installed:
-- **Visual Studio** (with ASP.NET and Entity Framework workloads)
-- **Git**
-- **SQL Server** (or use SQLite if configured)
+- **Visual Studio** (with ASP.NET and Entity Framework Core workloads)
+- **Git** (for version control)
+- **SQL Server** (or another configured database)
 
----
+### 📥 Step 1: Clone the Backend Repository
+```bash
+git clone https://github.com/AbdAlRahman-Hesham/Car-Reservation.git
+cd Car-Reservation
+```
 
-### Step 2: Clone the Project from GitHub
-1. Open **Git Bash** or **Command Prompt**.
-2. Run the following command to clone the repository:
-   ```bash
-   git clone https://github.com/AbdAlRahman-Hesham/Car-Reservation.git
-   ```
-3. Navigate to the project folder:
-   ```bash
-   cd Car-Reservation
-   ```
-
----
-
-### Step 3: Open the Project in Visual Studio
+### 💻 Step 2: Open the Project in Visual Studio
 1. Open **Visual Studio**.
 2. Click **Open a project or solution**.
-3. Navigate to the cloned `Car-Reservation` folder and select the `.sln` file.
+3. Navigate to the `Car-Reservation` folder and open the `.sln` file.
 
----
+### 📦 Step 3: Restore Dependencies
+```bash
+dotnet restore
+```
 
-### Step 4: Restore NuGet Packages
-1. In Visual Studio, open the **Package Manager Console (PMC)**:
-   - Go to **Tools → NuGet Package Manager → Package Manager Console**.
-2. Run the following command to install all dependencies:
-   ```bash
-   dotnet restore
-   ```
+### 📊 Step 4: Apply Database Migrations
+```bash
+dotnet ef database update
+```
 
----
-
-### Step 5: Apply Database Migrations
-1. Open the **Package Manager Console** again.
-2. Run the following command to update the database:
-   ```bash
-   dotnet ef database update
-   ```
-
----
-
-### Step 6: Run the Project
+### ▶️ Step 5: Run the API
 1. Set **Car-Reservation.API** as the startup project.
-2. Click **Start (F5)** in Visual Studio.
-3. The API should now be running at `https://localhost:7014/` (or another assigned port).
+2. Press **F5** to start debugging.
+3. The API should now be available at `https://localhost:7014/` (or another assigned port).
 
 ---
+## 🌐 Frontend Setup Instructions
+Follow these steps to set up the React frontend project.
 
-## Contribution Guidelines
+### 📥 Step 1: Clone the Frontend Repository
+```bash
+git clone https://github.com/AbdAlRahman-Hesham/Car-Reservation.git
+cd Car-Reservation-Frontend
+```
 
-To contribute to the project, follow these guidelines:
+### 📦 Step 2: Install Dependencies
+Ensure you have **Node.js** and **npm** installed, then run:
+```bash
+npm install
+```
 
-1. **Follow the Project Structure**: Ensure your changes align with the existing folder structure.
-2. **Use Meaningful Commit Messages**: Write clear and descriptive commit messages.
-3. **Document Your Changes**: Update the relevant documentation and add comments to your code.
-4. **Create Pull Requests**: Submit a pull request for review before merging your changes.
+### 🔧 Step 3: Configure Environment Variables
+Create a `.env` file in the project root and add:
+```
+REACT_APP_API_URL=https://localhost:7014/
+```
+
+### ▶️ Step 4: Run the React App
+```bash
+npm start
+```
+The app should now be available at `http://localhost:3000/`.
 
 ---
+## 🤝 Contribution Guidelines
+Want to contribute? Follow these steps:
+
+1. **Maintain Code Structure**: Follow the existing folder and naming conventions.
+2. **Use Meaningful Commits**: Write clear commit messages.
+3. **Document Your Code**: Add comments and update documentation when needed.
+4. **Submit Pull Requests**: Create a PR for review before merging changes.
+   
