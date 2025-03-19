@@ -67,10 +67,12 @@ logs/
 *.db-wal
 *.rdb
 
-# Ignore compiled TypeScript files
+# Ignore all JavaScript files
 *.js
 *.js.map
-*.tsbuildinfo
+
+# Allow JavaScript files inside src/
+!src/**/*.js
 
 # Ignore Angular & ASP.NET generated files
 /dist/
