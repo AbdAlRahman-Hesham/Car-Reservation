@@ -10,6 +10,7 @@ namespace Car_Reservation_Domain.Entities
 {
     public class Reservation : BaseEntity
     {
+        public string? PaymentIntentId { get; set; }
         public ReservationStatus Status { get; set; }
         public DateTime ReservationDate { get; set; }
         public DateTime StartDate { get; set; }

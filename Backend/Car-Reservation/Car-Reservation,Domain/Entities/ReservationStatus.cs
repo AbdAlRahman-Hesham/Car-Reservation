@@ -14,7 +14,11 @@ namespace Car_Reservation_Domain.Entities
         [EnumMember(Value = "Pending")]
         Pending,
         [EnumMember(Value = "Cancelled")]
-        Cancelled
+        Cancelled,
+        [EnumMember(Value = "Payment Pending")]
+        PaymentPending,
+        [EnumMember(Value = "Payment Failed")]
+        PaymentFailed
 
     }
 }

@@ -10,7 +10,7 @@ namespace Car_Reservation_Domain.Entities.CarEntity
     public class Brand : BaseEntity
     {
         public string name { get; set; }
-        public ICollection<Model> brands { get; set; }
+        public ICollection<Model> Models { get; set; }
 
         //BMW,
         //Mercedes,
