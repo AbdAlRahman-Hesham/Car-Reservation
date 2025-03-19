@@ -5,14 +5,8 @@ using Car_Reservation_Domain.Entities;
 using Car_Reservation_Domain.Entities.EmailEntity;
 using Car_Reservation_Domain.ServicesInterfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Stripe;
 using Stripe.Checkout;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-
 namespace Car_Reservation_API.Controllers;
 
 public class PaymentController : BaseApiController
