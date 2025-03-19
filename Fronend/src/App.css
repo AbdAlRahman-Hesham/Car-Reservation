@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+
+}
+
+.background {
+  background-color: #c7cacd !important;
+
+
+  margin: 0 !important;
+  min-height: 100vh !important;
+}
+
+
+.roundedImg {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: fill;
+  border: 2px solid #007bff;
+}
+
+.mainContainer {
+  max-width: 1100px;
+  background-color: #f4f4f4;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+}
+
+.h-35 {
+  height: 35px !important;
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+}
+
+
+
+
+
+.invalid-input {
+  border-color: #e53b89 !important;
+}
+
+
+.invalid-input:focus {
+  outline: none !important;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.6) !important;
+  border-color: darkred !important;
+}
+
+
+.characters {
+  color: white;
+  margin-top: 3px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+
+input, button {
+  background-color: #333;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container.col-6 {
+    width: 90% !important;
+  }
+}
