@@ -12,7 +12,7 @@ namespace Car_Reservation_Domain.Entities
     {
         public string? PaymentIntentId { get; set; }
         public ReservationStatus Status { get; set; }
-        public DateTime ReservationDate { get; set; }
+        public DateTime ReservationDate { get; set; } = DateTime.UtcNow;
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int CarId { get; set; }

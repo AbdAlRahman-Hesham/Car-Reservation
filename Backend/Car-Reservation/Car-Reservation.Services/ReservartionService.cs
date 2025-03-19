@@ -109,5 +109,10 @@ namespace Car_Reservation.Services
             await _unitOfWork.CompleteAsync();
             return reslut;
         }
+        public async Task<bool> IsCarExist(int carId)
+        {
+            var car = await _unitOfWork.Repository<Car>().GetAsync(carId);
+            return car != null;
+        }
     }
 }
