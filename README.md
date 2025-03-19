@@ -37,6 +37,10 @@ The project requires specific configurations set in the `appsettings.json` file.
     "UserName": "The User Name",
     "Password": "The Password",
     "Email": "The Email"
+  },
+  "Stripe": {
+    "Secretkey": "sk_************************************************************",
+    "PublishableKey": "pk_********************************************************"
   }
 }
 ```
