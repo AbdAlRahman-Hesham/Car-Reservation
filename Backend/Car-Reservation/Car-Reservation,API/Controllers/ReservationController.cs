@@ -41,17 +41,18 @@ public class ReservationController : BaseApiController
         private readonly IReservationService _reservationService;
         private readonly UserManager<User> _userManager;
 
-        public ReservationController(IReservationService reservationService , UserManager<User> userManager)
+        public ReservationController(IReservationService reservationService , UserManager<User> userManager )
         {
             this._reservationService = reservationService;
             this._userManager = userManager;
         }
         [Authorize]
         [HttpGet]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<IReadOnlyList<ReservationToReturnDto>>> GetAllReservationsForUser()
         {
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            var reslut = await _reservationService.GetAllReservationsForUser(userEmail);
+            var reslut = await _reservationService.GetAllReservationsForUser(userEmail!);
             if (reslut == null) { return NotFound(new ApiResponse(404)); } 
             var reslutDto = reslut.Adapt<IReadOnlyList<ReservationToReturnDto>>();
             return Ok(reslutDto);
@@ -61,10 +62,11 @@ public class ReservationController : BaseApiController
         //Get All Reservations For Use By Date
         [Authorize]
         [HttpGet("date")]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<IReadOnlyList<ReservationToReturnDto>>> GetAllReservationsForUserByDate(DateTime date)
         {
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            var reslut = await _reservationService.GetAllReservationsForUserByDate(userEmail,date);
+            var reslut = await _reservationService.GetAllReservationsForUserByDate(userEmail!,date);
             if (reslut == null) { return NotFound(new ApiResponse(404)); }
 
             var reslutDto = reslut.Adapt<IReadOnlyList<ReservationToReturnDto>>();
@@ -72,6 +74,7 @@ public class ReservationController : BaseApiController
         }
         //Get Reservations By Id
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<ReservationToReturnDto>> GetReservationsById(int id)
         {
             var reslut = await _reservationService.GetReservationById(id);
@@ -82,8 +85,10 @@ public class ReservationController : BaseApiController
         //Get All Reservations For Car
 
         [HttpGet("car/{carId}")]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<IReadOnlyList<ReservationToReturnDto>>> GetAllReservationsForCar(int carId)
         {
+        
             var reslut = await _reservationService.GetAllReservationsForCar(carId);
             if (reslut == null) { return NotFound(new ApiResponse(404)); }
             var reslutDto = reslut.Adapt<IReadOnlyList<ReservationToReturnDto>>();
@@ -91,6 +96,7 @@ public class ReservationController : BaseApiController
         }
         //Get Reservation For Car By Date
         [HttpGet("car")]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<ReservationToReturnDto>> GetAllReservationsForCarByDate(int carId, DateTime date)
         {
             var reslut = await _reservationService.GetReservationForCarByDate(carId, date);
@@ -102,8 +108,13 @@ public class ReservationController : BaseApiController
         //Make Reservation For Use
         [Authorize]
         [HttpPost]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
+        [ProducesResponseType(typeof(ApiResponse), 400)]
         public async Task<ActionResult<ReservationToReturnDto>> MakeReservationForUser(int CarId, DateTime StartDate, DateTime EndDate)
         {
+            var isCarExist = await _reservationService.IsCarExist(CarId);
+            if (!isCarExist) { return NotFound(new ApiResponse(404,"We Do Not Have A Car With This Id")); }
+
 
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             var user = await _userManager.FindByEmailAsync(userEmail!);
@@ -115,6 +126,7 @@ public class ReservationController : BaseApiController
         }
         //get car reservaton with start and end date
         [HttpGet("car/ByDates")]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<IReadOnlyList<ReservationToReturnDto>>> GetCarReservationsByDates(int carId, DateTime startDate, DateTime endDate)
         {
             var reslut = await _reservationService.GetCarReservationsByDates(carId, startDate, endDate);
@@ -126,6 +138,7 @@ public class ReservationController : BaseApiController
         //Cancel Reservations By Id --> Admin, User Who Make It
         [HttpDelete("{id}")]
         [Authorize]
+        [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<ReservationToReturnDto>> CancleReservation(int id)
         {
 
@@ -134,7 +147,7 @@ public class ReservationController : BaseApiController
 
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             var user = await _userManager.FindByEmailAsync(userEmail!);
-            if (!(reslut.UserId == user!.Id || User.IsInRole("Admin")) ) { return BadRequest(new ApiResponse(401)); }
+            if (!(reslut.UserId == user!.Id || User.IsInRole("Admin")) ) { return BadRequest(new ApiResponse(401,"You Do Not Have Access TO Cancel This Reservation")); }
 
             var CanceldReservation =  await _reservationService.CancleReservation(reslut);
             var reslutDto = CanceldReservation.Adapt<ReservationToReturnDto>();
