@@ -33,7 +33,7 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseCors(op =>
 {
-    op.WithOrigins("http://localhost:4200")
+    op.WithOrigins("http://localhost:3000")
     .AllowAnyMethod()
     .AllowAnyHeader()
     .AllowCredentials();
