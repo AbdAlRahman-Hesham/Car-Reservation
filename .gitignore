@@ -111,3 +111,5 @@ yarn-error.log*
 /Backend/Car-Reservation/Car-Reservation.Repository/obj/Car-Reservation.Repositories.csproj.nuget.g.props
 /Backend/Car-Reservation/Car-Reservation.Repository/obj/project.assets.json
 /Backend/Car-Reservation/Car-Reservation.Repository/obj/project.nuget.cache
+/Backend/Car-Reservation/Car-Reservation,API/appsettings.json
+/Backend/Car-Reservation/Car-Reservation,API/appsettings.Development.json
