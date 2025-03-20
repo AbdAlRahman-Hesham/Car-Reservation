@@ -16,10 +16,10 @@ public class AuthServices(IConfiguration configuration) :IAuthServices
     public async Task<string> CreateToken(User appUser, UserManager<User> userManager)
     {
         List<Claim> claims = new List<Claim> {
-    new Claim(ClaimTypes.Email, appUser.Email!),
-    new Claim(ClaimTypes.Name, appUser.FName + appUser.LName),
-    new Claim(ClaimTypes.MobilePhone, appUser.PhoneNumber!)
-};
+            new Claim(ClaimTypes.Email, appUser.Email!),
+            new Claim(ClaimTypes.Name, appUser.FName + appUser.LName),
+            new Claim(ClaimTypes.MobilePhone, appUser.PhoneNumber!)
+        };
 
         // Get user roles and add them as claims
         var roles = await userManager.GetRolesAsync(appUser);

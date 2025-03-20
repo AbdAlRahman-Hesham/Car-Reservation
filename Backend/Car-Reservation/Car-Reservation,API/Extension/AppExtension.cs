@@ -2,6 +2,7 @@
 using Car_Reservation.Services;
 using Car_Reservation.Services.EmailService;
 using Car_Reservation_Domain.Entities.EmailEntity;
+using Car_Reservation.APIs.Controllers;
 namespace Car_Reservation_API.Extension;
 
 public static class AppExtension
@@ -17,7 +18,9 @@ public static class AppExtension
         services.AddSwaggerService();
         services.AddTransient<ISendEmail, EmailServices>();
         services.AddScoped<IReviewService, ReviewService>();
+        services.AddTransient<IPaymentService,StripePaymentService>();
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
+        services.Configure<CloudinarySettings>(configuration.GetSection("Cloudinary"));
 
 
         return services;
