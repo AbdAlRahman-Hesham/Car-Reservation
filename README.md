@@ -41,6 +41,11 @@ The project requires specific configurations set in the `appsettings.json` file.
   "Stripe": {
     "Secretkey": "sk_************************************************************",
     "PublishableKey": "pk_********************************************************"
+  },
+  "Cloudinary": {
+    "CloudName": "dpgqwpmzm",
+    "APISecret": "mfAFa63Xj8v57lVAL1pweuFR7Dw",
+    "APIKey": "527187521539697"
   }
 }
 ```
