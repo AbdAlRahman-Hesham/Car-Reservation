@@ -168,7 +168,7 @@ Want to contribute? Follow these steps:
   <tr>
     <td align="center">
       <a href="https://github.com/AbdAlRahman-Hesham">
-        <img src="https://github.com/AbdAlRahman-Hesham.png" width="100px; hight="100px";" alt="" style="border-radius:50%"/>
+        <img src="https://github.com/AbdAlRahman-Hesham.png"   width="100px;" alt="" style="border-radius:50%"/>
         <br />
         <sub><b>AbdAlRahman Hesham</b></sub>
       </a>
@@ -177,7 +177,9 @@ Want to contribute? Follow these steps:
     </td>
     <td align="center">
       <a href="https://github.com/Ahmed0Sanad">
-        <img src="https://github.com/Ahmed0Sanad.png" width="100px;" alt="" style="border-radius:50%"/>
+        <img src="https://github.com/Ahmed0Sanad.png" width="100px;" alt="" 
+             style="border-radius:50%"
+             />
         <br />
         <sub><b>Ahmed Sanad</b></sub>
       </a>
@@ -186,7 +188,9 @@ Want to contribute? Follow these steps:
     </td>
     <td align="center">
       <a href="https://github.com/Abdallahjsx">
-        <img src="https://github.com/Abdallahjsx.png" width="100px;" alt="" style="border-radius:50%"/>
+        <img src="https://github.com/Abdallahjsx.png" width="100px;" alt="" 
+             style="border-radius:50%"
+             />
         <br />
         <sub><b>Abdallah</b></sub>
       </a>
@@ -195,6 +199,5 @@ Want to contribute? Follow these steps:
     </td>
   </tr>
 </table>
-
 
    
