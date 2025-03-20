@@ -9,7 +9,7 @@ namespace Car_Reservation.Repository.Specifications;
 public abstract class Specification<TEntity> where TEntity : BaseEntity
 {
     public Expression<Func<TEntity, bool>>? Criteria { get; }
-    public ReadOnlyCollection<Expression<Func<TEntity, object>>> Includes { get; }
+    public List<Expression<Func<TEntity, object>>> Includes { get; }
     public Expression<Func<TEntity, object>>? OrderBy { get; }
     public SortOrder SortOrder { get; }
     public int? Skip { get; set; } = 0;
@@ -18,7 +18,7 @@ public abstract class Specification<TEntity> where TEntity : BaseEntity
 
     protected Specification()
     {
-        Includes = new List<Expression<Func<TEntity, object>>>().AsReadOnly();
+        Includes = new List<Expression<Func<TEntity, object>>>();
     }
 
     protected Specification(Expression<Func<TEntity, bool>>? criteria) : this()
@@ -40,7 +40,7 @@ public abstract class Specification<TEntity> where TEntity : BaseEntity
         Criteria = criteria;
         OrderBy = orderBy;
         SortOrder = sortOrder?? SortOrder.Ascending;
-        Includes = includes.AsReadOnly();
+        Includes = includes;
         Skip = skip;
         Take = take;
     }

@@ -17,6 +17,7 @@ public static class AppExtension
         services.AddScoped<IReservationService, ReservartionService>();
         services.AddSwaggerService();
         services.AddTransient<ISendEmail, EmailServices>();
+        services.AddScoped<IReviewService, ReviewService>();
         services.AddTransient<IPaymentService,StripePaymentService>();
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
         services.Configure<CloudinarySettings>(configuration.GetSection("Cloudinary"));

@@ -1,5 +1,6 @@
 ﻿using Car_Reservation.Dtos.CarDtos;
 using Car_Reservation.Dtos.ReservationDtos;
+using Car_Reservation.Dtos.ReviewDtos;
 using Car_Reservation_Domain.Entities;
 using Car_Reservation_Domain.Entities.CarEntity;
 using Mapster;
@@ -20,7 +21,8 @@ internal static class RegisterMapsterConfigurtions
 
         // Define Mapping Configuration
         config.NewConfig<Reservation, ReservationToReturnDto>().TwoWays();
-
+        config.NewConfig<Review, ReviewToReturnDto>()
+            .Map(d=>d.UserEmail,s=>s.User.Email)  ;
 
         config.NewConfig<Car, CarToReturnDto>()
             .Map(d => d.Brand, s => s.Brand.name)
