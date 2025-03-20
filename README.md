@@ -164,37 +164,33 @@ Want to contribute? Follow these steps:
 4. **Submit Pull Requests**: Create a PR for review before merging changes.
 
 👨‍💻 Contributors
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/AbdAlRahman-Hesham">
-        <img src="https://github.com/AbdAlRahman-Hesham.png" width="100px;" alt="" style="border-radius:50%"/>
-        <br />
-        <sub><b>AbdAlRahman Hesham</b></sub>
-      </a>
-      <br />
-      <sub>Backend Developer</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Ahmed0Sanad">
-        <img src="https://github.com/Ahmed0Sanad.png" width="100px;" alt="" style="border-radius:50%"/>
-        <br />
-        <sub><b>Ahmed Sanad</b></sub>
-      </a>
-      <br />
-      <sub>Backend Developer</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Abdallahjsx">
-        <img src="https://github.com/Abdallahjsx.png" width="100px;" alt="" style="border-radius:50%"/>
-        <br />
-        <sub><b>Abdallah</b></sub>
-      </a>
-      <br />
-      <sub>Frontend Developer</sub>
-    </td>
-  </tr>
-</table>
+We appreciate all who have contributed to making the Car-Reservation project better!
+<div style="display: flex; gap: 20px; margin: 30px 0;">
+  <div style="text-align: center;">
+    <a href="https://github.com/AbdAlRahman-Hesham">
+      <img src="https://github.com/AbdAlRahman-Hesham.png?size=100" style="border-radius: 50%; border: 3px solid #4A90E2; width: 100px; height: 100px;">
+      <br>
+      <strong>AbdAlRahman Hesham</strong>
+    </a>
+    <p>Backend Developer</p>
+  </div>
+  <div style="text-align: center;">
+    <a href="https://github.com/Ahmed0Sanad">
+      <img src="https://github.com/Ahmed0Sanad.png?size=100" style="border-radius: 50%; border: 3px solid #4A90E2; width: 100px; height: 100px;">
+      <br>
+      <strong>Ahmed Sanad</strong>
+    </a>
+    <p>Backend Developer</p>
+  </div>
+  <div style="text-align: center;">
+    <a href="https://github.com/Abdallahjsx">
+      <img src="https://github.com/Abdallahjsx.png?size=100" style="border-radius: 50%; border: 3px solid #4A90E2; width: 100px; height: 100px;">
+      <br>
+      <strong>Abdallah</strong>
+    </a>
+    <p>Frontend Developer</p>
+  </div>
+</div>
 Want to Contribute?
 Please check our contribution guidelines to get started!
 
