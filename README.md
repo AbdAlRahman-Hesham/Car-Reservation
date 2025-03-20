@@ -163,16 +163,40 @@ Want to contribute? Follow these steps:
 3. **Document Your Code**: Add comments and update documentation when needed.
 4. **Submit Pull Requests**: Create a PR for review before merging changes.
 
-## 🤝 Contributors
-<a href="https://github.com/AbdAlRahman-Hesham">
-  <img src="https://github.com/AbdAlRahman-Hesham.png?size=50">
-</a>
-<a href="https://github.com/Ahmed0Sanad">
-  <img src="https://github.com/Ahmed0Sanad.png?size=50">
-</a>
-<a href="https://github.com/Abdallahjsx">
-  <img src="https://github.com/Abdallahjsx.png?size=50">
-</a>
+👨‍💻 Contributors
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/AbdAlRahman-Hesham">
+        <img src="https://github.com/AbdAlRahman-Hesham.png" width="100px;" alt="" style="border-radius:50%"/>
+        <br />
+        <sub><b>AbdAlRahman Hesham</b></sub>
+      </a>
+      <br />
+      <sub>Backend Developer</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Ahmed0Sanad">
+        <img src="https://github.com/Ahmed0Sanad.png" width="100px;" alt="" style="border-radius:50%"/>
+        <br />
+        <sub><b>Ahmed Sanad</b></sub>
+      </a>
+      <br />
+      <sub>Backend Developer</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Abdallahjsx">
+        <img src="https://github.com/Abdallahjsx.png" width="100px;" alt="" style="border-radius:50%"/>
+        <br />
+        <sub><b>Abdallah</b></sub>
+      </a>
+      <br />
+      <sub>Frontend Developer</sub>
+    </td>
+  </tr>
+</table>
+Want to Contribute?
+Please check our contribution guidelines to get started!
 
 
    
