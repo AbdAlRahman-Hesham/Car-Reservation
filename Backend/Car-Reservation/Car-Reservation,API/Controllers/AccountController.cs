@@ -21,7 +21,7 @@ public class AccountsController(UserManager<User> userManager, SignInManager<Use
     private readonly SignInManager<User> _signInManager = signInManager;
     private readonly IAuthServices _authServices = authServices;
     private readonly Cloudinary _cloudinary = new Cloudinary(new Account(
-            cloudinaryConfig.Value.KeyName,
+            cloudinaryConfig.Value.CloudName,
             cloudinaryConfig.Value.APIKey,
             cloudinaryConfig.Value.APISecret
         ));

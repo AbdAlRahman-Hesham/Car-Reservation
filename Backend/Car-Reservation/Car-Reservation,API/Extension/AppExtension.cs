@@ -2,7 +2,7 @@
 using Car_Reservation.Services;
 using Car_Reservation.Services.EmailService;
 using Car_Reservation_Domain.Entities.EmailEntity;
-using Car_Reservation.APIs.Controllers;
+using Car_Reservation.DTOs.AccountDtos;
 namespace Car_Reservation_API.Extension;
 
 public static class AppExtension
