@@ -16,6 +16,7 @@ public static class AppExtension
         services.AddScoped<IReservationService, ReservartionService>();
         services.AddSwaggerService();
         services.AddTransient<ISendEmail, EmailServices>();
+        services.AddTransient<IPaymentService,StripePaymentService>();
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
 
