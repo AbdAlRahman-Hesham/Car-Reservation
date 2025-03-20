@@ -7,16 +7,24 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Microsoft.Extensions.Options;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 
 namespace Car_Reservation.APIs.Controllers;
 
 
-public class AccountsController(UserManager<User> userManager, SignInManager<User> signInManager, IAuthServices authServices) : BaseApiController
+public class AccountsController(UserManager<User> userManager, SignInManager<User> signInManager, IAuthServices authServices, IOptions<CloudinarySettings> cloudinaryConfig) : BaseApiController
 {
     private readonly UserManager<User> _userManager = userManager;
     private readonly SignInManager<User> _signInManager = signInManager;
     private readonly IAuthServices _authServices = authServices;
+    private readonly Cloudinary _cloudinary = new Cloudinary(new Account(
+            cloudinaryConfig.Value.KeyName,
+            cloudinaryConfig.Value.APIKey,
+            cloudinaryConfig.Value.APISecret
+        ));
 
     [HttpPost("Login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
@@ -48,31 +56,42 @@ public class AccountsController(UserManager<User> userManager, SignInManager<Use
     public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
         if (CheckEmailExists(registerDto.Email).Result.Value)
-            return Conflict(new ApiValidationResponse() { Errors = ["Email is used"], StatusCode = StatusCodes.Status409Conflict });
+            return Conflict(new ApiValidationResponse() { Errors = new List<string> { "Email is used" }, StatusCode = StatusCodes.Status409Conflict });
+
+        // Handle the image upload to Cloudinary
+        var picUrl = "";
+        if (registerDto.Picture != null)
+        {
+            var uploadResult = await UploadImageToCloudinary(registerDto.Picture);
+            if (uploadResult.Error != null)
+                return BadRequest(new ApiResponse(400, "Image upload failed: " + uploadResult.Error.Message));
+
+            picUrl = uploadResult.SecureUrl.ToString();
+        }
+
         var user = new User
         {
             FName = registerDto.FName,
             LName = registerDto.LName,
-            PicUrl = registerDto.PicUrl,
-            Address = registerDto.Address.Adapt<UserAddress>(),
+            PicUrl = picUrl, // Set the secure URL from Cloudinary
+            Address = registerDto.Address?.Adapt<UserAddress>()!,
             Email = registerDto.Email,
             UserName = registerDto.Email,
             NationalId = registerDto.NationalId,
             PhoneNumber = registerDto.PhoneNumber,
-
         };
 
         var result = await _userManager.CreateAsync(user, registerDto.Password);
         if (!result.Succeeded)
             return BadRequest(new ApiResponse(400));
-        var token = await _authServices.CreateToken(user, _userManager);
 
+        var token = await _authServices.CreateToken(user, _userManager);
         return Ok(new UserDto()
         {
             FName = registerDto.FName,
             LName = registerDto.LName,
-            PicUrl = registerDto.PicUrl,
-            Address = registerDto.Address,
+            PicUrl = picUrl,
+            Address = registerDto.Address!,
             Email = registerDto.Email,
             Token = token
         });
@@ -96,7 +115,27 @@ public class AccountsController(UserManager<User> userManager, SignInManager<Use
         });
 
     }
+    private async Task<ImageUploadResult> UploadImageToCloudinary(IFormFile file)
+    {
+        var uploadResult = new ImageUploadResult();
 
+        if (file.Length > 0)
+        {
+            using (var stream = file.OpenReadStream())
+            {
+                var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(file.FileName, stream),
+                    Transformation = new Transformation()
+                        .Width(500).Height(500).Crop("fill").Gravity("face")
+                };
+
+                uploadResult = await _cloudinary.UploadAsync(uploadParams);
+            }
+        }
+
+        return uploadResult;
+    }
 
 
 

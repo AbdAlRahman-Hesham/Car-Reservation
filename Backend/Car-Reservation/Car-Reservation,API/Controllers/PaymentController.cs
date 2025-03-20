@@ -37,6 +37,7 @@ public class PaymentController(IPaymentService paymentService) : BaseApiControll
     }
 
     [HttpPost("/webhook")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public async Task<IActionResult> HandleStripeWebhook()
     {
         var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();

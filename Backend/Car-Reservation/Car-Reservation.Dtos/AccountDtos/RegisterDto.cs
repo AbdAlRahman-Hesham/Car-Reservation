@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace Car_Reservation.DTOs.AccountDtos;
 
@@ -9,7 +10,7 @@ public class RegisterDto
     [Required]
     public string LName { get; set; }
     [Required]
-    public string PicUrl { get; set; }
+    public IFormFile Picture { get; set; } 
     [Required]
     [RegularExpression(@"^\d{14}$", ErrorMessage = "National ID must be exactly 14 digits.")]
     public string NationalId { get; set; }
