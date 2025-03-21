@@ -19,6 +19,7 @@ namespace Car_Reservation_Domain.ServicesInterfaces
         public Task<Reservation?> MakeReservationForUser(string userId, DateTime StartDate, DateTime EndDate, int CarId);
         public  Task<Reservation?> CancleReservation(Reservation reslut);
         public Task<bool> IsCarExist(int carId);
+        public Task AutoCancelStaleReservations();
 
     }
 }

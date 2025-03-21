@@ -33,7 +33,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
@@ -514,7 +514,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Reservation", b =>
                 {
-                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Car", "car")
+                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Car", "Car")
                         .WithMany("Reservations")
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -528,7 +528,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     b.Navigation("User");
 
-                    b.Navigation("car");
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Review", b =>

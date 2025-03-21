@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Stripe;
 using Stripe.Checkout;
+using Car_Reservation_Domain.Entities.CarEntity;
 
 
 namespace Car_Reservation.Services;
@@ -69,12 +70,12 @@ public class StripePaymentService : IPaymentService
                 };
             }
 
-            if (reservation.car == null)
+            if (reservation.Car == null)
             {
                 return new CreateCheckoutSessionResponse()
                 {
                     Status = 422, // Unprocessable Entity
-                    ErrorMassage = "This reservation has no associated car."
+                    ErrorMassage = "This reservation has no associated Car."
                 };
             }
 
@@ -105,8 +106,10 @@ public class StripePaymentService : IPaymentService
                 };
             }
 
-            var carName = !string.IsNullOrEmpty(reservation.car.Name) ? reservation.car.Name : "Car Reservation";
-            var totalAmount = (long)((reservation.car.Price + reservation.car.InsuranceCost) * 100); // Convert to cents
+
+            var carName = (await _unitOfWork.Repository<Model>().GetAsync(reservation.Car.ModelId))!.Name;
+
+            var totalAmount = (long)((reservation.Car.Price + reservation.Car.InsuranceCost) * 100); // Convert to cents
 
             var options = new SessionCreateOptions
             {
@@ -225,6 +228,23 @@ public class StripePaymentService : IPaymentService
         }
     }
 
+    public async Task<int> CheckoutSessionFailed(int reservationId, string userEmail)
+    {
+        var reservationSpec = new ReservationSpec();
+        var reservation = await _unitOfWork.Repository<Reservation>().GetAsyncWithSpecification(reservationSpec);
+        if (reservation == null)
+            return 404;
+        
+        if (reservation.User.Email != userEmail)
+            return 409;
+        
+        reservation.Status = ReservationStatus.PaymentFailed;
+
+         _unitOfWork.Repository<Reservation>().Update(reservation);
+        await _unitOfWork.CompleteAsync();
+        return 200;
+
+    }
     private async Task HandleCheckoutSessionEvent(Event stripeEvent, Func<Session, ReservationStatus> statusResolver)
     {
         var session = stripeEvent.Data.Object as Session;
@@ -275,7 +295,7 @@ public class StripePaymentService : IPaymentService
             <html>
             <head>
                 <meta charset=""utf-8"">
-                <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+                <meta Name=""viewport"" content=""width=device-width, initial-scale=1"">
                 <title>Complete Your Car Reservation Payment</title>
                 <style>
                     body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }}
@@ -302,7 +322,7 @@ public class StripePaymentService : IPaymentService
                         <table>
                             <tr>
                                 <th>Car Model</th>
-                                <td>{reservation.car.Name}</td>
+                                <td>{reservation.Car.Model.Name}</td>
                             </tr>
                             <tr>
                                 <th>Pickup Date</th>
@@ -314,7 +334,7 @@ public class StripePaymentService : IPaymentService
                             </tr>
                             <tr>
                                 <th>Total Cost</th>
-                                <td>${(reservation.car.Price + reservation.car.InsuranceCost):0.00}</td>
+                                <td>${(reservation.Car.Price + reservation.Car.InsuranceCost):0.00}</td>
                             </tr>
                         </table>
                         

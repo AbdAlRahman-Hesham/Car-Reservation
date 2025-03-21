@@ -49,7 +49,7 @@ public class CarSpecfications: Specification<Car>
 
         Expression<Func<Car, object>>? orderBy = sort.ToLower() switch
         {
-            "name" => c => c.Name,
+            "Name" => c => c.Model.Name,
             "price" => c => c.Price,
             _ => null
         };
@@ -74,7 +74,7 @@ public class CarSpecfications: Specification<Car>
 
         if (brandId.HasValue)
         {
-            criteria = c => c.BrandId == brandId;
+            criteria = c => c.Model.BrandId == brandId;
         }
 
         if (categorityId.HasValue)
@@ -92,11 +92,11 @@ public class CarSpecfications: Specification<Car>
         {
             if (criteria != null)
             {
-                criteria = criteria.AndAlso(c => c.Name.Contains(searchName));
+                criteria = criteria.AndAlso(c => c.Model.Name.Contains(searchName));
             }
             else
             {
-                criteria = c => c.Name.Contains(searchName);
+                criteria = c => c.Model.Name.Contains(searchName);
             }
         }
 

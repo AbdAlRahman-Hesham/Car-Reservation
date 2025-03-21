@@ -12,7 +12,7 @@ using Car_Reservation_Domain.Entities.CarEntity;
 
 namespace Car_Reservation.Services
 {
-   public  class ReservartionService : IReservationService
+    public  class ReservartionService : IReservationService
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -96,7 +96,6 @@ namespace Car_Reservation.Services
                 Status = ReservationStatus.Pending,
                 
             };
-            // TODO : Send Email to the user
             await _unitOfWork.Repository<Reservation>().AddAsync(reservation);
             await _unitOfWork.CompleteAsync();
             return reservation;
@@ -114,5 +113,25 @@ namespace Car_Reservation.Services
             var car = await _unitOfWork.Repository<Car>().GetAsync(carId);
             return car != null;
         }
+
+        public async Task AutoCancelStaleReservations()
+        {
+            var now = DateTime.UtcNow;
+            var staleReservations = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(
+                new StaleReservationSpecification(now.AddHours(-24)) // Find pending reservations older than 24 hours
+            );
+
+            if (staleReservations.Any())
+            {
+                foreach (var reservation in staleReservations)
+                {
+                    reservation.Status = ReservationStatus.Cancelled;
+                    _unitOfWork.Repository<Reservation>().Update(reservation);
+                }
+
+                await _unitOfWork.CompleteAsync();
+            }
+        }
+
     }
 }

@@ -1,13 +1,8 @@
-﻿using Car_Reservation_Domain.Entities.CarEntity;
-using Car_Reservation_Domain.Entities.Identity;
-using Car_Reservation_Domain.Entities;
-
-namespace Car_Reservation.Dtos.CarDtos;
+﻿namespace Car_Reservation.Dtos.CarDtos;
 
 public class CarToReturnDto
 {
     public int Id { get; set; }
-    public string Name { get; set; }
     public bool IsAvailable { get; set; }
     public string Url { get; set; }
     public double Rating { get; set; }

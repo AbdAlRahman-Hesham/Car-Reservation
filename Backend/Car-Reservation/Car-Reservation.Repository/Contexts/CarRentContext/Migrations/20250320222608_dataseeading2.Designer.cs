@@ -4,6 +4,7 @@ using Car_Reservation.Repository.Contexts.CarRentContext.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 {
     [DbContext(typeof(CarRentDbContext))]
-    partial class CarRentContextModelSnapshot : ModelSnapshot
+    [Migration("20250320222608_dataseeading2")]
+    partial class dataseeading2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -667,6 +670,9 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                     b.Property<int?>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("BrandId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -679,6 +685,8 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
+
+                    b.HasIndex("BrandId1");
 
                     b.ToTable("Models");
 
@@ -1284,10 +1292,14 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Model", b =>
                 {
-                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Brand", "Brand")
+                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Brand", null)
                         .WithMany("Models")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId1");
 
                     b.Navigation("Brand");
                 });

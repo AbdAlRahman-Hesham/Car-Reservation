@@ -106,10 +106,10 @@ public class EmailServices : ISendEmail
         var emailBody = emailTemplate
             .Replace("{UserName}", $"{user.FName} {user.LName}")
             .Replace("{ReservationId}", reservation.Id.ToString())
-            .Replace("{CarModel}", reservation.car.Name)
+            .Replace("{CarModel}", reservation.Car.Model.Name)
             .Replace("{PickupDate}", reservation.StartDate.ToString("MMMM dd, yyyy"))
             .Replace("{ReturnDate}", reservation.EndDate.ToString("MMMM dd, yyyy"))
-            .Replace("{TotalCost}", (reservation.car.InsuranceCost + reservation.car.Price).ToString("0.00"))
+            .Replace("{TotalCost}", (reservation.Car.InsuranceCost + reservation.Car.Price).ToString("0.00"))
             .Replace("{ReservationLink}", $"https://yourwebsite.com/reservations/{reservation.Id}")
             .Replace("{CurrentYear}", DateTime.Now.Year.ToString())
             .Replace("{UserEmail}", user.Email);

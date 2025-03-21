@@ -84,7 +84,7 @@ public class ReservationController : BaseApiController
         }
         //Get All Reservations For Car
 
-        [HttpGet("car/{carId}")]
+        [HttpGet("Car/{carId}")]
         [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<IReadOnlyList<ReservationToReturnDto>>> GetAllReservationsForCar(int carId)
         {
@@ -95,7 +95,7 @@ public class ReservationController : BaseApiController
             return Ok(reslutDto);
         }
         //Get Reservation For Car By Date
-        [HttpGet("car")]
+        [HttpGet("Car")]
         [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<ReservationToReturnDto>> GetAllReservationsForCarByDate(int carId, DateTime date)
         {
@@ -120,12 +120,12 @@ public class ReservationController : BaseApiController
             var user = await _userManager.FindByEmailAsync(userEmail!);
 
             var reslut = await _reservationService.MakeReservationForUser(user!.Id,StartDate,EndDate,CarId);
-            if (reslut == null) { return BadRequest(new ApiResponse(400,"The car is reserved on this date")); }
+            if (reslut == null) { return BadRequest(new ApiResponse(400,"The Car is reserved on this date")); }
             var reslutDto = reslut.Adapt<ReservationToReturnDto>();
             return Ok(reslutDto);
         }
         //get car reservaton with start and end date
-        [HttpGet("car/ByDates")]
+        [HttpGet("Car/ByDates")]
         [ProducesResponseType(typeof(ApiResponse), 404)]
         public async Task<ActionResult<IReadOnlyList<ReservationToReturnDto>>> GetCarReservationsByDates(int carId, DateTime startDate, DateTime endDate)
         {

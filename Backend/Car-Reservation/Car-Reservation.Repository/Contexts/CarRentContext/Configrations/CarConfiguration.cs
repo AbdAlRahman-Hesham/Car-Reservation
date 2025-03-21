@@ -8,46 +8,147 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations
     {
         public void Configure(EntityTypeBuilder<Car> builder)
         {
-            builder.HasMany(c => c.Reservations).WithOne(r => r.car);
+            builder.HasMany(c => c.Reservations).WithOne(r => r.Car);
             builder.HasMany(c => c.Reviews).WithOne(r => r.Car);
             builder.HasOne(c => c.Admin).WithMany();
+            builder.HasOne(c=>c.Brand).WithMany().OnDelete(DeleteBehavior.NoAction);
 
             builder.Property(c => c.Url).HasMaxLength(500);
 
+            //Seed Cars with ModelId foreign keys
             builder.HasData(
-                 new Car() { Id = 1, Name = "Ford Mustang", ModelId = 1, BrandId = 2, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.shICukY9MAFIZZ2fY8GCogHaEA?rs=1&pid=ImgDetMain", Rating = 4.7, InsuranceCost = 428, Price = 127 },
-                 new Car() { Id = 2, Name = "Toyota Camry", ModelId = 2, BrandId = 1, IsAvailable = true, Url = "https://th.bing.com/th/id/R.ee3a8eb625b80e8a339ba413b6083356?rik=EqglPbjWgbUQWA&pid=ImgRaw&r=0", Rating = 4.5, InsuranceCost = 275, Price = 85 },
-                 new Car() { Id = 3, Name = "BMW 3 Series", ModelId = 3, BrandId = 3, IsAvailable = true, Url = "https://cdn.motor1.com/images/mgl/174Wp/s1/2019-bmw-3-series.jpg", Rating = 4.6, InsuranceCost = 498, Price = 146 },
-                 new Car() { Id = 4, Name = "Mercedes-Benz C-Class", ModelId = 4, BrandId = 4, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.x0Rg9xavRsO8l2YJYZ2-gQHaEK?rs=1&pid=ImgDetMain", Rating = 4.8, InsuranceCost = 520, Price = 154 },
-                 new Car() { Id = 5, Name = "Honda Civic", ModelId = 5, BrandId = 5, IsAvailable = true, Url = "https://th.bing.com/th/id/R.5716f82fcc49a849949faa979ec89993?rik=blR%2fh2NedLFhfA&pid=ImgRaw&r=0", Rating = 4.4, InsuranceCost = 254, Price = 78 },
-                 new Car() { Id = 6, Name = "Chevrolet Corvette", ModelId = 6, BrandId = 6, IsAvailable = false, Url = "https://th.bing.com/th/id/R.ae0112d018f6411a2bdd2d8f1836c365?rik=ob60KY04v5sRHQ&riu=http%3a%2f%2fwww.ausmotive.com%2fpics%2f2013%2fChevrolet-Corvette-Stingray-02.jpg&ehk=1m9%2fMf269WkLWAORDdRyY%2bcNI9xZJ1D9sTzqEzyL3Y0%3d&risl=&pid=ImgRaw&r=0", Rating = 4.9, InsuranceCost = 625, Price = 198 },
-                 new Car() { Id = 7, Name = "Nissan Altima", ModelId = 7, BrandId = 7, IsAvailable = true, Url = "https://th.bing.com/th/id/R.ab06dccb5178c4ac5600833a47e5ccb9?rik=EyIkcPS33piZNw&pid=ImgRaw&r=0", Rating = 4.0, InsuranceCost = 287, Price = 82 },
-                 new Car() { Id = 8, Name = "Hyundai Sonata", ModelId = 8, BrandId = 8, IsAvailable = true, Url = "https://th.bing.com/th/id/R.a2ab007ce1b2485af4724930ab407b47?rik=y2UaMIaJAuLAzQ&pid=ImgRaw&r=0", Rating = 4.2, InsuranceCost = 265, Price = 76 },
-                 new Car() { Id = 9, Name = "Kia Optima", ModelId = 9, BrandId = 9, IsAvailable = true, Url = "https://th.bing.com/th/id/R.557a504bc2e45044c335018d3ce9ad62?rik=37PqlpPKJl7Hkg&pid=ImgRaw&r=0", Rating = 4.1, InsuranceCost = 260, Price = 75 },
-                 new Car() { Id = 10, Name = "Volkswagen Golf", ModelId = 10, BrandId = 10, IsAvailable = true, Url = "https://th.bing.com/th/id/R.07bb929fafa610a35127831042ea774e?rik=XMI7vJ0h5AZTUw&pid=ImgRaw&r=0", Rating = 4.3, InsuranceCost = 290, Price = 87 },
-                 new Car() { Id = 11, Name = "Subaru Outback", ModelId = 11, BrandId = 11, IsAvailable = true, Url = "https://th.bing.com/th/id/R.b3cc66d690c6bed677061358dd20c804?rik=Xm7irkrDMOwOHw&pid=ImgRaw&r=0", Rating = 4.6, InsuranceCost = 310, Price = 93 },
-                 new Car() { Id = 12, Name = "Mazda CX-5", ModelId = 12, BrandId = 12, IsAvailable = true, Url = "https://th.bing.com/th/id/R.69334b92d94e652496b1d537a313a3f4?rik=hfxCetakvC%2fdyA&pid=ImgRaw&r=0", Rating = 4.5, InsuranceCost = 305, Price = 92 },
-                 new Car() { Id = 13, Name = "Lexus ES", ModelId = 13, BrandId = 13, IsAvailable = true, Url = "https://th.bing.com/th/id/R.36978b49382491ae7db58ab0d036af5a?rik=VcnskkblDSQX%2fQ&pid=ImgRaw&r=0", Rating = 4.7, InsuranceCost = 425, Price = 134 },
-                 new Car() { Id = 14, Name = "Dodge Charger", ModelId = 14, BrandId = 14, IsAvailable = true, Url = "https://www.motortrend.com/uploads/sites/5/2016/05/2016-Dodge-Charger-SRT-Hellcat-front-three-quarter-in-motion-10-e1463002496685.jpg", Rating = 4.4, InsuranceCost = 415, Price = 124 },
-                 new Car() { Id = 15, Name = "Jeep Wrangler", ModelId = 15, BrandId = 15, IsAvailable = true, Url = "", Rating = 4.6, InsuranceCost = 398, Price = 119 },
-                 new Car() { Id = 16, Name = "Tesla Model 3", ModelId = 16, BrandId = 16, IsAvailable = true, Url = "https://facts.net/wp-content/uploads/2023/12/15-jeep-wrangler-facts-1701628021.jpeg", Rating = 4.8, InsuranceCost = 380, Price = 129 },
-                 new Car() { Id = 17, Name = "Volvo XC90", ModelId = 17, BrandId = 17, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.4yE72-7g-iODnnSdz0ix_AHaE8?rs=1&pid=ImgDetMain", Rating = 4.7, InsuranceCost = 510, Price = 152 },
-                 new Car() { Id = 18, Name = "Porsche 911", ModelId = 18, BrandId = 18, IsAvailable = false, Url = "https://th.bing.com/th/id/OIP.V3nD0p-Bhf-TivgmJaYR0wHaEK?rs=1&pid=ImgDetMain", Rating = 4.9, InsuranceCost = 815, Price = 320 },
-                 new Car() { Id = 19, Name = "Toyota Corolla", ModelId = 19, BrandId = 1, IsAvailable = true, Url = "https://i.ytimg.com/vi/nMuGDd0bcog/maxresdefault.jpg", Rating = 4.3, InsuranceCost = 240, Price = 68 },
-                 new Car() { Id = 20, Name = "Ford Explorer", ModelId = 20, BrandId = 2, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.FvUR3d2kbE4N8Pde3udA-wHaEK?rs=1&pid=ImgDetMain", Rating = 4.2, InsuranceCost = 375, Price = 115 },
-                 new Car() { Id = 21, Name = "BMW X5", ModelId = 1, BrandId = 3, IsAvailable = true, Url = "https://media.autoexpress.co.uk/image/private/s--VfWlNFGx--/v1609948123/autoexpress/2021/01/New%20BMW%20X5%20M%20Competition%202021%20UK-16.jpg", Rating = 4.7, InsuranceCost = 610, Price = 175 },
-                 new Car() { Id = 22, Name = "Mercedes-Benz GLC", ModelId = 2, BrandId = 4, IsAvailable = true, Url = "https://cdn.motor1.com/images/mgl/Z2PX2/s1/mercedes-benz-glc-2019.jpg", Rating = 4.6, InsuranceCost = 580, Price = 165 },
-                 new Car() { Id = 23, Name = "Honda Accord", ModelId = 3, BrandId = 5, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.vLa2-0XiaioyXd6XqY3Y9gHaE8?w=302&h=201&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.5, InsuranceCost = 270, Price = 82 },
-                 new Car() { Id = 24, Name = "Chevrolet Camaro", ModelId = 4, BrandId = 6, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.I_mwW1qXjvCbHAWzSuUt_QHaEo?w=254&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.5, InsuranceCost = 480, Price = 143 },
-                 new Car() { Id = 25, Name = "Nissan Maxima", ModelId = 5, BrandId = 7, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.aYtcYYlbK1xY62VvCrf7dgHaFj?w=223&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.2, InsuranceCost = 320, Price = 93 },
-                 new Car() { Id = 26, Name = "Hyundai Tucson", ModelId = 6, BrandId = 8, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.zcXWOJgHE8edDLgtJHnQfgHaEK?w=319&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.3, InsuranceCost = 270, Price = 82 },
-                 new Car() { Id = 27, Name = "Kia Sportage", ModelId = 7, BrandId = 9, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.H0qqCl2_b0BRTzsnEtO2pgHaE7?w=236&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.2, InsuranceCost = 265, Price = 80 },
-                 new Car() { Id = 28, Name = "Subaru Forester", ModelId = 9, BrandId = 11, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.T3RIbguC2smX2ORvr-ooYgAAAA?w=317&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.5, InsuranceCost = 300, Price = 90 },
-                 new Car() { Id = 29, Name = "Lexus RX", ModelId = 11, BrandId = 13, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.oxWUD74TkCzaq-UR_1ImWgHaE8?w=284&h=189&c=7&r=0&o=5&dpr=2.5&pid=1.7", Rating = 4.7, InsuranceCost = 455, Price = 142 },
-                 new Car() { Id = 30, Name = "Dodge Challenger", ModelId = 12, BrandId = 14, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.XuTj_zjpeMBtD-PBP0XVUAHaE8?rs=1&pid=ImgDetMain", Rating = 4.5, InsuranceCost = 430, Price = 128 },
-                 new Car() { Id = 31, Name = "Jeep Grand Cherokee", ModelId = 13, BrandId = 15, IsAvailable = true, Url = "https://th.bing.com/th/id/OIP.DxWQK5PuVQx0n5RHxwoN4gHaE8?rs=1&pid=ImgDetMain", Rating = 4.4, InsuranceCost = 410, Price = 125 }
-             );
+                // Toyota Corolla Cars
+                new Car { BrandId = 1, Id = 1, ModelId = 1, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.13f35ec1a9de5ebd2fd4b827926d04b8?rik=9xLRDfW3CxDFnw&riu=http%3a%2f%2fgearopen.com%2fwp-content%2fuploads%2f2017%2f05%2f2017-Toyota-Corolla-ECO-front-three-quarter-02.jpg&ehk=tNdDzMCg49iswwtJYRuotsUbq4Rk99YTBhcgZQVDdqI%3d&risl=&pid=ImgRaw&r=0" },
+                new Car { BrandId = 1, Id = 2, ModelId = 1, Price = 204, InsuranceCost = 30, IsAvailable = false, Rating = 6, Url = "https://tflcar.com/wp-content/uploads/2017/01/2017_Toyota_Corolla_XSE_011.jpg" },
+                new Car { BrandId = 1, Id = 3, ModelId = 1, Price = 204, InsuranceCost = 15, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/R.ed40f0cebe8894cda6622bde80849c45?rik=4MrwAAPGryKcVA&pid=ImgRaw&r=0" },
 
+                // Toyota Prius Cars
+                new Car { BrandId = 1, Id = 4, ModelId = 2, Price = 2331, InsuranceCost = 452, IsAvailable = false, Rating = 10, Url = "https://th.bing.com/th/id/OIP.fRodtYEvhYFeUYjEyLdbkwHaEK?rs=1&pid=ImgDetMain" },
+                new Car { BrandId = 1, Id = 5, ModelId = 2, Price = 2014, InsuranceCost = 4655, IsAvailable = true, Rating = 8, Url = "https://www.toyota.co.uk/content/dam/toyota/nmsc/united-kingdom/new-cars/prius/toyota-prius-2019-gallery-01-full_tcm-3060-1574518.jpeg" },
+
+                // Toyota Camry Cars
+                new Car { BrandId = 1, Id = 6, ModelId = 3, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.ee3a8eb625b80e8a339ba413b6083356?rik=EqglPbjWgbUQWA&pid=ImgRaw&r=0" },
+                new Car { BrandId = 1, Id = 7, ModelId = 3, Price = 204, InsuranceCost = 45, IsAvailable = false, Rating = 10, Url = "https://th.bing.com/th/id/OIP.E3MaJERK-OEtNx6z2KkunwHaEK?rs=1&pid=ImgDetMain" },
+
+                // Toyota Land Cruiser Cars
+                new Car { BrandId = 1, Id = 8, ModelId = 4, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.0a2c890e770cfa0df8354a4853cd4b4a?rik=XMDCzxaF%2fXizjQ&pid=ImgRaw&r=0" },
+                new Car { BrandId = 1, Id = 9, ModelId = 4, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/OIP.kYvy0ttipDK8a6PQJYUhhgHaE7?rs=1&pid=ImgDetMain" },
+
+                // Toyota RAV4 Cars
+                new Car { BrandId = 1, Id = 10, ModelId = 5, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.a37fd279d6372b67a13c85b52bd19166?rik=Xvmvfx%2b3P%2fPA0A&pid=ImgRaw&r=0" },
+                new Car { BrandId = 1, Id = 11, ModelId = 5, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.ee5d18c40530d04c09d70d8261721609?rik=r6UfeNiSuoIpmg&pid=ImgRaw&r=0" },
+
+                // Ford Mustang Cars
+                new Car { BrandId = 2, Id = 12, ModelId = 6, Price = 350, InsuranceCost = 80, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/R.b246f3a72eea4183d7047e12f2181f73?rik=iFZHeTuQfsrS2g&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_ford_mustang_gt_fastback_4k_7-HD.jpg&ehk=INXMe19kIlj9qaMGtbE%2fshvhc6be5G0YX3UAXyv3l9U%3d&risl=1&pid=ImgRaw&r=0" },
+                new Car { BrandId = 2, Id = 13, ModelId = 6, Price = 370, InsuranceCost = 85, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/OIP.3m-31b1JnQqO_752cT7-IgHaE7?rs=1&pid=ImgDetMain" },
+
+                // Ford F-150 Cars
+                new Car { BrandId = 2, Id = 14, ModelId = 7, Price = 290, InsuranceCost = 60, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/R.41cac357f0f3b9910bfca1194afe668d?rik=xfS3n0r8Ad8dkA&riu=http%3a%2f%2fdigestcars.com%2fwp-content%2fuploads%2f2019%2f04%2f5-things-you-will-want-to-know-about-the-new-Ford-F-150_1.jpg&ehk=AGMnbpDJAyyrMsE8pMau4s3kFkGASpQCI9hWKTsIxIA%3d&risl=&pid=ImgRaw&r=0" },
+                new Car { BrandId = 2, Id = 15, ModelId = 7, Price = 310, InsuranceCost = 65, IsAvailable = false, Rating = 8, Url = "https://th.bing.com/th/id/R.c4570840f31e7a1731688238aa3107df?rik=XO%2brd6VoNyZitQ&pid=ImgRaw&r=0" },
+
+                // Ford Focus Cars
+                new Car { BrandId = 2, Id = 16, ModelId = 8, Price = 180, InsuranceCost = 35, IsAvailable = true, Rating = 7, Url = "https://th.bing.com/th/id/R.358541b7b0f49aa69ee4085ba8989327?rik=tslujerDsasWWw&riu=http%3a%2f%2fimages.thecarconnection.com%2fhug%2f2016-ford-focus_100530025_h.jpg&ehk=ChZtG23kaWOgono5xgRkJCoTkNgjshTk8Pbz4IDRfgQ%3d&risl=&pid=ImgRaw&r=0" },
+
+                // BMW 3 Series Cars
+                new Car { BrandId = 3, Id = 17, ModelId = 9, Price = 420, InsuranceCost = 95, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/OIP.i0ABaiuechbUYG190jsKqQHaE7?rs=1&pid=ImgDetMain" },
+                new Car { BrandId = 3, Id = 18, ModelId = 9, Price = 450, InsuranceCost = 100, IsAvailable = true, Rating = 10, Url = "https://images.summitmedia-digital.com/topgear/images/articleImages/news/0_2011/10/17/bmw_3_series_sedan/bmw-3-series-a.jpg" },
+
+                // BMW X5 Cars
+                new Car { BrandId = 3, Id = 19, ModelId = 10, Price = 580, InsuranceCost = 120, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/R.d96401ca0b33346d175c7c638144d93f?rik=UYTq0ZTpLRH5VQ&pid=ImgRaw&r=0" },
+
+                // Mercedes-Benz C-Class Cars
+                new Car { BrandId = 4, Id = 20, ModelId = 11, Price = 450, InsuranceCost = 110, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/OIP.A6HcLwAoEjbGrisbJia0uwHaEK?rs=1&pid=ImgDetMain" },
+
+                // Mercedes-Benz GLE Cars
+                new Car { BrandId = 4, Id = 21, ModelId = 12, Price = 600, InsuranceCost = 135, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.915151607b5ceb6119d4658c7225c19a?rik=2UrhhsIfX7gxVw&pid=ImgRaw&r=0" },
+
+                // Honda Civic Cars
+                new Car { BrandId = 5, Id = 22, ModelId = 13, Price = 210, InsuranceCost = 40, IsAvailable = false, Rating = 8, Url = "https://th.bing.com/th/id/OIP.FPAsfXVKluXh6NuPYRbtMgHaDX?rs=1&pid=ImgDetMain" },
+
+                // Honda CR-V Cars
+                new Car { BrandId = 5, Id = 23, ModelId = 14, Price = 280, InsuranceCost = 55, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/OIP.hDjz51LBg8zIQgpmUMP3wAHaE7?rs=1&pid=ImgDetMain" },
+
+                // Chevrolet Camaro Cars
+                new Car { BrandId = 6, Id = 24, ModelId = 15, Price = 320, InsuranceCost = 75, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/R.cbc9ad72b6b9148bcdbb032d19dff21a?rik=qrKNmspaO8Jh4g&pid=ImgRaw&r=0" },
+
+                // Chevrolet Silverado Cars
+                new Car { BrandId = 6, Id = 25, ModelId = 16, Price = 300, InsuranceCost = 60, IsAvailable = true, Rating = 7, Url = "https://th.bing.com/th/id/OIP.geMmf5pPWtha02X6kCBkHQHaEA?rs=1&pid=ImgDetMain" },
+
+                // Nissan Altima Cars
+                new Car { BrandId = 7, Id = 26, ModelId = 17, Price = 220, InsuranceCost = 45, IsAvailable = true, Rating = 7, Url = "https://th.bing.com/th/id/R.ab06dccb5178c4ac5600833a47e5ccb9?rik=EyIkcPS33piZNw&pid=ImgRaw&r=0" },
+
+                // Nissan Rogue Cars
+                new Car { BrandId = 7, Id = 27, ModelId = 18, Price = 250, InsuranceCost = 50, IsAvailable = true, Rating = 7, Url = "https://th.bing.com/th/id/R.6c1bda765af52a567342e023cf936ad3?rik=%2fHVwWJhsq72OXw&pid=ImgRaw&r=0" },
+
+                // Kia Forte Cars
+                new Car { BrandId = 9, Id = 28, ModelId = 19, Price = 190, InsuranceCost = 35, IsAvailable = false, Rating = 7, Url = "https://th.bing.com/th/id/R.c97e35804a46f538248d343db1a9f5ff?rik=%2fzFLn4gjLGjSbw&pid=ImgRaw&r=0" },
+
+                // Kia Sorento Cars
+                new Car { BrandId = 9, Id = 29, ModelId = 20, Price = 270, InsuranceCost = 55, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/OIP.Juc1DEMbs-wPz1VKev4SoQHaE8?rs=1&pid=ImgDetMain" },
+
+                // Volkswagen Golf Cars
+                new Car { BrandId = 10, Id = 30, ModelId = 21, Price = 220, InsuranceCost = 45, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/R.82a8d6336399fabe92e4fcd4d5950897?rik=%2bdZJp5hhFZlvNg&pid=ImgRaw&r=0" },
+
+                // Volkswagen Tiguan Cars
+                new Car { BrandId = 10, Id = 31, ModelId = 22, Price = 260, InsuranceCost = 50, IsAvailable = true, Rating = 7, Url = "https://th.bing.com/th/id/OIP.StiwyTxmAZdWVAVEnjmZ-wHaEK?rs=1&pid=ImgDetMain" },
+
+                // Mazda Mazda3 Cars
+                new Car { BrandId = 12, Id = 32, ModelId = 23, Price = 210, InsuranceCost = 40, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/R.7de3f188f629a170ec395b21d41f1685?rik=jk78fBKU9354Pw&pid=ImgRaw&r=0" },
+
+                // Mazda CX-5 Cars
+                new Car { BrandId = 12, Id = 33, ModelId = 24, Price = 250, InsuranceCost = 50, IsAvailable = false, Rating = 8, Url = "https://th.bing.com/th/id/R.db85daf9a08f811d1c05ef1c8bd0ffb0?rik=HxrFZqCkIghLSQ&pid=ImgRaw&r=0" },
+
+                // Dodge Charger Cars
+                new Car { BrandId = 14, Id = 34, ModelId = 25, Price = 340, InsuranceCost = 80, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/R.62b12f4444f0676498fc8ebb46542282?rik=3gFYyFdVD%2bbFrg&pid=ImgRaw&r=0" },
+
+                // Dodge Durango Cars
+                new Car { BrandId = 14, Id = 35, ModelId = 26, Price = 300, InsuranceCost = 60, IsAvailable = true, Rating = 7, Url = "https://th.bing.com/th/id/OIP.yKvLUhlM9mWH4yP4BbCJbgHaE8?rs=1&pid=ImgDetMain" },
+
+                // Jeep Wrangler Cars
+                new Car { BrandId = 15, Id = 36, ModelId = 27, Price = 320, InsuranceCost = 70, IsAvailable = false, Rating = 9, Url = "https://th.bing.com/th/id/OIP.AlD6RqrzPq5FnaovJgKXgQHaEK?rs=1&pid=ImgDetMain" },
+
+                // Jeep Grand Cherokee Cars
+                new Car { BrandId = 15, Id = 37, ModelId = 28, Price = 350, InsuranceCost = 75, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/R.7154ebc03e4cc069002b398a41e3b9f1?rik=AdsX6WsfZshMhQ&pid=ImgRaw&r=0" },
+
+                // Tesla Model 3 Cars
+                new Car { BrandId = 16, Id = 38, ModelId = 29, Price = 380, InsuranceCost = 85, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/OIP.xfhn3wN5Q1L3no4LmUPTxQHaD4?rs=1&pid=ImgDetMain" },
+
+                // Tesla Model Y Cars
+                new Car { BrandId = 16, Id = 39, ModelId = 30, Price = 420, InsuranceCost = 90, IsAvailable = true, Rating = 9, Url = "https://www.araba.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Ftasit-com%2Fimages%2Ff_webp%2Cq_auto%2Fv1680626856%2Ftesla-model-y-inceleme%2Ftesla-model-y-inceleme.webp%3F_i%3DAA&w=3840&q=75" },
+
+                // Volvo XC60 Cars
+                new Car { BrandId = 17, Id = 40, ModelId = 31, Price = 400, InsuranceCost = 90, IsAvailable = false, Rating = 8, Url = "https://th.bing.com/th/id/OIP.9wxNUwTthrUuNobKtAoYBwHaE8?rs=1&pid=ImgDetMain" },
+
+                // Volvo S60 Cars
+                new Car { BrandId = 17, Id = 41, ModelId = 32, Price = 360, InsuranceCost = 80, IsAvailable = true, Rating = 8, Url = "https://th.bing.com/th/id/R.2d5499fe5b284df9fe23f4b27dd77d60?rik=fmI6NjfcynQWxw&pid=ImgRaw&r=0" },
+
+                // Porsche 911 Cars
+                new Car { BrandId = 18, Id = 42, ModelId = 33, Price = 800, InsuranceCost = 200, IsAvailable = true, Rating = 10, Url = "https://th.bing.com/th/id/R.b5dc5efe3fffa7cf666c4f0d7fdd2718?rik=Go0eJvJqeAwKJQ&pid=ImgRaw&r=0" },
+
+                // Porsche Cayenne Cars
+                new Car { BrandId = 18, Id = 43, ModelId = 34, Price = 700, InsuranceCost = 150, IsAvailable = true, Rating = 9, Url = "https://th.bing.com/th/id/R.fa478ebff8509097b44979ad41cbd771?rik=Ajz8Q5PQa36V5g&pid=ImgRaw&r=0" }
+            );
         }
     }
 }
+/*
+ using Car_Reservation_Domain.Entities.CarEntity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations
+{
+    class CarConfiguration : IEntityTypeConfiguration<Car>
+    {
+        public void Configure(EntityTypeBuilder<Car> builder)
+        {
+            // Seed Cars with ModelId foreign keys
+            builder.HasData(
+                // Toyota Corolla Cars
+                new Car { Id = 1, ModelId = 1, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://www.motortrend.com/uploads/sites/5/2021/08/2022-Toyota-Corolla-SE-1.jpg" },
+                new Car { Id = 2, ModelId = 1, Price = 204, InsuranceCost = 30, IsAvailable = true, Rating = 6, Url = "https://cdn.motor1.com/images/mgl/7ZvG6/s1/2022-toyota-corolla-hatchback.jpg" },
+                new Car { Id = 3, ModelId = 1, Price = 204, InsuranceCost = 15, IsAvailable = true, Rating = 9, Url = "https://www.carscoops.com/wp-content/uploads/2022/08/2023-Toyota-Corolla-Sedan-1.jpg" },
+
+                // Toyota Prius Cars
+                new Car { Id = 4, ModelId = 2, Price = 2331, InsuranceCost
+ */
