@@ -3,7 +3,7 @@ using Car_Reservation.Repository.Reprositories_Interfaces;
 
 namespace Car_Reservation.Repository.UnitOfWork;
 
-public interface IUnitOfWork : IAsyncDisposable 
+public interface IUnitOfWork : IAsyncDisposable, IDisposable
 {
     IGenaricRepository<T> Repository<T>() where T : BaseEntity;
     public Task<int> CompleteAsync();

@@ -124,4 +124,93 @@ public class EmailServices : ISendEmail
 
         await SendAsync(email);
     }
+    public async Task SendReservationCanceledEmailAsync(Reservation reservation, string modelName)
+    {
+        var emailTemplate = """
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Car Reservation Cancellation</title>
+                <style>
+                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+                    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                    .header { background-color: #e74c3c; color: white; padding: 20px; text-align: center; }
+                    .content { padding: 20px; background-color: #f9f9f9; }
+                    .footer { text-align: center; padding: 10px; font-size: 12px; color: #777; }
+                    .button { background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block; margin: 20px 0; }
+                    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                    table, th, td { border: 1px solid #ddd; }
+                    th, td { padding: 10px; text-align: left; }
+                    th { background-color: #f2f2f2; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header">
+                        <h1>Car Reservation Cancellation</h1>
+                    </div>
+                    <div class="content">
+                        <p>Hello {UserName},</p>
+                        <p>Your car reservation has been <strong>canceled</strong>. Here are the details of the canceled reservation:</p>
+                        <table>
+                            <tr>
+                                <th>Reservation ID</th>
+                                <td>{ReservationId}</td>
+                            </tr>
+                            <tr>
+                                <th>Car Model</th>
+                                <td>{CarModel}</td>
+                            </tr>
+                            <tr>
+                                <th>Pickup Date</th>
+                                <td>{PickupDate}</td>
+                            </tr>
+                            <tr>
+                                <th>Return Date</th>
+                                <td>{ReturnDate}</td>
+                            </tr>
+                            <tr>
+                                <th>Total Cost</th>
+                                <td>${TotalCost}</td>
+                            </tr>
+                        </table>
+                        <p>Note: If the reservation is not confirmed within an hour, it will be automatically cancelled.</p>
+                        <p>If you did not request this cancellation or have any questions,
+                        , please contact our customer support team immediately.</p>
+                        <a href="{SupportLink}" class="button">Contact Support</a>
+                        <p>Thank you for your understanding.</p>
+                    </div>
+                    <div class="footer">
+                        <p>&copy; {CurrentYear} Car Reservation System. All rights reserved.</p>
+                        <p>This email was sent to {UserEmail}. If you believe this was sent in error, please contact support.</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+            """;
+
+        // Replace placeholders with actual data
+        var emailBody = emailTemplate
+            .Replace("{UserName}", $"{reservation.User.FName} {reservation.User.LName}")
+            .Replace("{ReservationId}", reservation.Id.ToString())
+            .Replace("{CarModel}", modelName)
+            .Replace("{PickupDate}", reservation.StartDate.ToString("MMMM dd, yyyy"))
+            .Replace("{ReturnDate}", reservation.EndDate.ToString("MMMM dd, yyyy"))
+            .Replace("{TotalCost}", (reservation.Car.InsuranceCost + reservation.Car.Price).ToString("0.00"))
+            .Replace("{SupportLink}", "https://yourwebsite.com/support")
+            .Replace("{CurrentYear}", DateTime.Now.Year.ToString())
+            .Replace("{UserEmail}", reservation.User.Email);
+
+        var email = new Email
+        {
+            To = reservation.User.Email!,
+            Name = $"{reservation.User.FName} {reservation.User.LName}",
+            Subject = "Car Reservation Cancellation",
+            Body = emailBody
+        };
+
+        await SendAsync(email);
+    }
 }

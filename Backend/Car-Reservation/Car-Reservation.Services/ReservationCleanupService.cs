@@ -20,7 +20,6 @@ public class ReservationCleanupService : BackgroundService
                 var reservationService = scope.ServiceProvider.GetRequiredService<IReservationService>();
                 await reservationService.AutoCancelStaleReservations();
             }
-
             await Task.Delay(TimeSpan.FromHours(1), stoppingToken); // Run every hour
         }
     }
