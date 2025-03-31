@@ -35,6 +35,18 @@ public class PaymentController(IPaymentService paymentService) : BaseApiControll
                 return StatusCode(result.Status, new ApiResponse(result.Status, result.ErrorMassage!));
         }
     }
+    [HttpPost("checkout-session-failed/{reservationId}")]
+    [ProducesResponseType(typeof(ApiResponse),409)]
+    [ProducesResponseType(typeof(ApiResponse),404)]
+    [ProducesResponseType(typeof(ApiResponse),409)]
+    [Authorize]
+    public async Task<IActionResult> CheckoutSessionFailed(int reservationId)
+    {
+       var userEmail =  User.FindFirst(ClaimTypes.Email)!;
+       var result = await paymentService.CheckoutSessionFailed(reservationId, userEmail.Value);
+
+        return StatusCode(result, new ApiResponse(result));
+    }
 
     [HttpPost("/webhook")]
     [ApiExplorerSettings(IgnoreApi = true)]

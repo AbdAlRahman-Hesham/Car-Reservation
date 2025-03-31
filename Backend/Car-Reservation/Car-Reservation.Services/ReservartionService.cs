@@ -1,20 +1,15 @@
 ﻿using Car_Reservation.Repository.UnitOfWork;
 using Car_Reservation_Domain.Entities;
 using Car_Reservation_Domain.ServicesInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Car_Reservation.Repository.Specfications.ReservationSpecification;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using Car_Reservation_Domain.Entities.CarEntity;
 
-namespace Car_Reservation.Services
+namespace Car_Reservation.Services;
+
+public  class ReservartionService : IReservationService
 {
-   public  class ReservartionService : IReservationService
-    {
-        private readonly IUnitOfWork _unitOfWork;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly ISendEmail _sendEmail;
 
         public ReservartionService(IUnitOfWork unitOfWork)
         {
@@ -31,6 +26,20 @@ namespace Car_Reservation.Services
         {
             var spec = new ReservationSpec(userEmail, date);
             var userReservations = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
+    public ReservartionService(IUnitOfWork unitOfWork, ISendEmail sendEmail)
+    {
+        _unitOfWork = unitOfWork;
+        _sendEmail = sendEmail;
+    }
+    public async Task<IReadOnlyList<Reservation>?> GetAllReservationsForUser(string email)
+    {
+        var spec = new ReservationSpec(email);
+        var reservations = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
+        return reservations;
+    }
+    public async  Task<IReadOnlyList<Reservation>?> GetAllReservationsForUserByDate(string userEmail, DateTime date)
+    {
+        var userReservations = await GetAllReservationsForUser(userEmail);
 
             return userReservations;
         }
@@ -54,7 +63,7 @@ namespace Car_Reservation.Services
             var reslut = await _unitOfWork.Repository<Reservation>().GetAsyncWithSpecification(spec);
             return reslut;
 
-        }
+    }
 
         public async Task<IReadOnlyList<Reservation>?> GetCarReservationsByDates(int carId, DateTime startDate, DateTime endDate)
         {
@@ -62,7 +71,7 @@ namespace Car_Reservation.Services
             var carReservatoins = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
             return carReservatoins;
 
-        }
+    }
 
         public async Task<Reservation?> MakeReservationForUser(string userId, DateTime StartDate , DateTime EndDate,int CarId  )
         {
@@ -76,33 +85,54 @@ namespace Car_Reservation.Services
             //TODO check if there is a free date between
             if (carResertionInReqiuredDate.Count>0) { return null; } // Car is not available
 
-            // Create the reservation
-            var reservation = new Reservation
-            {
-                CarId = CarId,
-                StartDate = StartDate,
-                EndDate = EndDate,
-                UserId = userId,
-                Status = ReservationStatus.Pending,
-                
-            };
-            // TODO : Send Email to the user
-            await _unitOfWork.Repository<Reservation>().AddAsync(reservation);
-            await _unitOfWork.CompleteAsync();
-            return reservation;
-        }
+        // Create the reservation
+        var reservation = new Reservation
+        {
+            CarId = CarId,
+            StartDate = StartDate,
+            EndDate = EndDate,
+            UserId = userId,
+            Status = ReservationStatus.Pending,
+            
+        };
+        await _unitOfWork.Repository<Reservation>().AddAsync(reservation);
+        await _unitOfWork.CompleteAsync();
+        return reservation;
+    }
 
-        public async Task<Reservation?> CancleReservation(Reservation reslut)
+    public async Task<Reservation?> CancleReservation(Reservation reslut)
+    {
+        reslut.Status = ReservationStatus.Cancelled;
+        _unitOfWork.Repository<Reservation>().Update(reslut);
+        await _unitOfWork.CompleteAsync();
+        return reslut;
+    }
+    public async Task<bool> IsCarExist(int carId)
+    {
+        var car = await _unitOfWork.Repository<Car>().GetAsync(carId);
+        return car != null;
+    }
+
+    public async Task AutoCancelStaleReservations()
+    {
+        var now = DateTime.UtcNow;
+        var staleReservations = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(
+            new StaleReservationSpecification(now.AddHours(-1)) 
+        );
+
+        if (staleReservations.Any())
         {
-            reslut.Status = ReservationStatus.Cancelled;
-            _unitOfWork.Repository<Reservation>().Update(reslut);
+            foreach (var reservation in staleReservations)
+            {
+                reservation.Status = ReservationStatus.Cancelled;
+                var model = await _unitOfWork.Repository<Model>().GetAsync(reservation.Car.ModelId);
+                await _sendEmail.SendReservationCanceledEmailAsync(reservation, model!.Name);
+                _unitOfWork.Repository<Reservation>().Update(reservation);
+
+            }
+
             await _unitOfWork.CompleteAsync();
-            return reslut;
-        }
-        public async Task<bool> IsCarExist(int carId)
-        {
-            var car = await _unitOfWork.Repository<Car>().GetAsync(carId);
-            return car != null;
         }
     }
+
 }

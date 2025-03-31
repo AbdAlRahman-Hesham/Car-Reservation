@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Car_Reservation.Repository.Specfications.ReservationSpecification
 {
-     public  class ReservationSpec : Specification<Reservation>
+    public  class ReservationSpec : Specification<Reservation>
     {
         public ReservationSpec(string email):base(r => r.User.Email == email)
         {
@@ -43,7 +43,7 @@ namespace Car_Reservation.Repository.Specfications.ReservationSpecification
         public ReservationSpec() : base(DefaultIncludes)
         {
         }
-        private static readonly List<Expression<Func<Reservation, object>>> DefaultIncludes = new() { r=>r.User,r=>r.car };
+        private static readonly List<Expression<Func<Reservation, object>>> DefaultIncludes = new() { r=>r.User,r=>r.Car };
 
     }
 }

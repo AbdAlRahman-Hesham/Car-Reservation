@@ -1,11 +1,6 @@
 ﻿using Car_Reservation_Domain.Entities.CarEntity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations
 {
@@ -13,27 +8,27 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations
     {
         public void Configure(EntityTypeBuilder<Brand> builder)
         {
-            builder.Property(b => b.name).HasMaxLength(60);
+            builder.Property(b => b.Name).HasMaxLength(60);
+
+            builder.HasMany(b=>b.Models).WithOne(m=>m.Brand).HasForeignKey(m=>m.BrandId).OnDelete(DeleteBehavior.Cascade);
+
             builder.HasData(
-            new Brand { Id = 1, name = "Toyota" },
-            new Brand { Id = 2, name = "Ford" },
-            new Brand { Id = 3, name = "BMW" },
-            new Brand { Id = 4, name = "Mercedes-Benz" },
-            new Brand { Id = 5, name = "Honda" },
-            new Brand { Id = 6, name = "Chevrolet" },
-            new Brand { Id = 7, name = "Nissan" },
-            new Brand { Id = 8, name = "Hyundai" },
-            new Brand { Id = 9, name = "Kia" },
-            new Brand { Id = 10, name = "Volkswagen" },
-            new Brand { Id = 11, name = "Subaru" },
-            new Brand { Id = 12, name = "Mazda" },
-            new Brand { Id = 13, name = "Lexus" },
-            new Brand { Id = 14, name = "Dodge" },
-            new Brand { Id = 15, name = "Jeep" },
-            new Brand { Id = 16, name = "Tesla" },
-            new Brand { Id = 17, name = "Volvo" },
-            new Brand { Id = 18, name = "Porsche" }
-        );
+                new Brand { Id = 1, Name = "Toyota", LogoUrl = "https://www.freepnglogos.com/uploads/toyota-logo-png/toyota-logos-brands-10.png" },
+                new Brand { Id = 2, Name = "Ford", LogoUrl = "https://example.com/ford-logo.png" },
+                new Brand { Id = 3, Name = "BMW", LogoUrl = "https://clipground.com/images/bmw-logo-png-5.png" },
+                new Brand { Id = 4, Name = "Mercedes-Benz", LogoUrl = "https://example.com/mercedes-logo.png" },
+                new Brand { Id = 5, Name = "Honda", LogoUrl = "https://example.com/honda-logo.png" },
+                new Brand { Id = 6, Name = "Chevrolet", LogoUrl = "https://example.com/chevrolet-logo.png" },
+                new Brand { Id = 7, Name = "Nissan", LogoUrl = "https://example.com/nissan-logo.png" },
+                new Brand { Id = 9, Name = "Kia", LogoUrl = "https://example.com/kia-logo.png" },
+                new Brand { Id = 10, Name = "Volkswagen", LogoUrl = "https://example.com/vw-logo.png" },
+                new Brand { Id = 12, Name = "Mazda", LogoUrl = "https://example.com/mazda-logo.png" },
+                new Brand { Id = 14, Name = "Dodge", LogoUrl = "https://example.com/dodge-logo.png" },
+                new Brand { Id = 15, Name = "Jeep", LogoUrl = "https://example.com/jeep-logo.png" },
+                new Brand { Id = 16, Name = "Tesla", LogoUrl = "https://example.com/tesla-logo.png" },
+                new Brand { Id = 17, Name = "Volvo", LogoUrl = "https://example.com/volvo-logo.png" },
+                new Brand { Id = 18, Name = "Porsche", LogoUrl = "https://example.com/porsche-logo.png" }
+            );
         }
     }
 }

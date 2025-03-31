@@ -7,6 +7,7 @@ public interface IPaymentService
     public Task<CreateCheckoutSessionResponse> CreateCheckoutSession(int reservationId, string? successUrl, string? cancelUrl, string userEmail);
 
     public Task<int> HandleStripeWebhookAsync(string? json);
+    public Task<int> CheckoutSessionFailed(int reservationId, string userEmail);
 }
 
 public class CreateCheckoutSessionResponse

@@ -16,7 +16,7 @@ namespace Car_Reservation_Domain.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int CarId { get; set; }
-        public Car  car{ get; set; }
+        public Car  Car{ get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
     }

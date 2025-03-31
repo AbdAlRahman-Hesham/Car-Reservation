@@ -41,7 +41,7 @@ public class CarController(IUnitOfWork unitOfWork, UserManager<User> userManager
         var result = await _unitOfWork.Repository<Car>().GetAsyncWithSpecification(specification);
 
         if (result == null)
-            return NotFound(new ApiResponse(404, "No car with this id"));
+            return NotFound(new ApiResponse(404, "No Car with this id"));
 
         return Ok(result.Adapt<CarToReturnDto>());
     }
@@ -93,7 +93,7 @@ public class CarController(IUnitOfWork unitOfWork, UserManager<User> userManager
         }
 
         if (carDto == null)
-            return BadRequest(new ApiResponse(400, "Invalid car data"));
+            return BadRequest(new ApiResponse(400, "Invalid Car data"));
 
         var car = carDto.Adapt<Car>();
         await _unitOfWork.Repository<Car>().AddAsync(car);
@@ -122,11 +122,11 @@ public class CarController(IUnitOfWork unitOfWork, UserManager<User> userManager
         }
 
         if (carDto == null)
-            return BadRequest(new ApiResponse(400, "Invalid car data"));
+            return BadRequest(new ApiResponse(400, "Invalid Car data"));
 
         var car = await _unitOfWork.Repository<Car>().GetAsync(id);
         if (car == null)
-            return NotFound(new ApiResponse(404, "No car with this id"));
+            return NotFound(new ApiResponse(404, "No Car with this id"));
 
         carDto.Adapt(car); // Update the existing car entity
         _unitOfWork.Repository<Car>().Update(car);
@@ -155,7 +155,7 @@ public class CarController(IUnitOfWork unitOfWork, UserManager<User> userManager
 
         var car = await _unitOfWork.Repository<Car>().GetAsync(id);
         if (car == null)
-            return NotFound(new ApiResponse(404, "No car with this id"));
+            return NotFound(new ApiResponse(404, "No Car with this id"));
 
         _unitOfWork.Repository<Car>().Delete(car);
         await _unitOfWork.CompleteAsync();

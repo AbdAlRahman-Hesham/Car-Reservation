@@ -30,7 +30,11 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("name")
+                    b.Property<string>("LogoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
@@ -43,92 +47,92 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                         new
                         {
                             Id = 1,
-                            name = "Toyota"
+                            LogoUrl = "https://www.freepnglogos.com/uploads/toyota-logo-png/toyota-logos-brands-10.png",
+                            Name = "Toyota"
                         },
                         new
                         {
                             Id = 2,
-                            name = "Ford"
+                            LogoUrl = "https://example.com/ford-logo.png",
+                            Name = "Ford"
                         },
                         new
                         {
                             Id = 3,
-                            name = "BMW"
+                            LogoUrl = "https://clipground.com/images/bmw-logo-png-5.png",
+                            Name = "BMW"
                         },
                         new
                         {
                             Id = 4,
-                            name = "Mercedes-Benz"
+                            LogoUrl = "https://example.com/mercedes-logo.png",
+                            Name = "Mercedes-Benz"
                         },
                         new
                         {
                             Id = 5,
-                            name = "Honda"
+                            LogoUrl = "https://example.com/honda-logo.png",
+                            Name = "Honda"
                         },
                         new
                         {
                             Id = 6,
-                            name = "Chevrolet"
+                            LogoUrl = "https://example.com/chevrolet-logo.png",
+                            Name = "Chevrolet"
                         },
                         new
                         {
                             Id = 7,
-                            name = "Nissan"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            name = "Hyundai"
+                            LogoUrl = "https://example.com/nissan-logo.png",
+                            Name = "Nissan"
                         },
                         new
                         {
                             Id = 9,
-                            name = "Kia"
+                            LogoUrl = "https://example.com/kia-logo.png",
+                            Name = "Kia"
                         },
                         new
                         {
                             Id = 10,
-                            name = "Volkswagen"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            name = "Subaru"
+                            LogoUrl = "https://example.com/vw-logo.png",
+                            Name = "Volkswagen"
                         },
                         new
                         {
                             Id = 12,
-                            name = "Mazda"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            name = "Lexus"
+                            LogoUrl = "https://example.com/mazda-logo.png",
+                            Name = "Mazda"
                         },
                         new
                         {
                             Id = 14,
-                            name = "Dodge"
+                            LogoUrl = "https://example.com/dodge-logo.png",
+                            Name = "Dodge"
                         },
                         new
                         {
                             Id = 15,
-                            name = "Jeep"
+                            LogoUrl = "https://example.com/jeep-logo.png",
+                            Name = "Jeep"
                         },
                         new
                         {
                             Id = 16,
-                            name = "Tesla"
+                            LogoUrl = "https://example.com/tesla-logo.png",
+                            Name = "Tesla"
                         },
                         new
                         {
                             Id = 17,
-                            name = "Volvo"
+                            LogoUrl = "https://example.com/volvo-logo.png",
+                            Name = "Volvo"
                         },
                         new
                         {
                             Id = 18,
-                            name = "Porsche"
+                            LogoUrl = "https://example.com/porsche-logo.png",
+                            Name = "Porsche"
                         });
                 });
 
@@ -155,10 +159,6 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                     b.Property<int>("ModelId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -184,374 +184,475 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                         new
                         {
                             Id = 1,
-                            BrandId = 2,
-                            InsuranceCost = 428m,
+                            BrandId = 1,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
                             ModelId = 1,
-                            Name = "Ford Mustang",
-                            Price = 127m,
-                            Rating = 4.7000000000000002,
-                            Url = "https://th.bing.com/th/id/OIP.shICukY9MAFIZZ2fY8GCogHaEA?rs=1&pid=ImgDetMain"
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.13f35ec1a9de5ebd2fd4b827926d04b8?rik=9xLRDfW3CxDFnw&riu=http%3a%2f%2fgearopen.com%2fwp-content%2fuploads%2f2017%2f05%2f2017-Toyota-Corolla-ECO-front-three-quarter-02.jpg&ehk=tNdDzMCg49iswwtJYRuotsUbq4Rk99YTBhcgZQVDdqI%3d&risl=&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 1,
-                            InsuranceCost = 275m,
-                            IsAvailable = true,
-                            ModelId = 2,
-                            Name = "Toyota Camry",
-                            Price = 85m,
-                            Rating = 4.5,
-                            Url = "https://th.bing.com/th/id/R.ee3a8eb625b80e8a339ba413b6083356?rik=EqglPbjWgbUQWA&pid=ImgRaw&r=0"
+                            InsuranceCost = 30m,
+                            IsAvailable = false,
+                            ModelId = 1,
+                            Price = 204m,
+                            Rating = 6.0,
+                            Url = "https://tflcar.com/wp-content/uploads/2017/01/2017_Toyota_Corolla_XSE_011.jpg"
                         },
                         new
                         {
                             Id = 3,
-                            BrandId = 3,
-                            InsuranceCost = 498m,
+                            BrandId = 1,
+                            InsuranceCost = 15m,
                             IsAvailable = true,
-                            ModelId = 3,
-                            Name = "BMW 3 Series",
-                            Price = 146m,
-                            Rating = 4.5999999999999996,
-                            Url = "https://cdn.motor1.com/images/mgl/174Wp/s1/2019-bmw-3-series.jpg"
+                            ModelId = 1,
+                            Price = 204m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/R.ed40f0cebe8894cda6622bde80849c45?rik=4MrwAAPGryKcVA&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 4,
-                            BrandId = 4,
-                            InsuranceCost = 520m,
-                            IsAvailable = true,
-                            ModelId = 4,
-                            Name = "Mercedes-Benz C-Class",
-                            Price = 154m,
-                            Rating = 4.7999999999999998,
-                            Url = "https://th.bing.com/th/id/OIP.x0Rg9xavRsO8l2YJYZ2-gQHaEK?rs=1&pid=ImgDetMain"
+                            BrandId = 1,
+                            InsuranceCost = 452m,
+                            IsAvailable = false,
+                            ModelId = 2,
+                            Price = 2331m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/OIP.fRodtYEvhYFeUYjEyLdbkwHaEK?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 5,
-                            BrandId = 5,
-                            InsuranceCost = 254m,
+                            BrandId = 1,
+                            InsuranceCost = 4655m,
                             IsAvailable = true,
-                            ModelId = 5,
-                            Name = "Honda Civic",
-                            Price = 78m,
-                            Rating = 4.4000000000000004,
-                            Url = "https://th.bing.com/th/id/R.5716f82fcc49a849949faa979ec89993?rik=blR%2fh2NedLFhfA&pid=ImgRaw&r=0"
+                            ModelId = 2,
+                            Price = 2014m,
+                            Rating = 8.0,
+                            Url = "https://www.toyota.co.uk/content/dam/toyota/nmsc/united-kingdom/new-cars/prius/toyota-prius-2019-gallery-01-full_tcm-3060-1574518.jpeg"
                         },
                         new
                         {
                             Id = 6,
-                            BrandId = 6,
-                            InsuranceCost = 625m,
-                            IsAvailable = false,
-                            ModelId = 6,
-                            Name = "Chevrolet Corvette",
-                            Price = 198m,
-                            Rating = 4.9000000000000004,
-                            Url = "https://th.bing.com/th/id/R.ae0112d018f6411a2bdd2d8f1836c365?rik=ob60KY04v5sRHQ&riu=http%3a%2f%2fwww.ausmotive.com%2fpics%2f2013%2fChevrolet-Corvette-Stingray-02.jpg&ehk=1m9%2fMf269WkLWAORDdRyY%2bcNI9xZJ1D9sTzqEzyL3Y0%3d&risl=&pid=ImgRaw&r=0"
+                            BrandId = 1,
+                            InsuranceCost = 45m,
+                            IsAvailable = true,
+                            ModelId = 3,
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.ee3a8eb625b80e8a339ba413b6083356?rik=EqglPbjWgbUQWA&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 7,
-                            BrandId = 7,
-                            InsuranceCost = 287m,
-                            IsAvailable = true,
-                            ModelId = 7,
-                            Name = "Nissan Altima",
-                            Price = 82m,
-                            Rating = 4.0,
-                            Url = "https://th.bing.com/th/id/R.ab06dccb5178c4ac5600833a47e5ccb9?rik=EyIkcPS33piZNw&pid=ImgRaw&r=0"
+                            BrandId = 1,
+                            InsuranceCost = 45m,
+                            IsAvailable = false,
+                            ModelId = 3,
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/OIP.E3MaJERK-OEtNx6z2KkunwHaEK?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 8,
-                            BrandId = 8,
-                            InsuranceCost = 265m,
+                            BrandId = 1,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
-                            ModelId = 8,
-                            Name = "Hyundai Sonata",
-                            Price = 76m,
-                            Rating = 4.2000000000000002,
-                            Url = "https://th.bing.com/th/id/R.a2ab007ce1b2485af4724930ab407b47?rik=y2UaMIaJAuLAzQ&pid=ImgRaw&r=0"
+                            ModelId = 4,
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.0a2c890e770cfa0df8354a4853cd4b4a?rik=XMDCzxaF%2fXizjQ&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 9,
-                            BrandId = 9,
-                            InsuranceCost = 260m,
+                            BrandId = 1,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
-                            ModelId = 9,
-                            Name = "Kia Optima",
-                            Price = 75m,
-                            Rating = 4.0999999999999996,
-                            Url = "https://th.bing.com/th/id/R.557a504bc2e45044c335018d3ce9ad62?rik=37PqlpPKJl7Hkg&pid=ImgRaw&r=0"
+                            ModelId = 4,
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/OIP.kYvy0ttipDK8a6PQJYUhhgHaE7?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 10,
-                            BrandId = 10,
-                            InsuranceCost = 290m,
+                            BrandId = 1,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
-                            ModelId = 10,
-                            Name = "Volkswagen Golf",
-                            Price = 87m,
-                            Rating = 4.2999999999999998,
-                            Url = "https://th.bing.com/th/id/R.07bb929fafa610a35127831042ea774e?rik=XMI7vJ0h5AZTUw&pid=ImgRaw&r=0"
+                            ModelId = 5,
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.a37fd279d6372b67a13c85b52bd19166?rik=Xvmvfx%2b3P%2fPA0A&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 11,
-                            BrandId = 11,
-                            InsuranceCost = 310m,
+                            BrandId = 1,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
-                            ModelId = 11,
-                            Name = "Subaru Outback",
-                            Price = 93m,
-                            Rating = 4.5999999999999996,
-                            Url = "https://th.bing.com/th/id/R.b3cc66d690c6bed677061358dd20c804?rik=Xm7irkrDMOwOHw&pid=ImgRaw&r=0"
+                            ModelId = 5,
+                            Price = 204m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.ee5d18c40530d04c09d70d8261721609?rik=r6UfeNiSuoIpmg&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 12,
-                            BrandId = 12,
-                            InsuranceCost = 305m,
+                            BrandId = 2,
+                            InsuranceCost = 80m,
                             IsAvailable = true,
-                            ModelId = 12,
-                            Name = "Mazda CX-5",
-                            Price = 92m,
-                            Rating = 4.5,
-                            Url = "https://th.bing.com/th/id/R.69334b92d94e652496b1d537a313a3f4?rik=hfxCetakvC%2fdyA&pid=ImgRaw&r=0"
+                            ModelId = 6,
+                            Price = 350m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/R.b246f3a72eea4183d7047e12f2181f73?rik=iFZHeTuQfsrS2g&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_ford_mustang_gt_fastback_4k_7-HD.jpg&ehk=INXMe19kIlj9qaMGtbE%2fshvhc6be5G0YX3UAXyv3l9U%3d&risl=1&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 13,
-                            BrandId = 13,
-                            InsuranceCost = 425m,
+                            BrandId = 2,
+                            InsuranceCost = 85m,
                             IsAvailable = true,
-                            ModelId = 13,
-                            Name = "Lexus ES",
-                            Price = 134m,
-                            Rating = 4.7000000000000002,
-                            Url = "https://th.bing.com/th/id/R.36978b49382491ae7db58ab0d036af5a?rik=VcnskkblDSQX%2fQ&pid=ImgRaw&r=0"
+                            ModelId = 6,
+                            Price = 370m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/OIP.3m-31b1JnQqO_752cT7-IgHaE7?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 14,
-                            BrandId = 14,
-                            InsuranceCost = 415m,
+                            BrandId = 2,
+                            InsuranceCost = 60m,
                             IsAvailable = true,
-                            ModelId = 14,
-                            Name = "Dodge Charger",
-                            Price = 124m,
-                            Rating = 4.4000000000000004,
-                            Url = "https://www.motortrend.com/uploads/sites/5/2016/05/2016-Dodge-Charger-SRT-Hellcat-front-three-quarter-in-motion-10-e1463002496685.jpg"
+                            ModelId = 7,
+                            Price = 290m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/R.41cac357f0f3b9910bfca1194afe668d?rik=xfS3n0r8Ad8dkA&riu=http%3a%2f%2fdigestcars.com%2fwp-content%2fuploads%2f2019%2f04%2f5-things-you-will-want-to-know-about-the-new-Ford-F-150_1.jpg&ehk=AGMnbpDJAyyrMsE8pMau4s3kFkGASpQCI9hWKTsIxIA%3d&risl=&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 15,
-                            BrandId = 15,
-                            InsuranceCost = 398m,
-                            IsAvailable = true,
-                            ModelId = 15,
-                            Name = "Jeep Wrangler",
-                            Price = 119m,
-                            Rating = 4.5999999999999996,
-                            Url = ""
+                            BrandId = 2,
+                            InsuranceCost = 65m,
+                            IsAvailable = false,
+                            ModelId = 7,
+                            Price = 310m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.c4570840f31e7a1731688238aa3107df?rik=XO%2brd6VoNyZitQ&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 16,
-                            BrandId = 16,
-                            InsuranceCost = 380m,
+                            BrandId = 2,
+                            InsuranceCost = 35m,
                             IsAvailable = true,
-                            ModelId = 16,
-                            Name = "Tesla Model 3",
-                            Price = 129m,
-                            Rating = 4.7999999999999998,
-                            Url = "https://facts.net/wp-content/uploads/2023/12/15-jeep-wrangler-facts-1701628021.jpeg"
+                            ModelId = 8,
+                            Price = 180m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/R.358541b7b0f49aa69ee4085ba8989327?rik=tslujerDsasWWw&riu=http%3a%2f%2fimages.thecarconnection.com%2fhug%2f2016-ford-focus_100530025_h.jpg&ehk=ChZtG23kaWOgono5xgRkJCoTkNgjshTk8Pbz4IDRfgQ%3d&risl=&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 17,
-                            BrandId = 17,
-                            InsuranceCost = 510m,
+                            BrandId = 3,
+                            InsuranceCost = 95m,
                             IsAvailable = true,
-                            ModelId = 17,
-                            Name = "Volvo XC90",
-                            Price = 152m,
-                            Rating = 4.7000000000000002,
-                            Url = "https://th.bing.com/th/id/OIP.4yE72-7g-iODnnSdz0ix_AHaE8?rs=1&pid=ImgDetMain"
+                            ModelId = 9,
+                            Price = 420m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/OIP.i0ABaiuechbUYG190jsKqQHaE7?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 18,
-                            BrandId = 18,
-                            InsuranceCost = 815m,
-                            IsAvailable = false,
-                            ModelId = 18,
-                            Name = "Porsche 911",
-                            Price = 320m,
-                            Rating = 4.9000000000000004,
-                            Url = "https://th.bing.com/th/id/OIP.V3nD0p-Bhf-TivgmJaYR0wHaEK?rs=1&pid=ImgDetMain"
+                            BrandId = 3,
+                            InsuranceCost = 100m,
+                            IsAvailable = true,
+                            ModelId = 9,
+                            Price = 450m,
+                            Rating = 10.0,
+                            Url = "https://images.summitmedia-digital.com/topgear/images/articleImages/news/0_2011/10/17/bmw_3_series_sedan/bmw-3-series-a.jpg"
                         },
                         new
                         {
                             Id = 19,
-                            BrandId = 1,
-                            InsuranceCost = 240m,
+                            BrandId = 3,
+                            InsuranceCost = 120m,
                             IsAvailable = true,
-                            ModelId = 19,
-                            Name = "Toyota Corolla",
-                            Price = 68m,
-                            Rating = 4.2999999999999998,
-                            Url = "https://i.ytimg.com/vi/nMuGDd0bcog/maxresdefault.jpg"
+                            ModelId = 10,
+                            Price = 580m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/R.d96401ca0b33346d175c7c638144d93f?rik=UYTq0ZTpLRH5VQ&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 20,
-                            BrandId = 2,
-                            InsuranceCost = 375m,
+                            BrandId = 4,
+                            InsuranceCost = 110m,
                             IsAvailable = true,
-                            ModelId = 20,
-                            Name = "Ford Explorer",
-                            Price = 115m,
-                            Rating = 4.2000000000000002,
-                            Url = "https://th.bing.com/th/id/OIP.FvUR3d2kbE4N8Pde3udA-wHaEK?rs=1&pid=ImgDetMain"
+                            ModelId = 11,
+                            Price = 450m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/OIP.A6HcLwAoEjbGrisbJia0uwHaEK?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 21,
-                            BrandId = 3,
-                            InsuranceCost = 610m,
+                            BrandId = 4,
+                            InsuranceCost = 135m,
                             IsAvailable = true,
-                            ModelId = 1,
-                            Name = "BMW X5",
-                            Price = 175m,
-                            Rating = 4.7000000000000002,
-                            Url = "https://media.autoexpress.co.uk/image/private/s--VfWlNFGx--/v1609948123/autoexpress/2021/01/New%20BMW%20X5%20M%20Competition%202021%20UK-16.jpg"
+                            ModelId = 12,
+                            Price = 600m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.915151607b5ceb6119d4658c7225c19a?rik=2UrhhsIfX7gxVw&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 22,
-                            BrandId = 4,
-                            InsuranceCost = 580m,
-                            IsAvailable = true,
-                            ModelId = 2,
-                            Name = "Mercedes-Benz GLC",
-                            Price = 165m,
-                            Rating = 4.5999999999999996,
-                            Url = "https://cdn.motor1.com/images/mgl/Z2PX2/s1/mercedes-benz-glc-2019.jpg"
+                            BrandId = 5,
+                            InsuranceCost = 40m,
+                            IsAvailable = false,
+                            ModelId = 13,
+                            Price = 210m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/OIP.FPAsfXVKluXh6NuPYRbtMgHaDX?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 23,
                             BrandId = 5,
-                            InsuranceCost = 270m,
+                            InsuranceCost = 55m,
                             IsAvailable = true,
-                            ModelId = 3,
-                            Name = "Honda Accord",
-                            Price = 82m,
-                            Rating = 4.5,
-                            Url = "https://th.bing.com/th/id/OIP.vLa2-0XiaioyXd6XqY3Y9gHaE8?w=302&h=201&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            ModelId = 14,
+                            Price = 280m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/OIP.hDjz51LBg8zIQgpmUMP3wAHaE7?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 24,
                             BrandId = 6,
-                            InsuranceCost = 480m,
+                            InsuranceCost = 75m,
                             IsAvailable = true,
-                            ModelId = 4,
-                            Name = "Chevrolet Camaro",
-                            Price = 143m,
-                            Rating = 4.5,
-                            Url = "https://th.bing.com/th/id/OIP.I_mwW1qXjvCbHAWzSuUt_QHaEo?w=254&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            ModelId = 15,
+                            Price = 320m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.cbc9ad72b6b9148bcdbb032d19dff21a?rik=qrKNmspaO8Jh4g&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 25,
-                            BrandId = 7,
-                            InsuranceCost = 320m,
+                            BrandId = 6,
+                            InsuranceCost = 60m,
                             IsAvailable = true,
-                            ModelId = 5,
-                            Name = "Nissan Maxima",
-                            Price = 93m,
-                            Rating = 4.2000000000000002,
-                            Url = "https://th.bing.com/th/id/OIP.aYtcYYlbK1xY62VvCrf7dgHaFj?w=223&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            ModelId = 16,
+                            Price = 300m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/OIP.geMmf5pPWtha02X6kCBkHQHaEA?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 26,
-                            BrandId = 8,
-                            InsuranceCost = 270m,
+                            BrandId = 7,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
-                            ModelId = 6,
-                            Name = "Hyundai Tucson",
-                            Price = 82m,
-                            Rating = 4.2999999999999998,
-                            Url = "https://th.bing.com/th/id/OIP.zcXWOJgHE8edDLgtJHnQfgHaEK?w=319&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            ModelId = 17,
+                            Price = 220m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/R.ab06dccb5178c4ac5600833a47e5ccb9?rik=EyIkcPS33piZNw&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 27,
-                            BrandId = 9,
-                            InsuranceCost = 265m,
+                            BrandId = 7,
+                            InsuranceCost = 50m,
                             IsAvailable = true,
-                            ModelId = 7,
-                            Name = "Kia Sportage",
-                            Price = 80m,
-                            Rating = 4.2000000000000002,
-                            Url = "https://th.bing.com/th/id/OIP.H0qqCl2_b0BRTzsnEtO2pgHaE7?w=236&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            ModelId = 18,
+                            Price = 250m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/R.6c1bda765af52a567342e023cf936ad3?rik=%2fHVwWJhsq72OXw&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 28,
-                            BrandId = 11,
-                            InsuranceCost = 300m,
-                            IsAvailable = true,
-                            ModelId = 9,
-                            Name = "Subaru Forester",
-                            Price = 90m,
-                            Rating = 4.5,
-                            Url = "https://th.bing.com/th/id/OIP.T3RIbguC2smX2ORvr-ooYgAAAA?w=317&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            BrandId = 9,
+                            InsuranceCost = 35m,
+                            IsAvailable = false,
+                            ModelId = 19,
+                            Price = 190m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/R.c97e35804a46f538248d343db1a9f5ff?rik=%2fzFLn4gjLGjSbw&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 29,
-                            BrandId = 13,
-                            InsuranceCost = 455m,
+                            BrandId = 9,
+                            InsuranceCost = 55m,
                             IsAvailable = true,
-                            ModelId = 11,
-                            Name = "Lexus RX",
-                            Price = 142m,
-                            Rating = 4.7000000000000002,
-                            Url = "https://th.bing.com/th/id/OIP.oxWUD74TkCzaq-UR_1ImWgHaE8?w=284&h=189&c=7&r=0&o=5&dpr=2.5&pid=1.7"
+                            ModelId = 20,
+                            Price = 270m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/OIP.Juc1DEMbs-wPz1VKev4SoQHaE8?rs=1&pid=ImgDetMain"
                         },
                         new
                         {
                             Id = 30,
-                            BrandId = 14,
-                            InsuranceCost = 430m,
+                            BrandId = 10,
+                            InsuranceCost = 45m,
                             IsAvailable = true,
-                            ModelId = 12,
-                            Name = "Dodge Challenger",
-                            Price = 128m,
-                            Rating = 4.5,
-                            Url = "https://th.bing.com/th/id/OIP.XuTj_zjpeMBtD-PBP0XVUAHaE8?rs=1&pid=ImgDetMain"
+                            ModelId = 21,
+                            Price = 220m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.82a8d6336399fabe92e4fcd4d5950897?rik=%2bdZJp5hhFZlvNg&pid=ImgRaw&r=0"
                         },
                         new
                         {
                             Id = 31,
-                            BrandId = 15,
-                            InsuranceCost = 410m,
+                            BrandId = 10,
+                            InsuranceCost = 50m,
                             IsAvailable = true,
-                            ModelId = 13,
-                            Name = "Jeep Grand Cherokee",
-                            Price = 125m,
-                            Rating = 4.4000000000000004,
-                            Url = "https://th.bing.com/th/id/OIP.DxWQK5PuVQx0n5RHxwoN4gHaE8?rs=1&pid=ImgDetMain"
+                            ModelId = 22,
+                            Price = 260m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/OIP.StiwyTxmAZdWVAVEnjmZ-wHaEK?rs=1&pid=ImgDetMain"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            BrandId = 12,
+                            InsuranceCost = 40m,
+                            IsAvailable = true,
+                            ModelId = 23,
+                            Price = 210m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.7de3f188f629a170ec395b21d41f1685?rik=jk78fBKU9354Pw&pid=ImgRaw&r=0"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            BrandId = 12,
+                            InsuranceCost = 50m,
+                            IsAvailable = false,
+                            ModelId = 24,
+                            Price = 250m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.db85daf9a08f811d1c05ef1c8bd0ffb0?rik=HxrFZqCkIghLSQ&pid=ImgRaw&r=0"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            BrandId = 14,
+                            InsuranceCost = 80m,
+                            IsAvailable = true,
+                            ModelId = 25,
+                            Price = 340m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.62b12f4444f0676498fc8ebb46542282?rik=3gFYyFdVD%2bbFrg&pid=ImgRaw&r=0"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            BrandId = 14,
+                            InsuranceCost = 60m,
+                            IsAvailable = true,
+                            ModelId = 26,
+                            Price = 300m,
+                            Rating = 7.0,
+                            Url = "https://th.bing.com/th/id/OIP.yKvLUhlM9mWH4yP4BbCJbgHaE8?rs=1&pid=ImgDetMain"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            BrandId = 15,
+                            InsuranceCost = 70m,
+                            IsAvailable = false,
+                            ModelId = 27,
+                            Price = 320m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/OIP.AlD6RqrzPq5FnaovJgKXgQHaEK?rs=1&pid=ImgDetMain"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            BrandId = 15,
+                            InsuranceCost = 75m,
+                            IsAvailable = true,
+                            ModelId = 28,
+                            Price = 350m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.7154ebc03e4cc069002b398a41e3b9f1?rik=AdsX6WsfZshMhQ&pid=ImgRaw&r=0"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            BrandId = 16,
+                            InsuranceCost = 85m,
+                            IsAvailable = true,
+                            ModelId = 29,
+                            Price = 380m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/OIP.xfhn3wN5Q1L3no4LmUPTxQHaD4?rs=1&pid=ImgDetMain"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            BrandId = 16,
+                            InsuranceCost = 90m,
+                            IsAvailable = true,
+                            ModelId = 30,
+                            Price = 420m,
+                            Rating = 9.0,
+                            Url = "https://www.araba.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Ftasit-com%2Fimages%2Ff_webp%2Cq_auto%2Fv1680626856%2Ftesla-model-y-inceleme%2Ftesla-model-y-inceleme.webp%3F_i%3DAA&w=3840&q=75"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            BrandId = 17,
+                            InsuranceCost = 90m,
+                            IsAvailable = false,
+                            ModelId = 31,
+                            Price = 400m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/OIP.9wxNUwTthrUuNobKtAoYBwHaE8?rs=1&pid=ImgDetMain"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            BrandId = 17,
+                            InsuranceCost = 80m,
+                            IsAvailable = true,
+                            ModelId = 32,
+                            Price = 360m,
+                            Rating = 8.0,
+                            Url = "https://th.bing.com/th/id/R.2d5499fe5b284df9fe23f4b27dd77d60?rik=fmI6NjfcynQWxw&pid=ImgRaw&r=0"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            BrandId = 18,
+                            InsuranceCost = 200m,
+                            IsAvailable = true,
+                            ModelId = 33,
+                            Price = 800m,
+                            Rating = 10.0,
+                            Url = "https://th.bing.com/th/id/R.b5dc5efe3fffa7cf666c4f0d7fdd2718?rik=Go0eJvJqeAwKJQ&pid=ImgRaw&r=0"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            BrandId = 18,
+                            InsuranceCost = 150m,
+                            IsAvailable = true,
+                            ModelId = 34,
+                            Price = 700m,
+                            Rating = 9.0,
+                            Url = "https://th.bing.com/th/id/R.fa478ebff8509097b44979ad41cbd771?rik=Ajz8Q5PQa36V5g&pid=ImgRaw&r=0"
                         });
                 });
 
@@ -566,14 +667,14 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                     b.Property<int?>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -586,239 +687,239 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            Name = "Corolla",
-                            category = "Economic"
+                            Category = "Economic",
+                            Name = "Corolla"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 1,
-                            Name = "Camry",
-                            category = "Medium"
+                            Category = "SUV",
+                            Name = "Prius"
                         },
                         new
                         {
                             Id = 3,
-                            BrandId = 2,
-                            Name = "Mustang",
-                            category = "Economic"
+                            BrandId = 1,
+                            Category = "Luxury",
+                            Name = "Camry"
                         },
                         new
                         {
                             Id = 4,
-                            BrandId = 2,
-                            Name = "Explorer",
-                            category = "Luxury"
+                            BrandId = 1,
+                            Category = "Pickup",
+                            Name = "Land Cruiser"
                         },
                         new
                         {
                             Id = 5,
-                            BrandId = 3,
-                            Name = "1 Series",
-                            category = "Economic"
+                            BrandId = 1,
+                            Category = "Economic",
+                            Name = "RAV4"
                         },
                         new
                         {
                             Id = 6,
-                            BrandId = 3,
-                            Name = "3 Series",
-                            category = "Medium"
+                            BrandId = 2,
+                            Category = "Sports",
+                            Name = "Mustang"
                         },
                         new
                         {
                             Id = 7,
-                            BrandId = 3,
-                            Name = "X5",
-                            category = "Luxury"
+                            BrandId = 2,
+                            Category = "Pickup",
+                            Name = "F-150"
                         },
                         new
                         {
                             Id = 8,
-                            BrandId = 4,
-                            Name = "C-Class",
-                            category = "Medium"
+                            BrandId = 2,
+                            Category = "Economic",
+                            Name = "Focus"
                         },
                         new
                         {
                             Id = 9,
-                            BrandId = 4,
-                            Name = "GLC",
-                            category = "Medium"
+                            BrandId = 3,
+                            Category = "Luxury",
+                            Name = "3 Series"
                         },
                         new
                         {
                             Id = 10,
-                            BrandId = 5,
-                            Name = "Civic",
-                            category = "Economic"
+                            BrandId = 3,
+                            Category = "SUV",
+                            Name = "X5"
                         },
                         new
                         {
                             Id = 11,
-                            BrandId = 5,
-                            Name = "Accord",
-                            category = "Medium"
+                            BrandId = 4,
+                            Category = "Luxury",
+                            Name = "C-Class"
                         },
                         new
                         {
                             Id = 12,
-                            BrandId = 6,
-                            Name = "Corvette",
-                            category = "Medium"
+                            BrandId = 4,
+                            Category = "SUV",
+                            Name = "GLE"
                         },
                         new
                         {
                             Id = 13,
-                            BrandId = 6,
-                            Name = "Camaro",
-                            category = "Medium"
+                            BrandId = 5,
+                            Category = "Economic",
+                            Name = "Civic"
                         },
                         new
                         {
                             Id = 14,
-                            BrandId = 7,
-                            Name = "Altima",
-                            category = "Medium"
+                            BrandId = 5,
+                            Category = "SUV",
+                            Name = "CR-V"
                         },
                         new
                         {
                             Id = 15,
-                            BrandId = 7,
-                            Name = "Maxima",
-                            category = "Medium"
+                            BrandId = 6,
+                            Category = "Sports",
+                            Name = "Camaro"
                         },
                         new
                         {
                             Id = 16,
-                            BrandId = 8,
-                            Name = "Sonata",
-                            category = "Medium"
+                            BrandId = 6,
+                            Category = "Pickup",
+                            Name = "Silverado"
                         },
                         new
                         {
                             Id = 17,
-                            BrandId = 8,
-                            Name = "Tucson",
-                            category = "Medium"
+                            BrandId = 7,
+                            Category = "Medium",
+                            Name = "Altima"
                         },
                         new
                         {
                             Id = 18,
-                            BrandId = 9,
-                            Name = "Optima",
-                            category = "Medium"
+                            BrandId = 7,
+                            Category = "SUV",
+                            Name = "Rogue"
                         },
                         new
                         {
                             Id = 19,
                             BrandId = 9,
-                            Name = "Luxuryage",
-                            category = "Medium"
+                            Category = "Economic",
+                            Name = "Forte"
                         },
                         new
                         {
                             Id = 20,
-                            BrandId = 10,
-                            Name = "Golf",
-                            category = "Economic"
+                            BrandId = 9,
+                            Category = "SUV",
+                            Name = "Sorento"
                         },
                         new
                         {
                             Id = 21,
                             BrandId = 10,
-                            Name = "Tiguan",
-                            category = "Medium"
+                            Category = "Hatchback",
+                            Name = "Golf"
                         },
                         new
                         {
                             Id = 22,
-                            BrandId = 11,
-                            Name = "Outback",
-                            category = "Medium"
+                            BrandId = 10,
+                            Category = "SUV",
+                            Name = "Tiguan"
                         },
                         new
                         {
                             Id = 23,
-                            BrandId = 11,
-                            Name = "Forester",
-                            category = "Medium"
+                            BrandId = 12,
+                            Category = "Economic",
+                            Name = "Mazda3"
                         },
                         new
                         {
                             Id = 24,
                             BrandId = 12,
-                            Name = "CX-5",
-                            category = "Medium"
+                            Category = "SUV",
+                            Name = "CX-5"
                         },
                         new
                         {
                             Id = 25,
-                            BrandId = 12,
-                            Name = "MX-5 Miata",
-                            category = "Luxury"
+                            BrandId = 14,
+                            Category = "Sports",
+                            Name = "Charger"
                         },
                         new
                         {
                             Id = 26,
-                            BrandId = 13,
-                            Name = "ES",
-                            category = "Luxury"
+                            BrandId = 14,
+                            Category = "SUV",
+                            Name = "Durango"
                         },
                         new
                         {
                             Id = 27,
-                            BrandId = 13,
-                            Name = "RX",
-                            category = "Luxury"
+                            BrandId = 15,
+                            Category = "SUV",
+                            Name = "Wrangler"
                         },
                         new
                         {
                             Id = 28,
-                            BrandId = 14,
-                            Name = "Charger",
-                            category = "Luxury"
+                            BrandId = 15,
+                            Category = "SUV",
+                            Name = "Grand Cherokee"
                         },
                         new
                         {
                             Id = 29,
-                            BrandId = 14,
-                            Name = "Challenger",
-                            category = "Luxury"
+                            BrandId = 16,
+                            Category = "Electric",
+                            Name = "Model 3"
                         },
                         new
                         {
                             Id = 30,
-                            BrandId = 15,
-                            Name = "Wrangler",
-                            category = "Medium"
+                            BrandId = 16,
+                            Category = "Electric",
+                            Name = "Model Y"
                         },
                         new
                         {
                             Id = 31,
-                            BrandId = 15,
-                            Name = "Grand Cherokee",
-                            category = "Medium"
+                            BrandId = 17,
+                            Category = "SUV",
+                            Name = "XC60"
                         },
                         new
                         {
                             Id = 32,
-                            BrandId = 16,
-                            Name = "Model 3",
-                            category = "Economic"
+                            BrandId = 17,
+                            Category = "Luxury",
+                            Name = "S60"
                         },
                         new
                         {
                             Id = 33,
-                            BrandId = 17,
-                            Name = "XC90",
-                            category = "Luxury"
+                            BrandId = 18,
+                            Category = "Sports",
+                            Name = "911"
                         },
                         new
                         {
                             Id = 34,
                             BrandId = 18,
-                            Name = "911",
-                            category = "Luxury"
+                            Category = "SUV",
+                            Name = "Cayenne"
                         });
                 });
 
@@ -1165,11 +1266,11 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                     b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Brand", "Brand")
                         .WithMany()
                         .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Model", "Model")
-                        .WithMany()
+                        .WithMany("Cars")
                         .HasForeignKey("ModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1185,7 +1286,8 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                 {
                     b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Brand", "Brand")
                         .WithMany("Models")
-                        .HasForeignKey("BrandId");
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Brand");
                 });
@@ -1223,7 +1325,7 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Reservation", b =>
                 {
-                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Car", "car")
+                    b.HasOne("Car_Reservation_Domain.Entities.CarEntity.Car", "Car")
                         .WithMany("Reservations")
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -1235,9 +1337,9 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Car");
 
-                    b.Navigation("car");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Review", b =>
@@ -1335,6 +1437,11 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Migrations
                     b.Navigation("Reservations");
 
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("Car_Reservation_Domain.Entities.CarEntity.Model", b =>
+                {
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Car_Reservation_Domain.Entities.Identity.User", b =>

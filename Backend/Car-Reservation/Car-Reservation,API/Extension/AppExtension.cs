@@ -22,6 +22,7 @@ public static class AppExtension
         services.AddTransient<IPaymentService,StripePaymentService>();
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
         services.Configure<CloudinarySettings>(configuration.GetSection("Cloudinary"));
+        services.AddHostedService<ReservationCleanupService>();
 
 
         return services;

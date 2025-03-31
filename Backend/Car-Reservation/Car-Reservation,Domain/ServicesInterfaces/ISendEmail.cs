@@ -8,5 +8,5 @@ public interface ISendEmail
 {
     public Task SendAsync(Email email);
     public Task SendConfirmationEmailAsync(Reservation reservation, User user);
-
+    public Task SendReservationCanceledEmailAsync(Reservation reservation, string modelName);
 }
