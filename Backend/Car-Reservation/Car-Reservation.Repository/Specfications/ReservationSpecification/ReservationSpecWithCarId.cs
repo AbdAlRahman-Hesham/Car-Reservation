@@ -14,6 +14,10 @@ namespace Car_Reservation.Repository.Specfications.ReservationSpecification
         {
             
         }
-       
+        public ReservationSpecWithCarId( int carid , DateTime startDate, DateTime endDate): base(r => r.CarId == carid && ((r.StartDate >= startDate && r.StartDate <= endDate) || (r.EndDate <= endDate && r.EndDate >= startDate)) && r.Status!=ReservationStatus.Cancelled)
+        {
+            
+        }
+
     }
 }

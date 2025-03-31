@@ -96,11 +96,11 @@ public class ReservationController : BaseApiController
         }
         //Get Reservation For Car By Date
         [HttpGet("car")]
-        [ProducesResponseType(typeof(ApiResponse), 404)]
+        
         public async Task<ActionResult<ReservationToReturnDto>> GetAllReservationsForCarByDate(int carId, DateTime date)
         {
             var reslut = await _reservationService.GetReservationForCarByDate(carId, date);
-            if (reslut == null) { return NotFound(new ApiResponse(404)); }
+            
             var reslutDto = reslut.Adapt<ReservationToReturnDto>();
             return Ok(reslutDto);
         }

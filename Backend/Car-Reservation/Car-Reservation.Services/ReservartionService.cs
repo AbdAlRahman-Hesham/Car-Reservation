@@ -26,17 +26,13 @@ namespace Car_Reservation.Services
             var reservations = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
             return reservations;
         }
+        //all reservation for user in specific date
         public async  Task<IReadOnlyList<Reservation>?> GetAllReservationsForUserByDate(string userEmail, DateTime date)
         {
-            var userReservations = await GetAllReservationsForUser(userEmail);
+            var spec = new ReservationSpec(userEmail, date);
+            var userReservations = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
 
-            // Filter reservations based on the date range
-            var filteredReservations = userReservations
-                .Where(reservation => reservation.StartDate <= date && reservation.EndDate >= date)
-                .ToList()
-                .AsReadOnly();
-
-            return filteredReservations;
+            return userReservations;
         }
 
         public async Task<Reservation?> GetReservationById(int id)
@@ -53,22 +49,18 @@ namespace Car_Reservation.Services
         }
         public async Task<Reservation?> GetReservationForCarByDate(int carId,DateTime date)
         {
-            //get all reservations for car by date
-            var carReservations = await GetAllReservationsForCar(carId);
+            var spec = new ReservationSpec(carId, date);
             //find the reservation that match owr date
-            var reslut = carReservations.Where(c=>c.StartDate<=date && c.EndDate>=date).SingleOrDefault();
+            var reslut = await _unitOfWork.Repository<Reservation>().GetAsyncWithSpecification(spec);
             return reslut;
 
         }
 
         public async Task<IReadOnlyList<Reservation>?> GetCarReservationsByDates(int carId, DateTime startDate, DateTime endDate)
         {
-            var carReservatoins = await GetAllReservationsForCar(carId);
-            var filteredReservations = carReservatoins
-                .Where(reservation => (reservation.StartDate >= startDate && reservation.StartDate <= endDate) ||(reservation.EndDate <= endDate && reservation.EndDate>=startDate))
-                .ToList()
-                .AsReadOnly();
-            return filteredReservations;
+            var spec = new ReservationSpec(carId, startDate, endDate);
+            var carReservatoins = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
+            return carReservatoins;
 
         }
 
@@ -78,13 +70,11 @@ namespace Car_Reservation.Services
             var car = await _unitOfWork.Repository<Car>().GetAsync(CarId);
             if (car == null) { return null; } // Car not found
             // Check if the car is available
-            var carReservations = await GetAllReservationsForCar(CarId);
-            var isCarAvailable = carReservations.All(reservation =>
-                reservation.StartDate > EndDate ||
-                reservation.EndDate < StartDate || 
-                reservation.Status == ReservationStatus.Cancelled
-            );
-            if (!isCarAvailable) { return null; } // Car is not available
+            var spec = new ReservationSpecWithCarId(CarId, StartDate, EndDate);
+            var carResertionInReqiuredDate = await _unitOfWork.Repository<Reservation>().GetAllAsyncWithSpecification(spec);
+          
+            //TODO check if there is a free date between
+            if (carResertionInReqiuredDate.Count>0) { return null; } // Car is not available
 
             // Create the reservation
             var reservation = new Reservation

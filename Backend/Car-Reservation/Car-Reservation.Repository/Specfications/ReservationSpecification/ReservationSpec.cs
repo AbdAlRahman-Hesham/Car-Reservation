@@ -15,7 +15,13 @@ namespace Car_Reservation.Repository.Specfications.ReservationSpecification
         {
             
         }
-        
+        public ReservationSpec(string email , DateTime Date): base(r => r.User.Email == email && r.StartDate <= Date && r.EndDate >= Date)
+        {
+                //.Where(reservation => reservation.StartDate <= date && reservation.EndDate >= date)
+
+
+        }
+
         public ReservationSpec(int id) : base(r => r.Id == id)
         {
             
@@ -24,6 +30,16 @@ namespace Car_Reservation.Repository.Specfications.ReservationSpecification
         {
             
         }
+        public ReservationSpec(int carId, DateTime startDate, DateTime endDate):base(r => r.CarId == carId && (( r.StartDate >= startDate && r.StartDate<= endDate)||( r.EndDate <= endDate&&r.EndDate>=startDate)))
+        {
+            
+        }
+        public ReservationSpec(int carId, DateTime date): base(r => r.CarId == carId && r.StartDate <= date && r.EndDate >= date)
+        {
+          //  var reslut = carReservations.Where(c=>c.StartDate<=date && c.EndDate>=date).SingleOrDefault();
+
+        }
+        
         public ReservationSpec() : base(DefaultIncludes)
         {
         }
