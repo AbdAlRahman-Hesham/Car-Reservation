@@ -15,7 +15,7 @@ public static class AppExtension
         services.AddIdentityAndJwtAuthenticationServices(configuration);
         services.AddApiErrorServices();
         services.RegisterMapsterConfigurtion();
-        services.AddScoped<IReservationService, ReservartionService>();
+        services.AddScoped<IReservationService, ReservationService>();
         services.AddSwaggerService();
         services.AddTransient<ISendEmail, EmailServices>();
         services.AddScoped<IReviewService, ReviewService>();

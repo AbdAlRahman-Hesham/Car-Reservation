@@ -33,13 +33,14 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseCors(op =>
 {
-    op.WithOrigins("http://localhost:3000")
+    op.WithOrigins(["http://localhost:3000", "http://127.0.0.1:5500"])
     .AllowAnyMethod()
     .AllowAnyHeader()
     .AllowCredentials();
 });
-
+app.UseStaticFiles();
 app.UseHttpsRedirection();
+app.MapFallbackToFile("index.html"); // React app entry point
 
 app.UseAuthentication();
 app.UseAuthorization();
