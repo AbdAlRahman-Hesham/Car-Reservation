@@ -113,8 +113,8 @@ public class StripePaymentService : IPaymentService
             int rentalDays = (int)(reservation.EndDate - reservation.StartDate).TotalDays + 1; // +1 to include both start and end days
 
             // Calculate total amount in cents
-            var dailyRate = reservation.Car.Price + reservation.Car.InsuranceCost;
-            var totalAmount = (long)(dailyRate * rentalDays * 100); // Convert to cents
+            var dailyRate = reservation.Car.Price;
+            var totalAmount = (long)((dailyRate * rentalDays + reservation.Car.InsuranceCost) * 100) ; // Convert to cents
 
             var options = new SessionCreateOptions
             {
@@ -348,7 +348,7 @@ public class StripePaymentService : IPaymentService
                             </tr>
                             <tr>
                                 <th>Daily Rate</th>
-                                <td>${(reservation.Car.Price + reservation.Car.InsuranceCost):0.00} (Car: ${reservation.Car.Price:0.00} + Insurance: ${reservation.Car.InsuranceCost:0.00})</td>
+                                <td>${(reservation.Car.Price):0.00} (Car: ${reservation.Car.Price:0.00} + Insurance: ${reservation.Car.InsuranceCost:0.00})</td>
                             </tr>
                             <tr>
                                 <th>Total Cost</th>

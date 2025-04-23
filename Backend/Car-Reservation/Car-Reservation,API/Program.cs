@@ -1,6 +1,7 @@
 using Car_Reservation_API.Extension;
 using Car_Reservation.APIs.Middlewares;
 using Car_Reservation.APIs.Extensions;
+using Microsoft.AspNetCore.Builder;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,14 +34,15 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseCors(op =>
 {
-    op.WithOrigins(["http://localhost:3000", "http://127.0.0.1:5500"])
+    op.WithOrigins(["http://localhost:3000", 
+        "http://127.0.0.1:5500", 
+        "https://amazing-pavlova-d11c9a.netlify.app"])
     .AllowAnyMethod()
     .AllowAnyHeader()
     .AllowCredentials();
 });
 app.UseStaticFiles();
 app.UseHttpsRedirection();
-app.MapFallbackToFile("index.html"); // React app entry point
 
 app.UseAuthentication();
 app.UseAuthorization();
