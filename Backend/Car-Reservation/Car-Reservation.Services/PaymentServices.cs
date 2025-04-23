@@ -297,7 +297,7 @@ public class StripePaymentService : IPaymentService
         int rentalDays = (int)(reservation.EndDate - reservation.StartDate).TotalDays + 1;
 
         // Calculate total cost
-        decimal totalCost = (reservation.Car.Price + reservation.Car.InsuranceCost) * rentalDays;
+        decimal totalCost = (reservation.Car.Price) * rentalDays + reservation.Car.InsuranceCost;
 
         // Create HTML email template for payment link
         string emailBody = $@"
