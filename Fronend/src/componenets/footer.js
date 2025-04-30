@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer style={styles.footer}>
       <div style={styles.text}>
-        <p>Car Rental @2025 | All Rights Not Reserved |</p>
+        <p>Speedo@2025 | All Rights Not Reserved |</p>
         <h3 style={styles.name}>Team 7</h3>
       </div>
     </footer>
@@ -19,7 +19,7 @@ const styles = {
     borderTopRightRadius:"50px",
     textAlign: "center",
     padding: "10px",
-    marginTop: "50px",
+    marginTop: "100px",
     fontSize: "16px",
     display: "flex",
     justifyContent: "space-between",
@@ -33,6 +33,6 @@ const styles = {
   },
   name: {
     fontWeight: "bold",
-    color: "#36A2EB",
+    color: "#7D26CD",
   },
 };
