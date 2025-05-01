@@ -73,8 +73,8 @@ public class EmailServices : ISendEmail
                                     <td>{ReservationId}</td>
                                 </tr>
                                 <tr>
-                                    <th>Car Model</th>
-                                    <td>{CarModel}</td>
+                                    <th>Car ID</th>
+                                    <td>{CarId}</td>
                                 </tr>
                                 <tr>
                                     <th>Pickup Date</th>
@@ -84,13 +84,9 @@ public class EmailServices : ISendEmail
                                     <th>Return Date</th>
                                     <td>{ReturnDate}</td>
                                 </tr>
-                                <tr>
-                                    <th>Total Cost</th>
-                                    <td>${TotalCost}</td>
-                                </tr>
+                                
                             </table>
                             <p>If you need to make any changes to your reservation, please contact our customer support team or visit our website.</p>
-                            <a href="{ReservationLink}" class="button">View Reservation</a>
                             <p>Thank you for choosing our service!</p>
                         </div>
                         <div class="footer">
@@ -106,11 +102,9 @@ public class EmailServices : ISendEmail
         var emailBody = emailTemplate
             .Replace("{UserName}", $"{user.FName} {user.LName}")
             .Replace("{ReservationId}", reservation.Id.ToString())
-            .Replace("{CarModel}", reservation.Car.Model.Name)
+            .Replace("{CarId}", reservation.CarId.ToString())
             .Replace("{PickupDate}", reservation.StartDate.ToString("MMMM dd, yyyy"))
             .Replace("{ReturnDate}", reservation.EndDate.ToString("MMMM dd, yyyy"))
-            .Replace("{TotalCost}", (reservation.Car.InsuranceCost + reservation.Car.Price).ToString("0.00"))
-            .Replace("{ReservationLink}", $"https://yourwebsite.com/reservations/{reservation.Id}")
             .Replace("{CurrentYear}", DateTime.Now.Year.ToString())
             .Replace("{UserEmail}", user.Email);
 
