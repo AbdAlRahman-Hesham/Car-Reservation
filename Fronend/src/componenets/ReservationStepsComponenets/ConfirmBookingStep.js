@@ -9,7 +9,7 @@ export default function DateConfirmation({
   stepBack,
 }) {
   const numberOfDays = Math.ceil(
-    dayjs(dates.end).diff(dayjs(dates.start), "hour") / 24
+    dayjs(dates.end).diff(dayjs(dates.start), "minute") / 1436
   );
   return (
     <motion.div
@@ -73,7 +73,7 @@ export default function DateConfirmation({
         >
           <h5 style={{ fontWeight: "bold" }}>Total Cost</h5>
           <h4 style={{ color: "green" }}>
-            {numberOfDays * Number(car.insuranceCost) + Number(car.price)}$
+            {numberOfDays * Number(car.price) + Number(car.insuranceCost)}$
           </h4>
         </div>
       </div>

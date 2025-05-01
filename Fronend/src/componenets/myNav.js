@@ -15,7 +15,7 @@ export default function NavBar() {
   const [stickyNavBar, setNavBar] = useState(false);
 
   const location = useLocation();
-  console.log(location.pathname);
+
 
   useEffect(() => {
     setSelected(location.pathname);
@@ -67,12 +67,12 @@ export default function NavBar() {
           <div style={{ marginTop: "20px" }}>
             <Nav className="me-aut d-flex align-items-center">
               <Nav.Link as={NavLink} to="/home">
-                <h5 className={`${selected === "/home" ? "selected" : ""} `}>
+                <h5 className={`${location.pathname === "/home" ? "selected" : ""} `}>
                   Home
                 </h5>
               </Nav.Link>
               <Nav.Link as={NavLink} to="/cars">
-                <h5 className={`${selected === "/cars" ? "selected" : ""} `}>
+                <h5 className={`${location.pathname === "/cars" ? "selected" : ""} `}>
                   Cars
                 </h5>
               </Nav.Link>
@@ -88,7 +88,7 @@ export default function NavBar() {
                 </h5>
               </Nav.Link> */}
               <Nav.Link as={NavLink} to="/aboutUs">
-                <h5 className={`${selected === "/aboutUs" ? "selected" : ""} `}>
+                <h5 className={`${location.pathname === "/aboutUs" ? "selected" : ""} `}>
                   About US
                 </h5>
               </Nav.Link>
