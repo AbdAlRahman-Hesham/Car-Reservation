@@ -1,7 +1,6 @@
-import NavBar from "./myNav";
 import Carousel from "react-bootstrap/Carousel";
-import img1 from "../images/photo-1493238792000-8113da705763.avif";
-import img2 from "../images/photo-1597985933882-b4c6a08857a8.avif";
+import img1 from "../images/photo-1493238792000-8113da705763.jpg";
+import img2 from "../images/photo-1597985933882-b4c6a08857a8.jpg";
 import img3 from "../images/image-77971099-cb2b-46f1-96c9-b113896d7de9.jpg";
 import { motion } from "framer-motion"; 
 
