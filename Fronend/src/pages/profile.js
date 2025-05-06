@@ -63,7 +63,7 @@ export default function Profile() {
           </div>
         </div>
         <h1 style={{ textAlign: "start" }}>Your Reservations</h1>
-        <hr />{" "}
+        <hr />
         {!loading ? (
           <div
             className="d-flex justify-content-center"
@@ -72,7 +72,7 @@ export default function Profile() {
             <FadeLoader />
           </div>
         ) : (
-          <div className="classification">
+          <div  className="classification">
             {reservations.map((op) => {
               return <Operation info={op} />;
             })}

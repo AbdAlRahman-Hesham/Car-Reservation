@@ -1,9 +1,7 @@
 import UncontrolledExample from "../componenets/slider";
 import Brands from "../componenets/ScrollingBrands";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CardsSlider from "../componenets/cardSlider";
-import { useContext } from "react";
-import { urlContext } from "../contexts/urlContext";
 import AboutUsComponent from "../componenets/aboutUsComponent";
 import { motion } from "framer-motion";
 import Questions from "../componenets/accordion";

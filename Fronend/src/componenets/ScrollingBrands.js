@@ -26,9 +26,9 @@ export default function Brands() {
         }}
       >
         <Marquee
-          speed={50} // سرعة الحركة
-          gradient={true} // ما نستخدمش تدرج لوني (نخليه كلام صافي)
-          direction="left" // اتجاه الحركة (ممكن تخليه "right" لو عايز)
+          speed={50} 
+          gradient={true} 
+          direction="left" 
         >
           <img alt="carLogo" width={250} height={200} src={img1} />
           <img alt="carLogo" width={200} height={200} src={img2} />
