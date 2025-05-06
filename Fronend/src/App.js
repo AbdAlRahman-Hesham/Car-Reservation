@@ -16,6 +16,7 @@ import Showdetails from "./componenets/Detiails";
 import NavBar from "./componenets/myNav";
 import AboutUsPage from "./pages/aboutUS";
 import Reservation from "./pages/completeReservation";
+import Profile from "./pages/profile";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -68,6 +69,7 @@ function App() {
           <Route path="/details/:id" element={<Showdetails />} />
           <Route path="/reservation/:id" element={<Reservation />} />
           <Route path="/aboutUs" element={<AboutUsPage />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
 
         {["/login", "/register", "/reservation"].includes(

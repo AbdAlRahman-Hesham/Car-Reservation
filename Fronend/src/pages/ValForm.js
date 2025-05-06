@@ -69,6 +69,7 @@ export default function Registration() {
     await axios
       .post(`${url}/api/accounts/Register`, formData)
       .then((res) => {
+        localStorage.setItem(("userData",res.data))
         localStorage.setItem("token", res.data.token);
         setMyToken(res.data.token);
         localStorage.setItem("fName", res.data.fName);

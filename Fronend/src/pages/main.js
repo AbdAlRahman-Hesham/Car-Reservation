@@ -21,7 +21,10 @@ export default function MainLayOut() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <CardsSlider />
+        <div className="d-flex justify-content-center">
+          <CardsSlider />
+        </div>
+
         <AboutUsComponent />
         <Container maxWidth="xl">
           <Questions />

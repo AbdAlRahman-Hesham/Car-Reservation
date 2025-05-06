@@ -70,25 +70,27 @@ function CardsSlider() {
 
   return (
     <>
-      {data.length === 0 ? (
-        <FadeLoader />
-      ) : (
-        <div>
-          <div style={{ marginTop: "100px" }}>
-            <h2
-              style={{
-                fontFamily: `Playfair Display,serif`,
-                fontSize: "50px",
-                wordSpacing: "10px",
-                textShadow: "0px 0px 3px black",
-              }}
-            >
-              Explore Our Car Collection
-            </h2>
-            <p>
-              Your perfect car is here — the best, the newest, the one you need!
-            </p>
+      <div>
+        <div style={{ marginTop: "100px" }}>
+          <h2
+            style={{
+              fontFamily: `Playfair Display,serif`,
+              fontSize: "50px",
+              wordSpacing: "10px",
+              textShadow: "0px 0px 3px black",
+            }}
+          >
+            Explore Our Car Collection
+          </h2>
+          <p>
+            Your perfect car is here — the best, the newest, the one you need!
+          </p>
+        </div>
+        {data.length === 0 ? (
+          <div className="d-flex justify-content-center">
+            <FadeLoader />
           </div>
+        ) : (
           <div
             className="slider-container"
             style={{
@@ -147,8 +149,8 @@ function CardsSlider() {
                 })}
             </Slider>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }

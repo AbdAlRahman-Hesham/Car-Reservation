@@ -10,12 +10,13 @@ import { urlContext } from "../contexts/urlContext";
 import { useLocation } from "react-router";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 export default function NavBar() {
   const { setMyToken, token, selected, setSelected } = useContext(urlContext);
-  const [stickyNavBar, setNavBar] = useState(false);
+  const [fixedNavBar, setNavBar] = useState(false);
 
   const location = useLocation();
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     setSelected(location.pathname);
@@ -23,7 +24,6 @@ export default function NavBar() {
       console.log("scrolllllllll");
       if (window.scrollY > 0) {
         setNavBar(true);
-       
       } else {
         setNavBar(false);
       }
@@ -32,7 +32,7 @@ export default function NavBar() {
     return () => {
       window.removeEventListener("scroll", hanelScroll);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const showAlertLoggedOutSuccess = () => {
     Swal.fire({
@@ -47,7 +47,7 @@ export default function NavBar() {
   return (
     <>
       <Navbar
-        className={`${stickyNavBar ? "fixed" : "absolute"}`}
+        className={`${fixedNavBar ? "fixed" : "absolute"}`}
         style={{ transition: " all 0.8s" }}
       >
         <Container className="d-flex p-0 ">
@@ -67,12 +67,20 @@ export default function NavBar() {
           <div style={{ marginTop: "20px" }}>
             <Nav className="me-aut d-flex align-items-center">
               <Nav.Link as={NavLink} to="/home">
-                <h5 className={`${location.pathname === "/home" ? "selected" : ""} `}>
+                <h5
+                  className={`${
+                    location.pathname === "/home" ? "selected" : ""
+                  } `}
+                >
                   Home
                 </h5>
               </Nav.Link>
               <Nav.Link as={NavLink} to="/cars">
-                <h5 className={`${location.pathname === "/cars" ? "selected" : ""} `}>
+                <h5
+                  className={`${
+                    location.pathname === "/cars" ? "selected" : ""
+                  } `}
+                >
                   Cars
                 </h5>
               </Nav.Link>
@@ -88,7 +96,11 @@ export default function NavBar() {
                 </h5>
               </Nav.Link> */}
               <Nav.Link as={NavLink} to="/aboutUs">
-                <h5 className={`${location.pathname === "/aboutUs" ? "selected" : ""} `}>
+                <h5
+                  className={`${
+                    location.pathname === "/aboutUs" ? "selected" : ""
+                  } `}
+                >
                   About US
                 </h5>
               </Nav.Link>
@@ -121,7 +133,10 @@ export default function NavBar() {
                 </Nav.Link>
               ) : (
                 <>
-                  <Link to="/profile">
+                  <Link
+                    to="/profile"
+                    style={{ all: "unset", display: "flex", cursor: "pointer" }}
+                  >
                     <div
                       className="text-center mb-1"
                       style={{ marginLeft: "5px" }}
@@ -134,19 +149,23 @@ export default function NavBar() {
                           width: "60px",
                           height: "60px",
                           marginLeft: "30px",
+                          boxShadow: "0px 0px 50px #7D26CD",
                         }}
                       />
                     </div>
+                    <span style={{ alignContent: "end" }}>
+                      <small
+                        style={{
+                          color: fixedNavBar ? "#1a1a1a" : "white",
+                          marginLeft: "5px",
+                          marginTop: "10px",
+                          fontSize: "20px",
+                        }}
+                      >
+                        {localStorage.getItem("fName")}
+                      </small>
+                    </span>
                   </Link>
-                  <small
-                    style={{
-                      color: stickyNavBar ? "#1a1a1a" : "white",
-                      marginLeft: "5px",
-                      marginTop: "10px",
-                    }}
-                  >
-                    {localStorage.getItem("fName")}
-                  </small>
                   <Button
                     style={{ marginLeft: "10px" }}
                     variant="danger"
@@ -156,6 +175,7 @@ export default function NavBar() {
                       localStorage.removeItem("fName");
                       localStorage.removeItem("picUrl");
                       showAlertLoggedOutSuccess();
+                      navigate("/home");
                     }}
                   >
                     Log Out
