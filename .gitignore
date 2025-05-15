@@ -5,3 +5,159 @@
 /Backend/Car-Reservation/Car-Reservation,API/Program.cs
 /Backend/Car-Reservation/Car-Reservation,API/appsettings.json
 /Backend/Car-Reservation/Car-Reservation,API/appsettings.Development.json
+# React / Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+coverage/
+build/
+dist/
+.DS_Store
+.idea/
+.vscode/
+*.log
+logs
+*.swp
+*.swo
+
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+**/Properties/launchSettings.json
+appsettings.Development.json
+appsettings.*.json
+!appsettings.Example.json
+.vscode/
+.vs/
+.idea/
+*.pidb
+*.svclog
+*.scc
+_ReSharper*/
+*.ReSharper
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.dotCover
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio temp files
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Entity Framework
+Migrations/
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Misc
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# Local development files
+.eslintcache
+.parcel-cache/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Next.js
+.next/
+out/
+
+# Production build folders
+build
+dist
+
+# Temporary folders
+tmp/
+temp/
+
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+**/Properties/launchSettings.json
+appsettings.Development.json
+appsettings.*.json
+!appsettings.Example.json
+.vscode/
+.vs/
+.idea/
+*.pidb
+*.svclog
+*.scc
+_ReSharper*/
+*.ReSharper
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.dotCover
+
+# ASP.NET wwwroot
+wwwroot
+wwwroot/lib/
+wwwroot/dist/
+wwwroot/css/site.min.css
+wwwroot/js/site.min.js
+
+# Publish profiles
+**/Properties/PublishProfiles/
+*.pubxml
+*.pubxml.user
