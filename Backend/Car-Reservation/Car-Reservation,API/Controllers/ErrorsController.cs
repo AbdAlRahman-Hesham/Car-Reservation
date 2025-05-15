@@ -13,11 +13,11 @@ public class ErrorsController : ControllerBase
         {
             400 => BadRequest(new ApiResponse(code, "A bad request, you have made")),
             401 => Unauthorized(new ApiResponse(code, "Unauthorized")),
-            403 => Forbid("Forbidden"),
             404 => NotFound(new ApiResponse(code, "Resource not found")),
             500 => StatusCode(500, new ApiResponse(code, "An internal server error occurred")),
-            _ => StatusCode(code, new ApiResponse(code, "An unexpected error occurred"))
+            _ => StatusCode(code, new ApiResponse(code))
         };
 
     }
+
 }

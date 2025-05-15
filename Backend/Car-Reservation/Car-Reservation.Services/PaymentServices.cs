@@ -40,7 +40,8 @@ public class StripePaymentService : IPaymentService
             if (string.IsNullOrEmpty(_stripeApiKey))
             {
                 _logger.LogError("Stripe API key is not configured");
-                return new CreateCheckoutSessionResponse() {
+                return new CreateCheckoutSessionResponse()
+                {
                     Status = 500,
                     ErrorMassage = "Payment service configuration error",
                 };
@@ -106,17 +107,21 @@ public class StripePaymentService : IPaymentService
                 };
             }
 
-
             var carName = (await _unitOfWork.Repository<Model>().GetAsync(reservation.Car.ModelId))!.Name;
 
-            var totalAmount = (long)((reservation.Car.Price + reservation.Car.InsuranceCost) * 100); // Convert to cents
+            // Calculate the rental period in days
+            int rentalDays = (int)(reservation.EndDate - reservation.StartDate).TotalDays + 1; // +1 to include both start and end days
+
+            // Calculate total amount in cents
+            var dailyRate = reservation.Car.Price;
+            var totalAmount = (long)((dailyRate * rentalDays + reservation.Car.InsuranceCost) * 100) ; // Convert to cents
 
             var options = new SessionCreateOptions
             {
                 CustomerEmail = reservation.User.Email,
                 Currency = "USD",
-                SuccessUrl = $"https://example.com/success",
-                CancelUrl = $"https://example.com/cancel",
+                SuccessUrl = finalSuccessUrl,
+                CancelUrl = finalCancelUrl,
                 PaymentMethodTypes = new List<string> { "card" },
                 LineItems = new List<SessionLineItemOptions>
                 {
@@ -129,7 +134,7 @@ public class StripePaymentService : IPaymentService
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
                                 Name = carName,
-                                Description = $"Reservation #{reservationId} - {reservation.StartDate:MM/dd/yyyy} to {reservation.EndDate:MM/dd/yyyy}"
+                                Description = $"Reservation #{reservationId} - {reservation.StartDate:MM/dd/yyyy} to {reservation.EndDate:MM/dd/yyyy} ({rentalDays} days)"
                             }
                         },
                         Quantity = 1
@@ -168,7 +173,7 @@ public class StripePaymentService : IPaymentService
                 Status = 200,
                 SuccessUrl = session.Url
             };
-           
+
         }
         catch (Exception ex)
         {
@@ -183,7 +188,6 @@ public class StripePaymentService : IPaymentService
 
     public async Task<int> HandleStripeWebhookAsync(string? json)
     {
-
         try
         {
             // Validate webhook signature
@@ -230,25 +234,25 @@ public class StripePaymentService : IPaymentService
 
     public async Task<int> CheckoutSessionFailed(int reservationId, string userEmail)
     {
-        var reservationSpec = new ReservationSpec();
+        var reservationSpec = new ReservationSpec(r => r.Id == reservationId);
         var reservation = await _unitOfWork.Repository<Reservation>().GetAsyncWithSpecification(reservationSpec);
         if (reservation == null)
             return 404;
-        
+
         if (reservation.User.Email != userEmail)
             return 409;
-        
+
         reservation.Status = ReservationStatus.PaymentFailed;
 
-         _unitOfWork.Repository<Reservation>().Update(reservation);
+        _unitOfWork.Repository<Reservation>().Update(reservation);
         await _unitOfWork.CompleteAsync();
         return 200;
-
     }
+
     private async Task HandleCheckoutSessionEvent(Event stripeEvent, Func<Session, ReservationStatus> statusResolver)
     {
         var session = stripeEvent.Data.Object as Session;
-        if (session != null && session.Metadata.TryGetValue("reservationId", out string reservationIdStr) &&
+        if (session != null && session.Metadata.TryGetValue("reservationId", out string? reservationIdStr) &&
             int.TryParse(reservationIdStr, out int reservationId))
         {
             var reservation = await GetReservationAsync(reservationId);
@@ -288,6 +292,12 @@ public class StripePaymentService : IPaymentService
         {
             throw new ArgumentException("Reservation, user email, and payment URL are required");
         }
+
+        // Calculate rental days
+        int rentalDays = (int)(reservation.EndDate - reservation.StartDate).TotalDays + 1;
+
+        // Calculate total cost
+        decimal totalCost = (reservation.Car.Price) * rentalDays + reservation.Car.InsuranceCost;
 
         // Create HTML email template for payment link
         string emailBody = $@"
@@ -333,8 +343,16 @@ public class StripePaymentService : IPaymentService
                                 <td>{reservation.EndDate:MMMM dd, yyyy}</td>
                             </tr>
                             <tr>
+                                <th>Duration</th>
+                                <td>{rentalDays} days</td>
+                            </tr>
+                            <tr>
+                                <th>Daily Rate</th>
+                                <td>${(reservation.Car.Price):0.00} (Car: ${reservation.Car.Price:0.00} + Insurance: ${reservation.Car.InsuranceCost:0.00})</td>
+                            </tr>
+                            <tr>
                                 <th>Total Cost</th>
-                                <td>${(reservation.Car.Price + reservation.Car.InsuranceCost):0.00}</td>
+                                <td>${totalCost:0.00}</td>
                             </tr>
                         </table>
                         

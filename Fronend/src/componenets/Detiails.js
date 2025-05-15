@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import Car from "../R2.jpg";
+import { Link } from "react-router";
 import { useParams } from "react-router";
 import { useContext } from "react";
 import { urlContext } from "../contexts/urlContext";
 import axios from "axios";
+import { motion } from "framer-motion";
 import { Button } from "react-bootstrap";
-import { BeatLoader} from "react-spinners";
+import { BeatLoader } from "react-spinners";
+import { useLocation } from "react-router";
+import { Container } from "@mui/material";
+import Grid from "@mui/material/Grid";
 export default function Showdetails() {
   const { url } = useContext(urlContext);
   const { id } = useParams();
@@ -15,8 +19,6 @@ export default function Showdetails() {
     axios
       .get(`${url}/api/Car/${id}`)
       .then((res) => {
-        console.log(res.data);
-
         setSelectedCar(res.data);
       })
       .catch((err) => {
@@ -30,51 +32,80 @@ export default function Showdetails() {
   return (
     <>
       {!loading ? (
-        <div className="container col-10 card shadow p-3 mb-5 bg-body-tertiary">
-          <div className="card-body">
-            <img src={selectedCar.url} alt="Car" className="img-fluid" />
-            {/* <p className="card-text" style={{ fontSize: "17px" }}>{i.body}</p> */}
-            <hr />
-            <table className="table table-bordered">
-              <tbody>
-                <tr>
-                  <th>Car Liscence</th>
-                  <td>{selectedCar.id * selectedCar.id}{selectedCar.id*28}</td>
-                </tr>
-                {/* <tr>
-              <th>Availability</th>
-              <td>{i.isAvailable ? "Available" : "Not Available"}</td>
-            </tr> */}
-                <tr>
-                  <th>Model</th>
-                  <td>{selectedCar.model}</td>
-                </tr>
-                <tr>
-                  <th>Brand</th>
-                  <td>{selectedCar.brand}</td>
-                </tr>
-                <tr>
-                  <th>Rating</th>
-                  <td>
-                    {selectedCar.rating} <b>/10</b>{" "}
-                  </td>
-                </tr>
-                <tr>
-                  <th>Insurance Cost</th>
-                  <td> <b>$</b> {selectedCar.insuranceCost}</td>
-                </tr>
-                <tr>
-                  <th>Price</th>
-                  <td><b>$</b> {selectedCar.price}</td>
-                </tr>
-              </tbody>
-            </table>
+        <div>
+          <div className="DetailsBackground"></div>
+          <div>
+            {" "}
+            <Container className="containerForDetails">
+              <div>
+                <img
+                  src={selectedCar.url}
+                  alt="Car"
+                  className="img-fluid imgContainer"
+                />
+              </div>
+              <hr />
+              <motion.div
+                initial={{ x: -200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 2 }}
+              >
+                <Grid container spacing={2}>
+                  <Grid size={4}>
+                    <div className="d-flex justify-content-center flex-column align-items-center">
+                      <div>
+                        <h5>Barnd :</h5>
+                        <h3>{selectedCar.brand}</h3>
+                      </div>
+                      <div>
+                        <h5>Rate :</h5>
+                        <h3>
+                          {selectedCar.rating}
+                          <small>/10</small>
+                        </h3>
+                      </div>
+                    </div>
+                  </Grid>
+                  <Grid size={4}>
+                    <div className="d-flex justify-content-center flex-column align-items-center">
+                      <div>
+                        <h5>Model :</h5>
+                        <h3>{selectedCar.model}</h3>
+                      </div>
+                      <div>
+                        <h5>Insurance Cost :</h5>
+                        <h3>{selectedCar.insuranceCost}$</h3>
+                      </div>
+                    </div>
+                  </Grid>
+                  <Grid size={4}>
+                    <div className="d-flex justify-content-center flex-column align-items-center">
+                      <div>
+                        <h5>Price Per Day:</h5>
+                        <h3 style={{ color: "green" }}>{selectedCar.price}$</h3>
+                      </div>
+                      <div>
+                        {selectedCar.isAvailable ? (
+                          <Link to={`/reservation/${id}`}>
+                            <Button
+                              variant="success"
+                              style={{ margin: "auto" }}
+                            >
+                              Rent And Pay Now !!
+                            </Button>
+                          </Link>
+                        ) : (
+                          <h4 style={{ color: "rgb(255, 50, 47)" }}>
+                            Not Available For Now ...
+                          </h4>
+                        )}
+                      </div>
+                    </div>
+                  </Grid>
+                </Grid>
+              </motion.div>
+            </Container>
           </div>
-          { selectedCar.isAvailable ? 
-            <Button variant="success" style={{ width: "75%", margin: "auto" }}>
-              Rent And Pay Now !!
-            </Button>:<h4 style={{color:"rgb(255, 50, 47)"}}> Sorry !! ..This Car Is Rented Already .. </h4>
-          }
         </div>
       ) : (
         <div

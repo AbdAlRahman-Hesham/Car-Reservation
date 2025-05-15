@@ -131,24 +131,3 @@ namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations
         }
     }
 }
-/*
- using Car_Reservation_Domain.Entities.CarEntity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace Car_Reservation.Repository.Contexts.CarRentContext.Configrations
-{
-    class CarConfiguration : IEntityTypeConfiguration<Car>
-    {
-        public void Configure(EntityTypeBuilder<Car> builder)
-        {
-            // Seed Cars with ModelId foreign keys
-            builder.HasData(
-                // Toyota Corolla Cars
-                new Car { Id = 1, ModelId = 1, Price = 204, InsuranceCost = 45, IsAvailable = true, Rating = 10, Url = "https://www.motortrend.com/uploads/sites/5/2021/08/2022-Toyota-Corolla-SE-1.jpg" },
-                new Car { Id = 2, ModelId = 1, Price = 204, InsuranceCost = 30, IsAvailable = true, Rating = 6, Url = "https://cdn.motor1.com/images/mgl/7ZvG6/s1/2022-toyota-corolla-hatchback.jpg" },
-                new Car { Id = 3, ModelId = 1, Price = 204, InsuranceCost = 15, IsAvailable = true, Rating = 9, Url = "https://www.carscoops.com/wp-content/uploads/2022/08/2023-Toyota-Corolla-Sedan-1.jpg" },
-
-                // Toyota Prius Cars
-                new Car { Id = 4, ModelId = 2, Price = 2331, InsuranceCost
- */

@@ -1,17 +1,24 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { urlContext } from "../contexts/urlContext";
 import { Link, useNavigate } from "react-router";
-import Logo from "../logo2.jpg";
+import User from "../images/user.jpg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { ClipLoader } from "react-spinners";
 const LoginForm = () => {
-  const { url, setMyToken, showAlertError, loading, setMyLoading,setSelected } =
-    useContext(urlContext);
+  const {
+    url,
+    setMyToken,
+    showAlertError,
+    loading,
+    setMyLoading,
+    setSelected,
+  } = useContext(urlContext);
   const navigate = useNavigate();
+  const [to, setTO] = useState("");
   const showAlert = () => {
     Swal.fire({
       title: `🚀 Welcome back ${localStorage.getItem("fName")} !`,
@@ -38,6 +45,7 @@ const LoginForm = () => {
       myform.resetForm();
     },
   });
+
   async function loginRequest(values) {
     setMyLoading(true);
     await axios
@@ -49,8 +57,8 @@ const LoginForm = () => {
         localStorage.setItem("fName", res.data.fName);
         localStorage.setItem("picUrl", res.data.picUrl);
         showAlert();
-        navigate("/home");
-        setSelected("H")
+        navigate(to);
+        setSelected("H");
       })
       .catch((res) => {
         switch (res.response.status) {
@@ -68,11 +76,20 @@ const LoginForm = () => {
         setMyLoading(false);
       });
   }
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("id")) {
+      setTO(
+        `/reservation/${new URLSearchParams(window.location.search).get("id")}`
+      );
+    }else{
+      setTO("/home")
+    }
+  }, []);
 
   return (
     <Container
       className="d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100%", alignContent: "center", marginTop: "15px", marginBottom: "60px" }}
+      style={{ minHeight: "100vh", alignContent: "center", padding: "20px" }}
     >
       <Row>
         <Col md={12}>
@@ -86,7 +103,7 @@ const LoginForm = () => {
           >
             <h2 className="text-center fw-bold mb-3">Login</h2>
             <div className="text-center mb-1">
-              <img src={Logo} alt="Logo" className="roundedImg" />
+              <img src={User} alt="Logo" className="roundedImg" />
             </div>
 
             <Form onSubmit={myform.handleSubmit}>
@@ -175,6 +192,12 @@ const LoginForm = () => {
                 <i style={{ marginLeft: "10px", fontSize: "20px" }}>
                   Sign Up →
                 </i>
+              </Link>
+            </div>
+            <div className="text-center mt-3">
+              OR You could Run As A Guest
+              <Link to="/home" className="text-decoration-none text-primary">
+                <i style={{ marginLeft: "10px", fontSize: "20px" }}>Home →</i>
               </Link>
             </div>
           </div>

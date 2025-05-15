@@ -6,43 +6,44 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.Extensions.Options;
 
-namespace Car_Reservation_API.Extension
+namespace Car_Reservation_API.Extension;
+
+internal static class AppIdentityAndJwtAuthenticationExtensionHelpers
 {
-    internal static class AppIdentityAndJwtAuthenticationExtensionHelpers
+
+    public static IServiceCollection AddIdentityAndJwtAuthenticationServices(this IServiceCollection service, IConfiguration configuration)
     {
 
-        public static IServiceCollection AddIdentityAndJwtAuthenticationServices(this IServiceCollection service, IConfiguration configuration)
+        service.AddIdentity<User, IdentityRole>()
+            .AddEntityFrameworkStores<CarRentDbContext>();
+
+        service.AddScoped<IAuthServices, AuthServices>();
+
+        service.AddAuthentication(op =>
         {
-
-            service.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<CarRentDbContext>();
-
-            service.AddScoped<IAuthServices, AuthServices>();
-
-            service.AddAuthentication(op =>
+            op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            op.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            op.DefaultForbidScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
+        .AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
             {
-                op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                op.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                op.DefaultForbidScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SecretKey"]!)),
-                    ValidIssuer = configuration["JWT:Issuer"],
-                    ValidAudience = configuration["JWT:Audience"],
-                    ClockSkew = TimeSpan.FromDays(double.Parse(configuration["JWT:Lifetime"]!))
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SecretKey"]!)),
+                ValidIssuer = configuration["JWT:Issuer"],
+                ValidAudience = configuration["JWT:Audience"],
+                ClockSkew = TimeSpan.FromDays(double.Parse(configuration["JWT:Lifetime"]!))
 
-                };
-            });
-            return service;
-        }
+            };
+        }).AddCookie("Forbidden", options =>
+        {
+            options.AccessDeniedPath = "/errors/403";
+        }); ;
+        return service;
     }
 }

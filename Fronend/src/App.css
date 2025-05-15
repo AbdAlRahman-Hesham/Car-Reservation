@@ -2,8 +2,25 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
-  background-color: rgba(143, 134, 134, 0.297);
 
+
+  background-color: rgba(228, 228, 203, 0.388);
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.forPosition {
+  position: relative;
+  height: 100vh;
+}
+
+.carousel-item img {
+  height: 100vh;
+  object-fit: cover;
 }
 
 .background {
@@ -15,10 +32,9 @@
 }
 
 .selected {
-  color: #111111 !important;
-  background-color: white;
-  padding: 5px;
-  border-radius: 10px;
+  border-bottom: 3px solid #7d26cd;
+  cursor: pointer;
+
 }
 
 .hero {
@@ -36,7 +52,31 @@
   height: 110px;
   border-radius: 50%;
   object-fit: fill;
-  border: 2px solid #007bff;
+  border: 2px solid #7D26CD;
+}
+.profilePageImage{
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: fill;
+  border: 5px solid black;
+
+}
+.warning{
+  background-color:#fff3cd ;
+  color:#856404 ;
+}
+.success{
+  background-color: #d4edda;
+  color: #155724;
+}
+.failed{
+  background-color:#f8d7da  ;
+  color:#721c24 ;
+}
+.danger{
+  background-color:#f1b0b7 ;
+  color: #58151c  ;
 }
 
 .mainContainer {
@@ -58,7 +98,6 @@
 
 
 
-
 .invalid-input {
   border-color: #e53b89 !important;
 }
@@ -72,7 +111,7 @@
 
 
 .characters {
-  color: white;
+  color: black;
   margin-top: 3px;
   font-size: 10px;
   letter-spacing: 3px;
@@ -111,21 +150,19 @@ input, button {
 
 }
 
-/* .info {
-  background-color: rgb(194, 186, 178);
- 
-  opacity: 0;
-  transition: 0.3s;
- 
-  display: flex;
-  justify-content: space-around;
-
-
+.carousel-caption h3, .carousel-caption p {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.card :hover .info {
-  opacity: 0.9;
-} */
+.carousel-item img {
+  filter: brightness(60%);
+}
+
+
 
 .card {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
@@ -135,22 +172,316 @@ input, button {
 
 .card:hover {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  /* ظل أكبر عند التحويم */
+
 }
 
 .card:hover .body {
   background-color: #3d3d3d !important;
-  /* لون الخلفية عند التحويم */
+
   color: #FFFFFF;
   transition: background-color 0.3s ease-in-out;
-  /* تأثير سلس */
+
 }
 
-.notavailable {}
+.containerForDetails h3 {
+  color: #303079;
 
+}
 
+.carsSectionBackground {
+  background:
+    url("./images/2.jpg") no-repeat center top / contain;
+  filter: brightness(50%);
+  background-size: 100vw 400px;
+  background-color: transparent;
+  min-height: 50vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0px;
+}
 
+.profileBackground {
+  margin-top: 0px !important;
+  background:
+    url("./images/logo_with_padding-removebg-preview.png") no-repeat center top / contain;
+  background-size: 100vw 300px;
+  background-color: transparent;
+  min-height: 30vh;
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; */
+  margin: 20px;
+  align-content: end;
+}
 
+.AbooutUsBackground {
+  background:
+    url("./images/AboutUsImage.jpg") no-repeat center top / contain;
+  filter: brightness(50%);
+  background-size: 100vw 400px;
+  background-color: transparent;
+  min-height: 20vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0px;
+}
+
+.DetailsBackground {
+  background:
+    url("./images/DetailsImage.jpg") no-repeat center bottom / contain;
+  filter: brightness(70%);
+  background-size: 100vw 400px;
+  background-color: transparent;
+  min-height: 30vh;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.choosen {
+  color: black;
+  background-color: orange;
+  box-shadow: 3px 3px 10px black;
+  border-radius: 15px;
+  border: 2px solid white;
+  padding: 10px;
+  scale: 1.1;
+  font-family: "Comic Relief", system-ui;
+}
+
+.unChoosen {
+  background-color: transparent;
+  color: black;
+  font-family: "Comic Relief", system-ui;
+}
+
+.unChoosen:hover {
+  color: orange;
+}
+
+.tabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  min-height: 500px;
+  margin-bottom: 140px;
+
+}
+
+.tabs p {
+  margin: 50px;
+  word-spacing: 3px;
+  font-size: 25px;
+  font-family: "Comic Relief", system-ui;
+  color: rgb(17, 17, 104);
+  text-shadow: 0px 0px 2px rgb(17, 17, 104);
+  line-height: 50px;
+}
+
+.tabs h2 {
+  text-shadow: 2px 2px 10px black;
+  font-size: 60px;
+  display: inline;
+  margin-left: 10px;
+  color: rgb(94, 6, 6);
+  margin-right: 0px;
+}
+
+.contentOfTopics {
+  margin-bottom: 50px;
+  min-height: 300px;
+  display: flex;
+  flex-flow: column;
+  justify-content: cenetr;
+  align-items: start;
+  width: 60%;
+}
+
+.tabs div p {
+  display: inline;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.Buttons {
+  margin: 25px;
+  display: flex;
+  gap: 40px;
+}
+
+.forSelect {
+  width: 85%;
+}
+
+.reservationCard {
+
+  min-height: 500px;
+  height: 100%;
+  box-shadow: 0px 0px 20px rgba(38, 57, 205, 0.61);
+  border-radius: 40px;
+  background-color: rgb(223, 222, 226);
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.proceed:hover {
+  color: #0d6efd;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.reservationInput {
+  background-color: white;
+  color: black;
+  width: 70%;
+  border: 3px solid rgba(14, 20, 72, 0.61);
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 20px;
+  color: #fff;
+  width: 100%;
+  word-spacing: 12px;
+  letter-spacing: 3px;
+  color: gold;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 0px 0px 10px rgb(189, 182, 141);
+}
+
+.carBrandsWeHave {
+  color: #fff;
+  margin: 20px;
+}
+
+.card-wrapper {
+  padding: 10px;
+}
+
+.user-profile {
+  width: 131px;
+  height: 51px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: linear-gradient(to bottom right,
+      rgb(125, 38, 205) 0%,
+      rgba(46, 142, 255, 0) 30%);
+  background-color: rgba(138, 43, 226, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile:hover,
+.user-profile:focus {
+  background-color: rgba(138, 43, 226, 0.7);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+  outline: none;
+}
+
+.user-profile-inner {
+  width: 127px;
+  height: 47px;
+  border-radius: 13px;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: rgb(211, 210, 207);
+  font-weight: 600;
+}
+
+.user-profile-inner svg {
+  width: 27px;
+  height: 27px;
+  fill: #fff;
+}
+
+.purpleButtton {
+  background-color: #9B30FF !important;
+  color: white !important;
+}
+
+.imgContainer {
+  border-radius: 20px;
+  /* box-shadow: 7px 4px 40px black; */
+
+}
+
+.absolute {
+  background-color: transparent;
+  position: absolute !important;
+  z-index: 10;
+  width: 100%;
+  height: 90px;
+  transform: translateY(-20);
+  padding: 0px;
+}
+
+.absolute h5 {
+  color: white;
+}
+
+.fixed {
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  background-color: rgb(212, 208, 208);
+  color: #1a1a1a;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 90px;
+  padding: 10px;
+
+}
+
+.user-info-car {}
+
+/* scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e2f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#7a7aff, #9B30FF);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#975aff, #8310ef);
+}
+
+/* end of  scroll bar styling */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
