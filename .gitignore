@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Backend/Car-Reservation/Car-Reservation,API/Program.cs
+/Backend/Car-Reservation/Car-Reservation,API/appsettings.json
+/Backend/Car-Reservation/Car-Reservation,API/appsettings.Development.json
