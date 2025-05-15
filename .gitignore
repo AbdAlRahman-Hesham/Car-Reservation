@@ -90,8 +90,6 @@ bld/
 *.db-shm
 *.db-wal
 
-# Entity Framework
-Migrations/
 
 # Test Results
 [Tt]est[Rr]esult*/
