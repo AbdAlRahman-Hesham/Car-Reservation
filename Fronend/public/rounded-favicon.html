@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating Rounded Favicon</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      flex-direction: column;
+    }
+    
+    .rounded-icon {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .rounded-icon img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+    }
+    
+    h2 {
+      margin-top: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    p {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="rounded-icon">
+    <img src="logo2.png" alt="Speedo Logo">
+  </div>
+  <h2>Rounded Favicon Preview</h2>
+  <p>Take a screenshot of the rounded logo above and save it as favicon.png.</p>
+</body>
+</html>

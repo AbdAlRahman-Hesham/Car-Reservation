@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Rounded Favicon</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    
+    canvas {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      background-color: white;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .instructions {
+      max-width: 600px;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Rounded Favicon for Speedo</h1>
+  <canvas id="canvas" width="192" height="192"></canvas>
+  <button onclick="downloadImage()">Download Rounded Logo</button>
+  
+  <div class="instructions">
+    <h3>Instructions:</h3>
+    <p>1. Click the "Download Rounded Logo" button to download the rounded logo</p>
+    <p>2. Replace the current favicon with this rounded version by copying it to the public folder and renaming it</p>
+  </div>
+  
+  <script>
+    window.onload = function() {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      
+      // Load the logo image
+      img.onload = function() {
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Create circular clipping path
+        ctx.beginPath();
+        ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        
+        // Draw white background
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Calculate dimensions to properly center and scale the image
+        const scale = Math.min(canvas.width / img.width, canvas.height / img.height) * 0.85;
+        const x = (canvas.width - img.width * scale) / 2;
+        const y = (canvas.height - img.height * scale) / 2;
+        
+        // Draw the image
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+      };
+      
+      img.src = 'logo2.png'; // Path to your logo
+    };
+    
+    // Function to download the canvas as an image
+    function downloadImage() {
+      const canvas = document.getElementById('canvas');
+      const image = canvas.toDataURL("image/png");
+      const link = document.createElement('a');
+      link.download = "rounded-favicon.png";
+      link.href = image;
+      link.click();
+    }
+  </script>
+</body>
+</html>

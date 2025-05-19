@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Rounded Favicon for Speedo</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    
+    canvas {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 50%;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #7d26cd;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    button:hover {
+      background-color: #6a1fb0;
+    }
+    
+    .instructions {
+      max-width: 600px;
+      margin-top: 20px;
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #7d26cd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Rounded Favicon for Speedo</h1>
+  <canvas id="canvas" width="180" height="180"></canvas>
+  <button id="downloadBtn">Download Rounded Favicon</button>
+  <div id="preview"></div>
+  
+  <div class="instructions">
+    <h3>Instructions:</h3>
+    <p>1. Click the "Download Rounded Favicon" button above to save the rounded logo</p>
+    <p>2. Save the downloaded file to the "public" folder as "favicon.png"</p>
+    <p>3. Update the index.html file to use "favicon.png" instead of "logo2.png" for the favicon</p>
+  </div>
+  
+  <script>
+    window.onload = function() {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      const preview = document.getElementById('preview');
+      
+      // Load the logo image
+      img.onload = function() {
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Create circular clipping path
+        ctx.beginPath();
+        ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        
+        // Draw white background
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Calculate dimensions to properly center and scale the image
+        const scale = Math.min(canvas.width / img.width, canvas.height / img.height) * 0.85;
+        const x = (canvas.width - img.width * scale) / 2;
+        const y = (canvas.height - img.height * scale) / 2;
+        
+        // Draw the image
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+        
+        // Show preview
+        const previewImg = document.createElement('img');
+        previewImg.src = canvas.toDataURL('image/png');
+        previewImg.style.width = '64px';
+        previewImg.style.height = '64px';
+        previewImg.style.borderRadius = '50%';
+        previewImg.style.marginRight = '10px';
+        preview.innerHTML = '<p>Preview at different sizes:</p>';
+        preview.appendChild(previewImg.cloneNode());
+        
+        const previewImg2 = previewImg.cloneNode();
+        previewImg2.style.width = '32px';
+        previewImg2.style.height = '32px';
+        preview.appendChild(previewImg2);
+        
+        const previewImg3 = previewImg.cloneNode();
+        previewImg3.style.width = '16px';
+        previewImg3.style.height = '16px';
+        preview.appendChild(previewImg3);
+      };
+      
+      img.src = 'logo2.png'; // Path to your logo
+      
+      // Set up download button
+      document.getElementById('downloadBtn').addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.download = "favicon.png";
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    };
+  </script>
+</body>
+</html>
