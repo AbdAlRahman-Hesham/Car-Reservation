@@ -1,0 +1,144 @@
+/* Responsive Car Card Styles */
+
+.car-card {
+  width: 18rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  background-color: #fff2f2;
+  border: 1px solid #7d26cd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0.5rem;
+}
+
+.car-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.car-card-img {
+  height: 12.5rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.not-available-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.car-card-body {
+  padding: 1.25rem;
+}
+
+.car-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.car-card-price-rating {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.car-card-price {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.car-card-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.car-card-rating-star {
+  margin-left: 0.25rem;
+  color: #ffc107;
+}
+
+.car-card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.rent-button {
+  color: white !important;
+  background-color: #7d26cd !important;
+  border: 2px solid #7d26cd !important;
+  transition: all 0.3s ease;
+}
+
+.rent-button:hover:not(:disabled) {
+  background-color: #6a1fb0 !important;
+  border-color: #6a1fb0 !important;
+}
+
+.rent-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.details-button {
+  color: #7d26cd !important;
+  border: 2px solid #7d26cd !important;
+  transition: all 0.3s ease;
+}
+
+.details-button:hover {
+  background-color: #7d26cd !important;
+  color: white !important;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) {
+  .car-card {
+    width: 16rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .car-card {
+    width: 14rem;
+  }
+  
+  .car-card-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .car-card-img {
+    height: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-card {
+    width: calc(50% - 2rem);
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .car-card {
+    width: 100%;
+    max-width: 20rem;
+    margin: 1rem auto;
+  }
+  
+  .car-card-img {
+    height: 11rem;
+  }
+}

@@ -27,6 +27,8 @@ export default function Reservation() {
   const [resID, setResID] = useState();
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const finalUrl = `${baseUrl}/reservation/18?step=3`;
 
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("step")) {
@@ -69,7 +71,7 @@ export default function Reservation() {
         `${url}/api/Payment/create-checkout-session`,
         {
           reservationId: resID,
-          successUrl: "http://localhost:3000/reservation/18?step=3",
+          successUrl: finalUrl,
           cancelUrl: "http://example.com/cancel",
         },
         { headers: headers }

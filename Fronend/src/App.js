@@ -8,6 +8,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import Registration from "./pages/ValForm";
 import LoginForm from "./pages/loginForm";
+import AdminLogin from "./pages/adminLogin";
 
 import MainLayOut from "./pages/main";
 import Cars from "./pages/carsSection";
@@ -17,6 +18,7 @@ import NavBar from "./componenets/myNav";
 import AboutUsPage from "./pages/aboutUS";
 import Reservation from "./pages/completeReservation";
 import Profile from "./pages/profile";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -32,6 +34,15 @@ function App() {
       confirmButtonText: "Try Again 🔄",
     });
   };
+  const showAlertSuccess = (message = "Operation completed successfully!") => {
+  Swal.fire({
+    title: "✅ Success!",
+    text: message,
+    icon: "success",
+    confirmButtonColor: "#28a745", // لون أخضر
+    confirmButtonText: "Great! 🎉",
+  });
+};
   return (
     <urlContext.Provider
       value={{
@@ -40,6 +51,7 @@ function App() {
           setToken(t);
         },
         showAlertError: showAlertError,
+        showAlertSuccess:showAlertSuccess,
         token: token,
         loading: loading,
         setMyLoading: (L) => {
@@ -52,7 +64,7 @@ function App() {
       }}
     >
       <div className="App">
-        {["/login", "/register", "/reservation"].includes(
+        {["/login", "/register", "/reservation","/dashboard", "/admin-login"].includes(
           useLocation().pathname.replace(/\/\d+/g, "")
         ) ? (
           <></>
@@ -65,14 +77,16 @@ function App() {
           <Route path="/home" element={<MainLayOut />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<Registration />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/cars" element={<Cars />} />
           <Route path="/details/:id" element={<Showdetails />} />
           <Route path="/reservation/:id" element={<Reservation />} />
           <Route path="/aboutUs" element={<AboutUsPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
 
-        {["/login", "/register", "/reservation"].includes(
+        {["/login", "/register", "/reservation","/dashboard", "/admin-login"].includes(
           useLocation().pathname.replace(/\/\d+/g, "")
         ) ? (
           <></>
