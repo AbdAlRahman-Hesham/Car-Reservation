@@ -1,8 +1,6 @@
 using Car_Reservation_API.Extension;
 using Car_Reservation.APIs.Middlewares;
 using Car_Reservation.APIs.Extensions;
-using Microsoft.AspNetCore.Builder;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +40,10 @@ app.UseCors(op =>
     .AllowCredentials();
 });
 app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
+
 app.UseHttpsRedirection();
+
 
 app.UseAuthentication();
 app.UseAuthorization();

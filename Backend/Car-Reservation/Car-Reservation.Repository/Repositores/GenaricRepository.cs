@@ -19,7 +19,7 @@ public class GenaricRepository<T>(CarRentDbContext db) : IGenaricRepository<T> w
 
     public async Task<IReadOnlyList<T>> GetAllAsync()=> await _db.Set<T>().ToListAsync();
     public async Task<IReadOnlyList<T>> GetAllAsyncWithSpecification(Specification<T> specification) => 
-        await _db.Set<T>().GetQuery<T>(specification).ToListAsync();
+        await _db.Set<T>().GetQuery<T>(specification, false).ToListAsync();
     public async Task<ICollection<T>> GetCollectionOfAllAsyncWithSpecification(Specification<T> specification) => 
         await _db.Set<T>().GetQuery<T>(specification).ToListAsync();
 

@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace Car_Reservation.Repository.Specifications;
 
-public abstract class Specification<TEntity> where TEntity : BaseEntity
+public  class Specification<TEntity> where TEntity : BaseEntity
 {
     public Expression<Func<TEntity, bool>>? Criteria { get; }
     public List<Expression<Func<TEntity, object>>> Includes { get; }
@@ -16,7 +16,7 @@ public abstract class Specification<TEntity> where TEntity : BaseEntity
     public int? Take { get; set; } = 10;
 
 
-    protected Specification()
+    public Specification()
     {
         Includes = new List<Expression<Func<TEntity, object>>>();
     }

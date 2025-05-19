@@ -6,7 +6,7 @@ namespace Car_Reservation.Repository.Specifications;
 
 public static class SpecificaionQueryBuilder
 {
-    public static IQueryable<TEntity> GetQuery<TEntity>(this IQueryable<TEntity> inputQuery, Specification<TEntity> specification) where TEntity : BaseEntity
+    public static IQueryable<TEntity> GetQuery<TEntity>(this IQueryable<TEntity> inputQuery, Specification<TEntity> specification, bool makePagination = true) where TEntity : BaseEntity
     {
 
         if (specification.Criteria is not null)
@@ -21,8 +21,11 @@ public static class SpecificaionQueryBuilder
 
         else if (specification.OrderBy is not null && specification.SortOrder == SortOrder.Descending)
             inputQuery = inputQuery.OrderByDescending(specification.OrderBy);
-
-        inputQuery = inputQuery.Skip(specification.Skip!.Value).Take(specification.Take!.Value);
+        if (makePagination)
+        {
+            inputQuery = inputQuery.Skip(specification.Skip!.Value).Take(specification.Take!.Value);
+            
+        }
 
         return inputQuery;
     }
