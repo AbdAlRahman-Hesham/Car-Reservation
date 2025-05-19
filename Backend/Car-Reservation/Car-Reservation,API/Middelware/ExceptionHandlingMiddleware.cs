@@ -27,6 +27,8 @@ public class ExceptionHandlingMiddleware
             var response = _environment.IsDevelopment() ?
                new ApiExceptionErrorResponse(ex.Message, ex.StackTrace) :
                new ApiExceptionErrorResponse();
+
+            //var response = new ApiExceptionErrorResponse(ex.Message, ex.StackTrace);
             var optiens = new JsonSerializerOptions() { PropertyNamingPolicy =  JsonNamingPolicy.CamelCase };
 
             var json = JsonSerializer.Serialize(response,optiens);

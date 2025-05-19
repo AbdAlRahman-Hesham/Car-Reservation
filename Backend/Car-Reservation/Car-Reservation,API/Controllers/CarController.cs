@@ -10,6 +10,7 @@ using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Car_Reservation_API.Controllers;
@@ -141,6 +142,7 @@ public class CarController(IUnitOfWork unitOfWork, UserManager<User> userManager
     [ProducesResponseType(204)]
     [ProducesResponseType(typeof(ApiResponse), 404)]
     [ProducesResponseType(typeof(ApiResponse), 403)]
+    [ProducesResponseType(typeof(ApiResponse), 400)]
     public async Task<ActionResult> DeleteCar(int id)
     {
         var userEmail = User.FindFirstValue(ClaimTypes.Email);
@@ -158,10 +160,9 @@ public class CarController(IUnitOfWork unitOfWork, UserManager<User> userManager
             return NotFound(new ApiResponse(404, "No Car with this id"));
 
         _unitOfWork.Repository<Car>().Delete(car);
-        await _unitOfWork.CompleteAsync();
-        return NoContent();
-    }
-
+            await _unitOfWork.CompleteAsync();
+            return NoContent();
+        }
 
 }
 

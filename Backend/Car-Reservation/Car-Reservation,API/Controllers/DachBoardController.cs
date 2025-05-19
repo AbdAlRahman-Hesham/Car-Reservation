@@ -28,7 +28,7 @@ namespace Car_Reservation_API.Controllers
             _unitOfWork = unitOfWork;
             _userManager = userManager;
         }
-        [HttpGet("FastStatistic")]
+        /*[HttpGet("FastStatistic")]
         public async Task<ActionResult<Statistic>> FastStatistic()
         {
 
@@ -57,7 +57,7 @@ namespace Car_Reservation_API.Controllers
                 MonthlyRevenue = monthlyRevenue
             });
 
-        }
+        }*/
 
         [HttpGet("DetailedStatistics")]
         public async Task<ActionResult<Statistic>> DetailedStatistics()
