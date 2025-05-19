@@ -2,9 +2,6 @@ import Alert from "@mui/material/Alert";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PaymentIcon from "@mui/icons-material/Payment";
 // import { useEffect } from "react";
-import axios from "axios";
-import { urlContext } from "../../contexts/urlContext";
-import { useContext, useState } from "react";
 import { ClipLoader } from "react-spinners";
 export default function PayemtContent({ resId, toProceedClicked,loading }) {
   return (

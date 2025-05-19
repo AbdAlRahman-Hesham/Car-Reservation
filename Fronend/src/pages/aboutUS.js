@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 import { useEffect } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { motion } from "framer-motion";
-export default function AboutUsPage(params) {
+export default function AboutUsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -68,7 +68,6 @@ export default function AboutUsPage(params) {
           }}
         >
           <h3>Abdallah Nasser</h3>{" "}
-          <small style={{ color: "orange" }}>Front-End Developer</small>
         </div>
         <div
           style={{
@@ -80,7 +79,6 @@ export default function AboutUsPage(params) {
           }}
         >
           <h3>Abd-ElRahman Hesham</h3>{" "}
-          <small style={{ color: "orange" }}>Back-End Developer</small>
         </div>
         <div
           style={{
@@ -92,7 +90,6 @@ export default function AboutUsPage(params) {
           }}
         >
           <h3>Ahmad Sanad</h3>{" "}
-          <small style={{ color: "orange" }}>Back-End Developer</small>
         </div>
         <h3 style={{ marginRight: "30px" }}>Omar Dawood</h3>
         <h3 style={{ marginRight: "30px" }}>Omar Wagih</h3>

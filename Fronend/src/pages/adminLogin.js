@@ -1,43 +1,44 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { urlContext } from "../contexts/urlContext";
-import { Link, useNavigate } from "react-router";
-import User from "../images/user.jpg";
+import { useNavigate } from "react-router";
+import LogoIcon from "../images/logo2.png"; // Create or use an appropriate admin icon
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { ClipLoader } from "react-spinners";
-const LoginForm = () => {
+
+const AdminLogin = () => {
   const {
     url,
     setMyToken,
     showAlertError,
     loading,
     setMyLoading,
-    setSelected,
   } = useContext(urlContext);
   const navigate = useNavigate();
-  const [to, setTO] = useState("");
-  const showAlert = () => {
+
+  const showWelcomeAlert = (name) => {
     Swal.fire({
-      title: `🚀 Welcome back ${localStorage.getItem("fName")} !`,
-      text: "Your ride is ready! Let's hit the road!",
+      title: `Welcome, Admin ${name}!`,
+      text: "You've successfully logged into the admin dashboard.",
       icon: "success",
       confirmButtonColor: "#28a745",
-      confirmButtonText: "Let's Go! 🚗",
+      confirmButtonText: "Continue to Dashboard",
     });
   };
+
   const myform = useFormik({
     validateOnMount: true,
     initialValues: {
       email: "",
-      password: "",
+      password: ""
     },
     validationSchema: Yup.object().shape({
-      email: Yup.string().required(`Email Is Required`),
+      email: Yup.string().required(`Email is required`),
       password: Yup.string()
-        .required(`Password IS Rrequired`)
+        .required(`Password is required`)
         .min(7, `Password must be at least 7 characters long`),
     }),
     onSubmit: (values) => {
@@ -47,30 +48,32 @@ const LoginForm = () => {
   });
 
   async function loginRequest(values) {
-    setMyLoading(true);
     console.log(values);
+    setMyLoading(true);
     await axios
       .post(`${url}/api/accounts/login`, values)
       .then((res) => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        setMyToken(res.data.token);
-        localStorage.setItem("fName", res.data.fName);
-        localStorage.setItem("picUrl", res.data.picUrl);
-        showAlert();
-        navigate(to);
-        setSelected("H");
+        // Check if the user has admin role (you might need to adjust this based on your API response)
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("isAdmin", "true");
+          setMyToken(res.data.token);
+          localStorage.setItem("fName", res.data.fName);
+          localStorage.setItem("picUrl", res.data.picUrl);
+          showWelcomeAlert(res.data.fName);
+          navigate("/dashboard");
       })
       .catch((res) => {
+        console.log("soort");
         console.log(res);
-        switch (res.response.status) {
+        switch (res.response?.status) {
           case 401:
-            showAlertError("Wrong Password Or Email");
+            showAlertError("Wrong Password or Email");
             break;
-          case 409:
-            showAlertError("The Email Is Already Used");
+          case 403:
+            showAlertError("You don't have permission to access the admin dashboard");
             break;
           default:
+            showAlertError("An error occurred. Please try again.");
             break;
         }
       })
@@ -78,15 +81,6 @@ const LoginForm = () => {
         setMyLoading(false);
       });
   }
-  useEffect(() => {
-    if (new URLSearchParams(window.location.search).get("id")) {
-      setTO(
-        `/reservation/${new URLSearchParams(window.location.search).get("id")}`
-      );
-    }else{
-      setTO("/home")
-    }
-  }, []);
 
   return (
     <Container
@@ -100,12 +94,21 @@ const LoginForm = () => {
             style={{
               backgroundColor: "#f4f4f4",
               width: "45vw",
-              border: "#5e9dfa solid 2px",
+              border: "#2c3e50 solid 2px",
             }}
           >
-            <h2 className="text-center fw-bold mb-3">Login</h2>
+            <h2 className="text-center fw-bold mb-3">Admin Dashboard Login</h2>
             <div className="text-center mb-1">
-              <img src={User} alt="Logo" className="roundedImg" />
+              <img 
+                src={LogoIcon} 
+                alt="Admin Logo" 
+                className="roundedImg" 
+                onError={(e) => {
+                  // Fallback in case the admin icon is missing
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/150?text=Admin";
+                }}
+              />
             </div>
 
             <Form onSubmit={myform.handleSubmit}>
@@ -114,7 +117,7 @@ const LoginForm = () => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter admin email"
                   value={myform.values.email}
                   onBlur={myform.handleBlur}
                   onChange={(e) => {
@@ -146,7 +149,7 @@ const LoginForm = () => {
                 <Form.Label className="fw-bold">Password</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Enter admin password"
                   name="password"
                   value={myform.values.password}
                   onBlur={myform.handleBlur}
@@ -180,27 +183,20 @@ const LoginForm = () => {
                 type="submit"
                 variant="primary"
                 className="w-100 mb-3"
+                style={{ backgroundColor: "#2c3e50", borderColor: "#2c3e50" }}
               >
-                {loading ? <ClipLoader size={20} color="#fff" /> : "Login"}
+                {loading ? <ClipLoader size={20} color="#fff" /> : "Login as Admin"}
               </Button>
             </Form>
 
             <div className="text-center mt-3">
-              You Don't Have An Account?!
-              <Link
-                to="/register"
-                className="text-decoration-none text-primary"
+              <Button 
+                variant="link" 
+                onClick={() => navigate("/")} 
+                className="text-decoration-none"
               >
-                <i style={{ marginLeft: "10px", fontSize: "20px" }}>
-                  Sign Up →
-                </i>
-              </Link>
-            </div>
-            <div className="text-center mt-3">
-              OR You could Run As A Guest
-              <Link to="/home" className="text-decoration-none text-primary">
-                <i style={{ marginLeft: "10px", fontSize: "20px" }}>Home →</i>
-              </Link>
+                Return to main site
+              </Button>
             </div>
           </div>
         </Col>
@@ -209,4 +205,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default AdminLogin;

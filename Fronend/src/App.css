@@ -1,3 +1,6 @@
+:root {
+  --purple-color: #7d26cd;
+}
 .App {
   text-align: center;
   position: relative;
@@ -32,7 +35,7 @@ html, body {
 }
 
 .selected {
-  border-bottom: 3px solid #7d26cd;
+  border-bottom: 3px solid var(--purple-color);
   cursor: pointer;
 
 }
@@ -52,7 +55,7 @@ html, body {
   height: 110px;
   border-radius: 50%;
   object-fit: fill;
-  border: 2px solid #7D26CD;
+  border: 2px solid var(--purple-color);
 }
 .profilePageImage{
   width: 260px;
