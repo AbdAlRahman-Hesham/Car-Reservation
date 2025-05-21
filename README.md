@@ -199,6 +199,15 @@ Want to contribute? Follow these steps:
       <br />
       <sub>Frontend Developer</sub>
     </td>
+          <td align="center">
+      <a href="https://github.com/OmarDawoud4">
+        <img src="https://github.com/OmarDawoud4.png"   width="100px;" alt="" style="border-radius:50%"/>
+        <br />
+        <sub><b>Omar Dawood</b></sub>
+      </a>
+      <br />
+      <sub>ML Developer</sub>
+    </td>
   </tr>
 </table>
 
